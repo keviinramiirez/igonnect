@@ -6,7 +6,7 @@ import GoDiamondVideo from '../../assets/videos/go-diamond-cancun-tease.mp4'
 function HeroSection({ toScroll }) {
   return (
     <div className='hero__wrapper'>
-      <video autoPlay loop muted>
+      <video autoplay='autoplay' playsinline='playsinline' loop muted style={{ pointerEvents: 'none' }}>
         <source src={GoDiamondVideo} type='video/mp4' />
       </video>
       <div className='hero__innerWrapper'>

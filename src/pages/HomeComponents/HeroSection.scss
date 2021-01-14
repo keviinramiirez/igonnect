@@ -6,55 +6,17 @@ $tablet: 768px;
 $lgphone: 480px;
 $phone: 360px;
 
-
-
-
-// .hero__innerWrapper {  
-//   padding: 11em 0 0 14em;
-//   // padding: 4em 10em 4em 10em;
-//   // padding: 1.5em; /* this is MOBILE padding */
-//   max-width: 1200px; /* impedir width que cubra toda la pantalla cuando disminuye */
-//   // margin: auto 0;
-
-
-
-
-
-//   .hero__content {
-//     opacity: 0.9;
-//     padding-bottom: 3em;
-//     font-weight: 700;
-//     .succeed {
-//       font-size: 5em;
-//       color: #F5E051;
-//     }
-//     .without-selling {
-//       font-size: 3em;
-//       padding-left: .7em;
-//     }
-  
-//     .build-your {
-//       font-size: 3em;
-//       padding-right: .7em;
-//     }
-//     .legacy {
-//       font-size: 5em;
-//       color: #B06ADF;
-//     }
-//   }
-//   @include media('<desktop') {
-
-//   }
-// }
-
 .hero__wrapper {
   // z-index: 0 !important;
   video {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    position: fixed;
+    position: absolute;
     z-index: -1;
+    video::-webkit-media-controls {
+      display:none !important;
+    }
   }
   /* background: url('') ceneter center/cover no-repeat; */
   // background-size: cover;

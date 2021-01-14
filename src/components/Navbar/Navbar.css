@@ -105,9 +105,11 @@
   } */
 
   .nav-link:hover {
-    background-color: #fff;
-    color: #242424;
-    border-radius: 0;
+    background-color: transparent;
+  }
+
+  .nav-link:focus {
+    outline: none;
   }
 
   .navbar-logo {
