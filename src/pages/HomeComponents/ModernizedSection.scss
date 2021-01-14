@@ -1,0 +1,679 @@
+@import "../../breakpoints/MediaBreakpoints.scss";
+
+
+.modern__wrapper {
+  // padding: 8em 4em;
+  // padding: 8em 18em;
+  // padding: 0em 18em 2em 18em;
+  // padding: 0 18em 8em 18em;
+  // padding: 10em;
+  padding: 0 10em 14em;
+
+  // background-color: #3d0158;
+  background-image: linear-gradient(#531f72, #4e0066);
+  // background-image: linear-gradient(#3d0158, #3d0158);
+  // background-image: linear-gradient(#660066, #3d0158);
+
+
+
+  
+  .modern__innerWrapper {
+    display: flex;
+    justify-content: space-around;
+    // justify-content: space-between;
+    // align-items: center;
+
+    .modern__left {
+      margin: 0;
+      padding: 0;
+      // width: 400px;
+      // width: 500px;
+      
+      .modern__boldContext {
+        font-weight: 700;
+        .modern__networkMarketing {
+          // font-size: 40px;
+          font-size: 3.2em;
+          white-space: nowrap !important;
+        }
+        .modern__modernized {
+          color: #F5E051;
+          // font-size: 52px;
+          font-size: 3.7em;
+          margin: 0 0 10px;
+        }
+      }
+      .modern__subtitleContext {
+        // font-weight: 300;
+        .modern_firstSentence {
+          padding-top: 0.5em;
+          display: flex;
+          white-space: nowrap !important;
+          width: 360px;
+          // font-size: 1em;
+          .prib__typewriter {
+            display: inline;
+            margin: 0 0.5em; 
+            color: #F5E051;
+            font-weight: 600;
+          }
+        }
+        // .modern__secondSentence {
+        //   max-width: 360px;
+        // }
+      }
+    }
+    .modern__right {
+      font-size: 1.4em;
+      text-align: center;
+      white-space: nowrap !important;
+      .modern__icons {
+        .modern__icon {
+          padding-bottom: 0.7em;
+          g {
+            fill:  #F5E051;
+          }
+          .st0 {
+            stroke: #F5E051;
+          }
+          path {
+            color: #F5E051;
+          }
+        }
+      }
+      .modern__iconText p {
+        font-size: 1em;
+        padding-bottom: 1em;
+      }
+    }
+  }
+
+
+  @include media('<=1300px') {
+    padding: 0 5em 8em 4em;
+  }
+  @include media('<=1300px', '<=desktop') {
+    padding: 0 4em 8em 4em;
+    .modern__innerWrapper {
+      // display: flex;
+      justify-content: space-between;
+  
+      .modern__left {
+        // margin: 0;
+        // padding: 0;
+        .modern__boldContext {
+          // font-weight: 700;
+          .modern__networkMarketing {
+            font-size: 2.3em;
+          }
+          .modern__modernized {
+            // font-size: 52px;
+            font-size: 2.8em;
+            // margin: 0 0 10px;
+          }
+        }
+        .modern__subtitleContext {
+          font-weight: 300;
+          .modern_firstSentence {
+            // display: flex;
+            // white-space: nowrap !important;
+            // width: 340px;
+            .prib__typewriter {
+              display: inline;
+              margin: 0 0.5em; 
+              font-weight: 600;
+            }
+          }
+          // .modern__secondSentence {
+          //   max-width: 360px;
+          // }
+        }
+      }
+      .modern__right {
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  @include media('<=desktop', '<1000px') {
+    padding: 0 6em 8em 6em;
+  }
+  @include media('<=1000px', '<=720px') {
+    .modern__innerWrapper {
+      .modern__left {
+        .modern__boldContext {
+          .modern__networkMarketing {
+            font-size: 2.2em;
+            white-space: wrap !important;
+          }
+          .modern__modernized {
+            font-size: 2.7em;
+          }
+        }
+      }
+      .modern__right {
+        font-size: 1.2em;
+        .modern__iconText p {
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+
+  @include media('<=desktop', '<=homecolumns') {
+    padding: 5em 4em 8em 4em;
+    .modern__innerWrapper {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      // flex-direction: column-reverse;
+      text-align: center;
+      .modern__left {
+        .modern__boldContext {
+          .modern__networkMarketing {
+            font-size: 2.2em;
+            // white-space: wrap !important;
+          }
+          .modern__modernized {
+            font-size: 2.7em;
+          }
+        }
+        .modern__subtitleContext {
+          .modern_firstSentence {
+            justify-content: center;
+            padding-top: 0.3em;
+          }
+          .modern__secondSentence {
+            line-height: 2em;
+            margin-top: 0;
+          }
+        }
+      }
+      .modern__right {
+        padding-top: 3em;
+        font-size: 1.2em;
+        .modern__iconText p {
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+
+  @include media('<homecolumns', '<=lgphone') {
+    padding: 0 4em 8em 4em;
+    .modern__innerWrapper {
+      .modern__left {
+        .modern__boldContext {
+          .modern__networkMarketing {
+            font-size: 2em;
+          }
+          .modern__modernized {
+            font-size: 2.5em;
+          }
+        }
+        .modern__subtitleContext {
+          font-size: 0.9em;
+        }
+      }
+      .modern__right {
+        padding-top: 1em;
+        .modern__iconText p {
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+
+  @include media('<lgphone', '<=phone') {
+    padding: 0 1em 8em 4em;
+    .modern__innerWrapper {
+      .modern__left {
+        // width: 300px;
+
+        .modern__boldContext {
+          .modern__networkMarketing {
+            font-size: 1.5em;
+          }
+          .modern__modernized {
+            font-size: 2em;
+          }
+        }
+        .modern__subtitleContext {
+          font-size: 0.825em;
+          .modern_firstSentence {
+            width: 300px;
+            // justify-content: center;
+            padding-top: 0.5em;
+          }
+          .modern__secondSentence {
+            line-height: 2.3em;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .modern__right {
+//   font-size: x-large;
+//   color: #F5E051;
+//   .modern__icons {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     text-align: center;
+//     .modern__icon {
+//       g {
+//         fill:  #F5E051;
+//       }
+//       .st0 {
+//         stroke: #F5E051;
+//       }
+//       path {
+//         color: #F5E051;
+//       }
+//     }
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .modern__right {
+//   font-size: x-large;
+//   color: #F5E051;
+//   // width: 100px;
+//   // height: 100px;
+//   .modern__icons {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     text-align: center;
+//     .absolute1 {
+//       position: relative;
+
+//       .absolute2 {
+//         // margin: auto;
+//         // display: absolute;
+//         // top: 0; left: 0; bottom: 0; right: 0;
+//         // position: absolute;
+//         // top: 50%;
+//         // left: 50%;
+//         // transform: translate(-50%, -50%);
+//         .modern__icon {
+//           g {
+//             fill:  #F5E051;
+//           }
+//           .st0 {
+//             stroke: #F5E051;
+//           }
+//           path {
+//             color: #F5E051;
+//           }
+//           // display: absolute !important;
+//           // position: absolute !important;
+//           // margin: auto;
+//           // position: absolute;
+//           // top: 0; left: 0; bottom: 0; right: 0;
+//         }
+//         .modern__iconText {
+//           // display: absolute;
+//           // position: absolute !important;
+//           // padding-top: 1em;
+//           // padding: 4em 0 0 0;
+
+//           .modern__textOverlay {
+//             p {
+//               position: absolute;
+//               // margin: auto;
+//               // position: absolute;
+//               top: 0; left: 0; bottom: 0; right: 0;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .modern__right {
+//   font-size: x-large;
+//   color: #F5E051;
+//   .modern__icons {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     text-align: center;
+//     .modern__icon {
+//       g {
+//         fill:  #F5E051;
+//       }
+//       .st0 {
+//         stroke: #F5E051;
+//       }
+//       path {
+//         color: #F5E051;
+//       }
+//     }
+//     .modern__iconText {
+//       display: absolute;
+//       padding-top: 1em;
+//       .modern__textOverlay {
+//         p {
+//           position: absolute;
+//         }
+//       }
+//     }
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.modern__ai {
+  animation: aiFade 12s infinite;
+}
+.modern__data {
+  animation: dataFade 12s infinite;
+}
+.modern__service {
+  animation: serviceFade 12s infinite;
+}
+
+
+@keyframes dataFade {
+  0%, 16.7% {
+    opacity: 0
+  }
+  16.7%, 33.4% {
+    opacity: 1
+  }
+  33.4%, 50% {
+    opacity: 0
+  }
+  50%, 66.7% {
+    opacity: 0
+  }
+  66.7%, 83.4% {
+    opacity: 0
+  }
+  83.4%, 100% {
+    opacity: 0
+  }
+}
+
+@keyframes serviceFade {
+  0%, 16.7% {
+    opacity: 0
+  }
+  16.7%, 33.4% {
+    opacity: 0
+  }
+  33.4%, 50% {
+    opacity: 0
+  }
+  50%, 66.7% {
+    opacity: 1
+  }
+  66.7%, 83.4% {
+    opacity: 0
+  }
+  83.4%, 100% {
+    opacity: 0
+  }
+}
+
+@keyframes aiFade {
+  0%, 16.7% {
+    opacity: 0
+  }
+  16.7%, 33.4% {
+    opacity: 0
+  }
+  33.4%, 50% {
+    opacity: 0
+  }
+  50%, 66.7% {
+    opacity: 0
+  }
+  66.7%, 83.4% {
+    opacity: 0
+  }
+  83.4%, 94% {
+    opacity: 1
+  }
+  94%, 100% {
+    opacity: 0
+  }
+}
+
+
+.modern__aiText {
+  animation: aiTextFade 12s infinite;
+}
+.modern__dataText {
+  animation: dataTextFade 12s infinite;
+}
+.modern__serviceText {
+  animation: serviceTextFade 12s infinite;
+}
+
+
+@keyframes dataTextFade {
+  0%, 16.7% {
+    color: rgba(255, 255, 255, 0.4)
+  }
+  16.7%, 33.4% {
+    color: #F5E051;
+  }
+  33.4%, 50% {
+    color: rgba(255, 255, 255, 0.4)
+  }
+  50%, 66.7% {
+    color: rgba(255, 255, 255, 0.4)
+  }
+  66.7%, 83.4% {
+    color: rgba(255, 255, 255, 0.4)
+  }
+  83.4%, 94% {
+    color: rgba(255, 255, 255, 0.4)
+  }
+  94%, 100% {
+    color: rgba(255, 255, 255, 0.4)
+  }
+}
+
+@keyframes serviceTextFade {
+  0%, 16.7% {
+    color: rgba(255, 255, 255, 0.4)
+  }
+  16.7%, 33.4% {
+    color: rgba(255, 255, 255, 0.4)
+  }
+  33.4%, 50% {
+    color: rgba(255, 255, 255, 0.4)
+  }
+  50%, 66.7% {
+    color: #F5E051;
+  }
+  66.7%, 83.4% {
+    color: rgba(255, 255, 255, 0.4)
+  }
+  83.4%, 94% {
+    color: rgba(255, 255, 255, 0.4)
+  }
+  94%, 100% {
+    color: rgba(255, 255, 255, 0.4)
+  }
+}
+
+@keyframes aiTextFade {
+  0%, 16.7% {
+    color: rgba(255, 255, 255, 0.4)
+  }
+  16.7%, 33.4% {
+    color: rgba(255, 255, 255, 0.4)
+  }
+  33.4%, 50% {
+    color: rgba(255, 255, 255, 0.4)
+  }
+  50%, 66.7% {
+    color: rgba(255, 255, 255, 0.4)
+  }
+  66.7%, 83.4% {
+    color: rgba(255, 255, 255, 0.4)
+  }
+  83.4%, 94% {
+    color: #F5E051;
+  }
+  94%, 100% {
+    color: rgba(255, 255, 255, 0.4)
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// @keyframes aiFade {
+//   0%, 16.7% {
+//     opacity: 0
+//   }
+//   16.7%, 33.4% {
+//     opacity: 1
+//   }
+//   33.4%, 50% {
+//     opacity: 0
+//   }
+//   50%, 66.7% {
+//     opacity: 0
+//   }
+//   66.7%, 83.4% {
+//     opacity: 0
+//   }
+//   83.4%, 100% {
+//     opacity: 0
+//   }
+// }
+
+// @keyframes dataFade {
+//   0%, 16.7% {
+//     opacity: 0
+//   }
+//   16.7%, 33.4% {
+//     opacity: 0
+//   }
+//   33.4%, 50% {
+//     opacity: 0
+//   }
+//   50%, 66.7% {
+//     opacity: 1
+//   }
+//   66.7%, 83.4% {
+//     opacity: 0
+//   }
+//   83.4%, 100% {
+//     opacity: 0
+//   }
+// }
+
+// @keyframes serviceFade {
+//   0%, 16.7% {
+//     opacity: 0
+//   }
+//   16.7%, 33.4% {
+//     opacity: 0
+//   }
+//   33.4%, 50% {
+//     opacity: 0
+//   }
+//   50%, 66.7% {
+//     opacity: 0
+//   }
+//   66.7%, 83.4% {
+//     opacity: 0
+//   }
+//   83.4%, 94% {
+//     opacity: 1
+//   }
+//   94%, 100% {
+//     opacity: 0
+//   }
+// }
+
+
+
+
+
+

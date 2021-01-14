@@ -1,0 +1,214 @@
+@import "../../breakpoints/MediaBreakpoints.scss";
+
+
+
+
+.benefits__wrapper {
+  // padding: 4em 18em 8em 18em;
+  padding: 14em 10em 8em 10em;
+  background-color: #f7f7f7;
+  color: black;
+  // background-image: linear-gradient(#3d0158, #660066);
+  // background-image: linear-gradient(#660066, #660066);
+  // background-image: linear-gradient(#631291, #9955A1);
+  // background-image: linear-gradient(#1E0030, #B06ADF);
+
+  position: relative;
+  
+  .benefits__shapeDivider {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 89px;
+      transform: rotateY(180deg);
+    }
+  }
+  .shape-fill {
+    fill: #4e0066;
+  }
+
+
+
+
+
+  .benefits__cutout {
+    // background-image: url('../../assets/Artboard1.png');
+    img {
+      // object-fit: cover;
+      width: 100%;
+      height: 100%;
+      // width: 100vh;
+      // height: 100vh;
+      position: fixed;
+      // z-index: -1;
+      // z-index: 0;
+    }
+  }
+  
+  .benefits__innerWrapper {
+    display: flex;
+    // justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+    // padding-top: -3em;
+    .benefits__column {
+      font-weight: 400;
+      font-size: 1em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-items: center;
+      text-align: center;
+      min-width: 260px;
+      padding: 0 4em;
+      @include media('<=1170px') { padding: 0 2em }
+      .benefits__icon {
+        g {
+          fill:  black;
+        }
+        .st0 {
+          stroke: black;
+        }
+      }
+      .benefits__benefit {
+        font-size: 1.3em;
+        font-weight: 600;
+        padding: 1em 0;
+        color: #6F1AA1;
+      }
+      .benefits__context {
+        padding-top: 10px;
+        font-weight: 500;
+        color: #555;
+      }
+    }
+  
+    .benefits__iconWrapper {
+      max-width: 100px;
+    }
+  }
+  @include media('<1300px', '<=desktop') {
+    .benefits__innerWrapper {
+      // display: flex;
+
+      // align-items: center;
+      // justify-content: center;
+      // @include media('<=1000px') { flex-direction: column !important }
+
+      .benefits__column {
+        font-weight: 300;
+        font-size: 0.9em;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
+        // justify-items: center;
+        // text-align: center;
+        min-width: 230px;
+        padding: 0 1.2em !important;
+        // padding: 0 1.2em !important;
+        .benefits__benefit {
+          font-size: 1.2em;
+          padding: 1em 0;
+        }
+        .benefits__context {
+          min-width: 235px;
+        }
+      }
+    
+      .benefits__iconWrapper {
+        max-width: 100px;
+      }
+    }
+  }
+  
+    
+  @include media('<desktop', '<=1000px') { 
+    @include media('<=homecolumns') {
+      padding: 12em 0 4em;
+    }
+    .benefits__innerWrapper {
+      flex-direction: column;
+      .benefits__column {
+        padding: 0em 1.2em 6em 1.2em !important;
+        .benefits__benefit {
+          font-size: 1.6em;
+          padding: 1em 0;
+        }
+        .benefits__context {
+          min-width: 300px;
+          font-size: 1.3em;
+        }
+      }
+      .benefits__context {
+        max-width: 235px;
+      }
+    }
+  }
+
+  @include media('<homecolumns', '<=lgphone') {
+    // padding-top: 14em;
+    // padding: 0 0 2em;
+    // @include media('<=homecolumns') {
+    //   padding: 8em 0 4em;
+    // }
+    .benefits__innerWrapper {
+      .benefits__column {
+        padding: 0em 1.2em 6em 1.2em !important;
+        .benefits__benefit {
+          font-size: 1.4em;
+          padding: 1em 0;
+        }
+        .benefits__context {
+          min-width: 300px;
+          font-size: 1.1em;
+        }
+      }
+      .benefits__context {
+        max-width: 235px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+// h2 {
+//   position: relative;
+//   margin: 0;
+//   font-size: 4em;
+//   font-weight: 800;
+//   color: #fff;
+//   z-index: 1;
+//   overflow: hidden;
+// }
+
+
+
+// h2:before {
+//   content: '';
+//   position: absolute;
+//   left: 0;
+//   width: 120%;
+//   height: 100%;
+//   background: linear-gradient(90deg, transparent 0%, #000 5%, #000 100%);
+//   animation: animate 5.5s linear forwards;
+// }
+
+// @keyframes animate {
+//   0% {
+//     left: 120%;
+//   }
+//   100% {
+//     left: -20%
+//   }
+// }

@@ -1,0 +1,27 @@
+
+/* .home__scrollToTop {
+  z-index: 2;
+  position: fixed;
+  cursor: pointer;
+  bottom: 40px;
+  right: 140px;
+  width: 70px;
+  height: 70px;
+  border-radius: 30%;
+  background: #3f015c;
+}
+
+.home__scrollToTop .icon {
+  margin: 17px 0 0 21px;
+  font-size: 2em;
+  animation: scrollTop 0.5s alternate ease infinite;
+}
+
+@keyframes scrollTop {
+  from {
+    transform: translateY(2px)
+  }
+  to {
+    transform: translateY(-1px)
+  }
+} */

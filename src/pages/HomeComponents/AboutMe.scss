@@ -1,0 +1,168 @@
+@import "../../breakpoints/MediaBreakpoints.scss";
+
+
+.aboutme__wrapper {
+  z-index: 1;
+  position: relative;
+  background: #f7f7f7;
+  // background: #4F0E74;
+  height: 70vh;
+  margin-top: -2px;
+  @include media('<=desktop') {
+    height: 55vh;
+  }
+  // @include media('<lgphone', '<=phone') {
+  //   height: 100vh;
+  // }
+  .aboutme__innerWrapper {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    .aboutme__testimonialWrapper {
+      width: calc(100% - 40px);
+      margin: 0 auto;
+      letter-spacing: 0.011em;
+      color: #222;
+      .aboutme__quotesIcon {
+        // font-size: 3.6em;
+        font-size: calc(2.4em + 1vh);
+        opacity: 80%;
+        color: #6F1AA1;
+      }
+
+      .aboutme__testimonial {
+        // font-size: 1.4em;
+        font-size: calc(1em + 0.5vw);
+        line-height: 1.5em;
+        font-family: 'Alegreya Sans';
+        // text-align: justify;
+        span {
+          font-size: 0.8em;
+          color: #6F1AA1;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .aboutme__info {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 30px 20px 30px 0;
+      .aboutme__myInfo {
+        padding-right: 2em;
+        line-height: 2.7em;
+        text-align: end;
+        font-weight: 600;
+        color: #6F1AA1;
+      }
+      img {
+        min-width: 70px;
+        background: #6F1AA1;
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        border: 3px solid #6F1AA1;
+        // z-index: 999;
+      }
+    }
+    
+    @include media('<=desktop') {
+      top: 28%;
+      left: 45%;
+      // height: 6vh;
+      .aboutme__testimonialWrapper {
+        width: 115%;
+        .aboutme__testimonial {
+          // font-size: 1.11em;
+          // font-weight: 500;
+        }
+      }
+      
+      .aboutme__info {
+        margin: 20px -70px 30px 0;
+        .aboutme__myInfo {
+          font-size: 0.9em;
+          padding-right: 1.5em;
+        }
+        img {
+          width: 130px;
+          height: 130px;
+        }
+      }
+    }
+
+    @include media('<desktop', '<=tablet') {
+      top: 35%;
+      left: 40%;
+      .aboutme__testimonialWrapper {
+        width: 133%;
+        .aboutme__quotesIcon {
+          font-size: 2.6em;
+        }
+        .aboutme__testimonial {
+          // font-size: 1.1em;
+        }
+      }
+      
+      .aboutme__info {
+        margin: 45px -90px 30px 0;
+        .aboutme__myInfo {
+          font-size: 0.85em;
+          padding-right: 1.5em;
+        }
+      }
+    }
+
+    
+    @include media('<tablet', '<=lgphone') {
+      left: 38%;
+      .aboutme__testimonialWrapper {
+        .aboutme__quotesIcon {
+          font-size: 2.2em;
+        }
+        .aboutme__testimonial {
+          font-size: 1em;
+          letter-spacing: 0.011em;
+        }
+      }
+      
+      .aboutme__info {
+        margin: 35px -60px 30px 0;
+        .aboutme__myInfo {
+          font-size: 0.8em;
+          padding-right: 1em;
+        }
+        img {
+          width: 100px;
+          height: 100px;
+        }
+      }
+    }
+
+    @include media('<lgphone', '<=phone') {
+      left: 50%;
+      top: 50%;
+      .aboutme__testimonialWrapper {
+        width: 100%;
+        .aboutme__testimonial {
+          font-size: 0.9em;
+        }
+      }
+      
+      .aboutme__info {
+        margin: 35px 0 30px;
+        .aboutme__myInfo {
+          font-size: 0.6em;
+          padding-right: 1em;
+        }
+        img {
+          width: 80px;
+          height: 80px;
+        }
+      }
+    }
+  }
+}

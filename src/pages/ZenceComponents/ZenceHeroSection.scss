@@ -1,0 +1,349 @@
+@import "../../breakpoints/MediaBreakpoints.scss";
+
+
+.zence__img img {
+  object-fit: cover;
+  @include media('>tablet', '<=1470px') {
+    object-fit: fill;
+  }
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.4);
+  z-index: -1;
+}
+
+
+.zence__wrapper {
+  .zence__transHalfBlack {
+    position: absolute;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    .zence__heroContentWrapper {
+      display: grid;
+      height: 100vh;
+      .zence__heroContent {
+        place-self: center;
+        .zence__heroTitle {
+          font-weight: bold;
+          .wearable {
+            font-size: 6.5em;
+            // font-size: 5vw;
+          }
+          .technology {
+            font-size: 6.2em;
+            // font-size: 5.3vw;
+            color: #b57cdb; 
+          }
+        }
+        .zence__heroSubtitle {
+          font-size: 1.5em;
+          // font-size: 1.2vw;
+          line-height: 2.2em;
+          font-weight: 300;
+          padding-bottom: 1em;
+        }
+        .zence__heroSubtitle > p > span {
+          color: #F5E051;
+        }
+        .zence__buttons {
+          margin-top: 1em;
+          display: flex;
+          flex-direction: row;
+        }
+        
+        @include media('<=1500px') {
+          .zence__heroTitle {
+            .wearable {
+              // font-size: 6.5em;
+              font-size: 6.5vw;
+              // margin-bottom: 0.1em;
+            }
+            .technology {
+              // font-size: 6.2em;
+              font-size: 6.1vw;
+            }
+          }
+          .zence__heroSubtitle {
+            // font-size: 1.5em;
+            font-size: 1.5vw;
+            font-weight: 200;
+            line-height: 2.3em;
+          }
+          .zence__buttons {
+            margin-top: 1.2em;
+          }
+        }
+
+        @include media('<1500px', '<=tablet') {
+          .zence__heroTitle {
+            margin: 1em 0;
+            .wearable {
+              font-size: 3.2em;
+              // font-size: 6.5vw;
+              // margin-bottom: 0.1em;
+            }
+            .technology {
+              font-size: 3.2em;
+              // font-size: 6.1vw;
+            }
+          }
+          .zence__heroSubtitle {
+            font-size: 1em;
+            // font-size: 1.5vw;
+            // font-weight: 200;
+            // line-height: 2.5em;
+          }
+          .zence__buttons {
+            justify-content: center;
+          }
+        }
+
+        @include media('<tablet', '<=lgphone') {
+          .zence__heroTitle {
+            .wearable {
+              font-size: 6vh;
+              // margin-bottom: 0.1em;
+            }
+            .technology {
+              // font-size: 3.2em;
+              font-size: 6vh;
+            }
+          }
+          .zence__heroSubtitle {
+            // font-size: 0.8em;
+            font-size: 4vw;
+            // font-weight: 200;
+            line-height: 2em;
+          }
+        }
+        @include media('<lgphone', '<=phone') {
+          .zence__heroTitle {
+            margin-bottom: -10px;
+          }
+          .zence__heroSubtitle {
+            margin-bottom: -10px;
+            line-height: 2em;
+          }
+        }
+      }
+    }
+  }
+  
+  // zence__wrapper
+  @include media('<=tablet') {
+  // @include media('<desktop', '<=tablet') {
+    .zence__transHalfBlack {
+      // position: absolute;
+      position: relative;
+      height: 50vh;
+      width: 100%;
+      background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+      text-align: center;
+      // margin:20px;
+      .zence__heroContentWrapper {
+        //https://www.freecodecamp.org/news/how-to-center-anything-with-css-align-a-div-text-and-more/
+        height: 50vh;
+        position: relative;
+      }
+    }
+  }
+
+
+  @include media("<lgphone", "<=355px") {
+    .zence__transHalfBlack {
+      .zence__heroContentWrapper {
+        // left: 8%;
+      }
+    }
+  }
+
+  @include media("<lgphone", "<=phone") {
+    .zence__transHalfBlack {
+      .zence__heroContentWrapper {
+        .zence__heroContent {
+          .zence__heroSubtitle {
+            font-weight: 200;
+            padding: 0.8em 0 1.4em;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+// ---------------------------------------------
+//          MOBILE VERSION
+// ---------------------------------------------
+// .zence__iframeContainer {
+//   position: relative;
+//   width: 100%;
+//   padding-bottom: 56.25%;
+//   height: 0;
+//   iframe {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//   }
+// }
+
+
+
+.lemon {
+  animation: lemonFade 12s infinite;
+}
+.lavender {
+  animation: lavenderFade 12s infinite;
+}
+.eucalyptus {
+  animation: eucalyptusFade 12s infinite;
+}
+
+
+
+@keyframes lemonFade {
+  0%, 33% {
+    opacity: 1;
+  }
+  33%, 75% {
+    opacity: 0;
+  }
+  75%, 92% {
+    opacity: 0;
+  }
+  92%, 100% {
+    opacity: 1;
+  }
+}
+
+@keyframes lavenderFade {
+  0%, 33% {
+    opacity: 0;
+  }
+  33%, 67% {
+    opacity: 1;
+  }
+  67%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes eucalyptusFade {
+  0%, 33% {
+    opacity: 0;
+  }
+  33%, 67% {
+    opacity: 0;
+  }
+  67%, 92% {
+    opacity: 1;
+  }
+  92%, 100% {
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//              GRADIENT BORDER EFFECT
+
+// .zence__wrapper {
+//   margin: 0;
+//   padding: 0;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   min-height: 100vh;
+//   // background: #060c21;
+//   // z-index: -100;
+// }
+
+
+// .zence__box {
+//   position: relative;
+//   width: 310px;
+//   height: 400px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   // background: red;
+//   z-index: 0;
+//   :before {
+//     content:attr(par);
+//     // content: '_';
+//     display: absolute;
+//     top: -2px;
+//     left: -2px;
+//     right: -2px;
+//     bottom: -2px;
+//     background: green;
+//     z-index: 100;
+//   }
+//   :after {
+//     content: '';
+//     position: absolute;
+//     top: -2px;
+//     left: -2px;
+//     right: -2px;
+//     bottom: -2px;
+//     background: purple;
+//     z-index: -1;
+//     filter: blur(40px);
+//     // -webkit-filter: blur(40px);
+//   }
+//   &:before, &:after {
+//     // z-index: 100;
+//     background: linear-gradient(235deg, #89ff00, #060c21, #00bcd4);
+//     color: #fff;
+//   }
+// }
+
+// .content {
+//   padding: 20px;
+//   box-sizing: border-box;
+//   color: white;
+// }
+
+
+// // .zence__box:after {
+// //   content: '';
+// //   position: absolute;
+// //   top: -2px;
+// //   left: -2px;
+// //   right: -2px;
+// //   bottom: -2px;
+// //   background: white;
+// //   z-index: -2;
+// //   filter: blur(40px);
+// //   // -webkit-filter: blur(40px);
+// // }
+
+// .zence__box:before, .zence__box:after {
+//   background: linear-gradient(235deg, #89ff00, #060c21, #00bcd4)
+// }

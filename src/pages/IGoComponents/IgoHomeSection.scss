@@ -1,0 +1,173 @@
+@import "../../breakpoints/MediaBreakpoints.scss";
+
+.igo__logoBack {
+  // height: 100vh;
+  // box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.3);
+  // background-position: center;
+  // background-size: cover;
+  // overflow: hidden;
+  // object-fit: cover;
+  // width: 100%;
+  // height: 100%;
+  // position: fixed;
+}
+
+// .igo__logo {
+//   z-index: 1;
+//   // width: 10%;
+//   // height: 100%;
+//   margin-left: 1em;
+//   height: 1000px;
+//   width: 1000px;
+// }
+
+.igo__heroWrapper {
+  // height: 100vh;
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.5);
+  z-index: 0;
+  .igo__logoBack {
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.4);
+      z-index: -1;
+    }
+  }
+  .igo__gridCentralize {
+    display: grid;
+    height: 100vh;
+    .igo__innerWrapper {
+      place-self: center;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      // line-height: 3.8em;
+      .igo__logo {
+        padding-bottom: 0.8em;
+        color: #E7AE11;
+        z-index: 1;
+      }
+
+      .igo__title {
+        font-size: 2.5em;
+        font-weight: bold;
+        padding-bottom: 0.6em;
+        .igo__lifetyle {
+          color: #E7AE11;
+        }
+      }
+
+      .igo__subtitle {
+        padding-bottom: 1.4em;
+        font-size: 1.8em;
+        font-weight: 200;
+        // color: #54c4e9;
+      }
+
+      @include media('<=desktop') {
+        .igo__title {
+          font-size: 2.1em;
+          padding-bottom: 0.9em;
+        }
+        .igo__subtitle {
+          font-size: 1.8em;
+          padding-bottom: 1.5em;
+        }
+      }
+
+      @include media('<desktop', '<=tablet') {
+        .igo__title {
+          font-size: 1.6em;
+          padding-bottom: 1.1em;
+        }
+        .igo__subtitle {
+          font-size: 1.2em;
+          padding-bottom: 1.9em;
+        }
+      }
+      @include media('<tablet', '<=570px') {
+        .igo__title {
+          font-size: 1.2em;
+          padding-bottom: 1.4em;
+        }
+        .igo__subtitle {
+          font-size: 0.9em;
+          padding-bottom: 2.4em;
+        }
+      }
+
+      @include media('<570px', '<=lgphone') {
+        .igo__title {
+          font-size: 1em;
+          padding-bottom: 1.8em;
+        }
+        .igo__subtitle {
+          font-size: 0.7em;
+          padding-bottom: 2.8em;
+        }
+      }
+      @include media('<lgphone', '<=phone') {
+        .igo__title {
+          font-size: 0.8em;
+        }
+        .igo__subtitle {
+          font-size: 0.5em;
+        }
+      }
+    }
+  }
+}
+
+.igo__bubbles {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0px;
+  object-fit: cover;
+  object-position: bottom;
+  .igo__bubble {
+      // animation: bubble 7s linear infinite ;
+      animation: bubble 10s linear infinite, pause-between-iterations 11s;
+      &:nth-child(1) {
+        animation-delay: 6s;
+        // animation-timing-function:cubic-bezier(0.75, 0.75, 0.75, 1);
+      }
+      &:nth-child(2) {
+        animation-delay: 2s;
+        // animation-timing-function:cubic-bezier(0.15, 0.15, 0.25, 1);
+      }
+      &:nth-child(3) {
+        animation-delay: 5s;
+        // animation-timing-function:cubic-bezier(0.35, 0.25, 0.25, 1);
+      }
+      &:nth-child(4) {
+        animation-delay: 6s;
+        // animation-timing-function:cubic-bezier(0.25, 0.25, 0.25, 1);
+      }
+      &:nth-child(5) {
+        animation-delay: 5s;
+        // animation-timing-function:cubic-bezier(0.25, 0.25, 0.25, 1);
+      }
+  }
+}
+
+@keyframes bubble {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  70% {
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateY(-80vh);
+    opacity: 0;
+  }
+}
