@@ -42,9 +42,8 @@ function Nav({ click, showRegularNavbar, handleClick, showButton, closeMobileMen
                   </li>
               )
             })}
-            {/* <li className='nav-item navbar__contactMe'
+            <li className='nav-item navbar__contactMe'
               onClick={() => closeMobileMenu()}
-              // style={{ marginLeft: click ? '2.5em' : 0 }}
               style={{ marginLeft: '2.5em' }}
             >
               {showButton &&
@@ -63,7 +62,7 @@ function Nav({ click, showRegularNavbar, handleClick, showButton, closeMobileMen
                   </Button>
                 </Navlink>
               }
-            </li> */}
+            </li>
           </ul>
           : null
         }

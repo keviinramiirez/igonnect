@@ -23,7 +23,7 @@ function ContactMeHeroSection() {
               Kevin J Ramirez
             </p>
             <p className='contact__email'>
-              kevjramirez@igonnect.com
+              kevjramirez@yahoo.com
             </p>
             <p className='contact__phone'>
               (787) 430-7478
