@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Button } from '../../components/Button/Button'
 import './HeroSection.scss'
 import GoDiamondVideo from '../../assets/videos/go-diamond-cancun-tease.mp4'
@@ -6,7 +6,7 @@ import GoDiamondVideo from '../../assets/videos/go-diamond-cancun-tease.mp4'
 function HeroSection({ toScroll }) {
   return (
     <div className='hero__wrapper'>
-      <video autoplay='autoplay' playsinline='playsinline' loop muted style={{ pointerEvents: 'none' }}>
+      <video autoPlay='autoplay' playsInline='playsinline' loop muted style={{ pointerEvents: 'none' }}>
         <source src={GoDiamondVideo} type='video/mp4' />
       </video>
       <div className='hero__innerWrapper'>

@@ -75,6 +75,7 @@ function ContactForm() {
     const form = await axios.post('/api/form', {
       name, email, about, message
     })
+    console.log(form)
   }
 
   const isButtonEnabled = () => {

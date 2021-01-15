@@ -3,7 +3,6 @@
 
 import React, { useState } from 'react'
 import './ZenceHeroSection.scss'
-import { makeStyles } from '@material-ui/core/styles'
 import { desktop, tablet, lgphone, phone } from '../../breakpoints/MediaBreakpoint'
 
 import ZenceBackSvg from '../../assets/SVG/purple-neon.svg'
@@ -17,7 +16,6 @@ import ZenceLemonVerticalSvg from '../../assets/SVG/zence_lemon_vertical.svg'
 
 import { Button } from '../../components/Button/Button'
 import Modal from '../../components/Modal/Modal'
-import Nav from '../../components/Navbar/Nav'
 
 function ZenceHeroSection() {
   const BUTTON_WRAPPER_STYLES = {
@@ -31,24 +29,7 @@ function ZenceHeroSection() {
   const isTabletSize = () => {
     setRotateSvgs(window.innerWidth > 768)
   }
-  // const checkButtonSize = () => {
-  //   console.log('checkButtonSize')
-  //   let innerWidth = window.innerWidth;
-  //   if (innerWidth <= phone) {
-  //     setButtonSize('size__small')
-  //   }
-  //   else if (innerWidth <= lgphone) {
-  //     setButtonSize('size__small')
-  //   }
-  //   else if (innerWidth <= tablet) {
-  //     setButtonSize('size__medium')
-  //   }
-  //   else if (innerWidth <= desktop) {
-  //     setButtonSize('size__large')
-  //   }
-  // }
 
-  // const checkButtonSize = () => {
   function checkButtonSize() {
     let innerWidth = window.innerWidth;
     if (innerWidth <= phone)
@@ -125,7 +106,15 @@ function ZenceHeroSection() {
 
                 <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
                   <div className='zence__iframeContainer'>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/tucWP9pkibQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen="true"></iframe>
+                    <iframe
+                      title={'Zence Commercial'}
+                      width="560"
+                      height="315"
+                      src="https://www.youtube.com/embed/tucWP9pkibQ"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen="true">
+                    </iframe>
                   </div>
                 </Modal>
               </div>

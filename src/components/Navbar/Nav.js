@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Button from '../Button/Button'
 import Navlink from './Navlink'
 import './Navbar.css'
@@ -27,7 +27,7 @@ function Nav({ click, showRegularNavbar, handleClick, showButton, closeMobileMen
             {MenuItems.map(({ title, path }) => {
               return (
                 (title.includes('Join') && showButton) ? null :
-                  <li className='nav-item' style={{ marginLeft: (!click ? '2.5em' : 0) }}>
+                  <li key={title} className='nav-item' style={{ marginLeft: (!click ? '2.5em' : 0) }}>
                     <div className='nav-content'>
                       <div className='nav-link-component'
                         onClick={() => closeMobileMenu()}>
@@ -42,7 +42,9 @@ function Nav({ click, showRegularNavbar, handleClick, showButton, closeMobileMen
                   </li>
               )
             })}
-            <li className='nav-item navbar__contactMe'
+            <li
+              key={'joinme'}
+              className='nav-item'
               onClick={() => closeMobileMenu()}
               style={{ marginLeft: '2.5em' }}
             >
