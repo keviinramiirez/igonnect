@@ -1,8 +1,6 @@
-import React, { useState } from 'react'
-import { Button } from '../Button/Button'
+import React from 'react'
 import './Modal.scss'
 import ReactDom from 'react-dom'
-import ModalVideo from 'react-modal-video'
 
 const MODAL_STYLES = {
   position: 'fixed',
@@ -34,7 +32,6 @@ function Modal({ open, children, onClose }) {
       <div style={OVERLAY_STYLES} />
       <div style={MODAL_STYLES}>
         <i onClick={onClose} className='fas fa-times' />
-        {/* <button onClick={onClose}>Close Modal</button> */}
         {children}
       </div>
     </>,

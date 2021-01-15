@@ -1,6 +1,5 @@
 import React from 'react'
 import './PribSection.scss'
-import Typewriter from 'typewriter-effect';
 // import PribImg from './prib_transparent_cropped.png';
 // import PribImg from '../../assets/prib_transparent_cropped.png';
 // import PribPng from '../../assets/prib_trans.png'
@@ -11,7 +10,7 @@ import { phone, lgphone, tablet, desktop, heroVideoCutout } from '../../breakpoi
 function PribSection() {
   const pribPng = () => {
     const innerWidth = window.innerWidth;
-    let height = 437, width = 550;
+    let width = 550, height = 437;
     if (innerWidth <= phone) {
       width -= 300; height -= 260;
     }
@@ -36,34 +35,21 @@ function PribSection() {
 
 
     // return <PribSvg height={height} width={width} viewBox="0 -100 1413 1172" alt='Flexibility Icon' />
-    return <img src={PribPng} height={height} width={width} alt='' />
+    return <img src={PribPng} width={width} height={height} alt='' />
   }
 
   return (
     <div className='prib__wrapper' style={{ marginBottom: '-10px' }}>
-      {/* <div style={{ position: 'relative', margin: '0 auto', }}>
-        <span className='sharing' sharing='sharing'>s</span>
-        <div style={{ position: 'absolute', top: '0', width: '100%' }}>
-          <span className='selling' selling='selling'>selling</span>
-        </div>
-      </div> */}
-
       <div className='prib__innerWrapper'>
         <div className='prib__left'>
           {pribPng()}
-          {/* <img src={PribSvg} alt='' /> */}
         </div>
         <div className='prib__right'>
           <div className='prib__context'>
             <h1>
               <p className='prib__thePribContainer'>
                 <span className='the'>THE</span>
-                {/* <div style={{ display: 'inline' }}> */}
-                {/* <span className='prib'> */}
                 <span className='prib'>PRIB</span>
-                {/* <span className='tm'>&trade;</span> */}
-                {/* </span> */}
-                {/* </div> */}
               </p>
             </h1>
             <div className='prib__subtitle'>
@@ -73,35 +59,6 @@ function PribSection() {
               <p>Our technologies are build around The PRIB.</p>
             </div>
           </div>
-
-          {/* <div className='prib__subtitleContext'>
-            <div id='prib__subtitleFirstSentence' style={{ display: 'flex', whiteSpace: 'nowrap !important', width: '330px' }}>
-              <span>Just focus on </span>
-              <div id='prib__typewriter' style={{ display: 'inline', margin: '0 0.5em', color: '#F5CA51', fontWeight: 400 }}>
-                <Typewriter
-                  // style={{ display: 'inline' }}
-                  onInit={typewriter => {
-                    typewriter
-                      .typeString('SHARING')
-                      .pauseFor(4500)
-                      .deleteAll(200)
-                      .typeString('not selling')
-                      .pauseFor(700)
-                      .deleteAll(70)
-                      .start();
-                  }}
-                  options={{
-                    autoStart: true,
-                    loop: true,
-                  }}
-                />
-              </div>
-              <span>our </span>
-            </div>
-            <span>
-              patented technologies and get paid while consumers save money.
-            </span>
-          </div> */}
         </div>
       </div>
     </div>

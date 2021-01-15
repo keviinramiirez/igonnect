@@ -8,7 +8,7 @@ function AboutMe({ sectionToScroll }) {
       <div className='aboutme__innerWrapper'>
         <div className='aboutme__testimonialWrapper'>
           <div className='aboutme__quotesIcon'>
-            <i class="fas fa-quote-left"></i>
+            <i className="fas fa-quote-left"></i>
           </div>
           <p className='aboutme__testimonial'>
             I quantify my hapiness in the number of people who's life I made a little bit better.
@@ -29,7 +29,7 @@ function AboutMe({ sectionToScroll }) {
               (787) 430-7478
             </p>
           </div>
-          <img src={Kevin} alt="Kevin's Picture" />
+          <img src={Kevin} alt="Kevin" />
         </div>
       </div>
     </div>

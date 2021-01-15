@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './Button.scss'
-import { Link } from 'react-router-dom'
 import {
   isPathIgo,
   isPathZence,
@@ -73,20 +72,6 @@ export const Button = ({
   buttonEffect,
 }) => {
   const buttonSizeByPath = () => {
-    // if (checkSize.length === 0) {
-    //   if (isPathBillGenius()) {
-    //     checkBorder = 'border__primary_bill';
-    //     checkColor = 'color__black'
-    //     checkHover = 'hover__primary_bill'
-    //     checkSize = checkButtonSize();
-    //   }
-    //   else if (isPathIgo()) {
-    //     checkSize = checkIgoButtonSize();
-    //   }
-    //   else if (isPathZence()) {
-    //     checkSize = checkButtonSize();
-    //   }
-    // }
     if (isPathBillGenius()) {
       return checkBillButtonSize();
     }
@@ -99,13 +84,7 @@ export const Button = ({
     else
       return checkButtonSize();
   }
-  // let checkSize = '';
-  // let checkSize = SIZES.includes(buttonSize)
-  //   ? buttonSize
-  //   : STYLES[0];
-  // let checkSize = SIZES.includes(buttonSize)
-  //   ? buttonSize
-  //   : '';
+
   let checkSize = SIZES.includes(buttonSize)
     ? buttonSize
     : buttonSizeByPath()
@@ -135,7 +114,6 @@ export const Button = ({
 
   const buttonResize = () => {
     if (window.innerWidth <= 1024) {
-      // console.log('<= 1024');
       checkSize = 'size__medium'
     }
   }
@@ -143,26 +121,6 @@ export const Button = ({
 
 
   const button = () => {
-    // buttonSizeByPath()
-    // if size has already been selected
-    // if (checkSize.length === 0) {
-    //   if (isPathBillGenius()) {
-    //     checkBorder = 'border__primary_bill';
-    //     checkColor = 'color__black'
-    //     checkHover = 'hover__primary_bill'
-    //     checkSize = checkButtonSize();
-    //   }
-    //   else if (isPathIgo()) {
-    //     checkSize = checkIgoButtonSize();
-    //   }
-    //   else if (isPathZence()) {
-    //     checkSize = checkButtonSize();
-    //   }
-    // }
-    // useEffect(() => {
-    //   checkButtonSize()
-    // }, [])
-
     if (isPathBillGenius()) {
       checkBorder = 'border__primary_bill';
       checkColor = 'color__black'
@@ -177,7 +135,6 @@ export const Button = ({
     return (
       <button
         className={`btn ${checkSize} ${checkStyle} ${checkBorder} ${checkColor} ${checkHover} ${checkEffect}`}
-        // className={`btn ${() => checkButtonSize()} ${checkStyle} ${checkBorder} ${checkColor} ${checkHover} ${checkEffect}`}
         onClick={onClick}
       >
         {children}
@@ -191,7 +148,7 @@ export const Button = ({
 
   return (
     <div>
-      { button()}
+      {button()}
     </div>
   )
 }
