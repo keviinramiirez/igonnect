@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import './JoinMeHero.css'
+import './JoinMeHero.css';
 import ConnectIcon from '../../assets/SVG/contact_connect.svg';
 import InvestIcon from '../../assets/SVG/contact_invest.svg';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
+import axios from 'axios';
 
 
 const boxInfo = [
@@ -45,22 +46,62 @@ const useStyles = makeStyles((theme) => ({
 
 function ContactForm() {
   const classes = useStyles();
-  const [about, setAbout] = React.useState('');
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [about, setAbout] = useState('');
+  const [message, setMessage] = useState('')
 
-  const handleChange = (event) => {
-    setAbout(event.target.value);
+  const handleNameChange = e => {
+    setName(e.target.value);
   };
+
+  const handleEmailChange = e => {
+    setEmail(e.target.value);
+  };
+
+  const handleAboutChange = e => {
+    setAbout(e.target.value);
+  };
+
+  const handleMessageChange = e => {
+    setMessage(e.target.value);
+  };
+
+  const handleSubmit = async e => {
+    if (!isButtonEnabled())
+      return;
+    e.preventDefault();
+
+    const form = await axios.post('/api/form', {
+      name, email, about, message
+    })
+  }
+
+  const isButtonEnabled = () => {
+    console.log(name.length === 0, email.length === 0, message.length === 0)
+    return name.length > 0 && email.length > 0 && message.length > 0
+  }
 
   return (
     <div className='joinme__wrapper'>
       <div className='joinme__card'>
         <h1>Contact Me</h1>
-        <div className='joinme__fields'>
+        <form className='joinme__fields' onSubmit={handleSubmit}>
           <div className='joinme__name'>
-            <input type='name' placeholder='Name' />
+            <input
+              type='text'
+              placeholder='Name'
+              value={name}
+              onChange={handleNameChange}
+            />
           </div>
           <div className='joinme__email'>
-            <input type='email' placeholder='Email' />
+            <input
+              type='email'
+              placeholder='Email'
+              value={email}
+              onChange={handleEmailChange}
+            />
           </div>
 
           <FormControl className={classes.formControl}>
@@ -69,7 +110,7 @@ function ContactForm() {
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               value={about}
-              onChange={handleChange}
+              onChange={handleAboutChange}
               disableUnderline
             >
               <MenuItem value={'ibuumerang'}>iBuumerang</MenuItem>
@@ -81,15 +122,22 @@ function ContactForm() {
           </FormControl>
 
           <div className='joinme__inputBox'>
-            <textarea type='text' name='' required='required' />
+            <textarea
+              type='text'
+              name=''
+              value={message}
+              onChange={handleMessageChange}
+              required='required'
+            />
             <span>Type your Message...</span>
           </div>
 
-          <button className='joinme__button'>
+          {/* <button className={`joinme__button${isButtonDisabled() ? '_disabled' : ''}`} onSubmit={handleSubmit} > */}
+          <button className={`joinme__button ${isButtonEnabled() ? '' : 'joinme__button_disabled'}`} onSubmit={handleSubmit} >
             <i class="far fa-paper-plane"></i>
             Send
           </button>
-        </div>
+        </form>
       </div>
 
       <div className='joinme__buumInfo'>

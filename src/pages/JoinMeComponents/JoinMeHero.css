@@ -34,15 +34,12 @@
   outline: none;
   background: none;
   font-size: 18px;
-  padding: 20px 10px 20px 5px;
+  padding: 20px 0 20px 1.6em;
+  /* padding: 20px 0 20px 0; */
   border-radius: 300px;
-  padding-left: 1.5em;
+  /* padding-left: 1.5em; */
+  /* margin-right: 1.5em; */
   width: 95%;
-}
-
-.joinme__fields .joinme__name input:focus {
-  /* box-shadow: inset 2px 2px 4px #babecc, inset -3px -3px 5px #fff;
-  width: 95%; */
 }
 
 .joinme__name, .joinme__email {
@@ -53,7 +50,20 @@
   transition: all -.2s ease-in-out;
   appearance: none;
   -webkit-appearance: none;
-  width: 95%;
+  /* width: 95%; */
+}
+
+
+.joinme__name input:focus,
+.joinme__email input:focus {
+  /* box-shadow: inset 3px 3px 4px #babecc, inset -3px -3px 5px #fff; */
+  /* box-shadow: inset 1px 0 0 #6F1AA1, inset 4px 0 0 #fff; */
+  /* box-shadow: inset 1px 0 0 #babecc, inset 3px 0 0 #6F1AA1; */
+  /* box-shadow: -5px -5px -20px #fff, 5px 5px 20 px #babecc; */
+  /* box-shadow: 1px 0 0 #babecc, 3px 0 0 #6F1AA1; */
+  /* box-shadow: inset 1px 0 0 #babecc, inset 3px 0 0 #fff; */
+  box-shadow: inset 4px 0 0 #ccc, inset 1px 0 0 #fff;
+  /* width: 95%; */
 }
 
 
@@ -64,7 +74,7 @@
 label.MuiInputLabel-formControl {
   top: -15.6px;
   font-size: 1.2em;
-  left: 11px;
+  left: 12px;
   padding: 16px;
 }
 .MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated.MuiInputLabel-shrink.MuiFormLabel-filled {
@@ -110,13 +120,14 @@ div#demo-simple-select:focus {
   padding: 10px 10px 30px;
   border: none;
   outline: none;
-  width: 92%;
+  width: 97%;
   box-shadow: inset 2px 2px 4px #babecc, inset -3px -3px 5px #fff;
   border-radius: 10px;
 }
 
 .joinme__inputBox span {
   position: absolute;
+  top: 2px;
   left: 16px;
   padding: 5px 0;
   font-size: 16px;
@@ -126,10 +137,9 @@ div#demo-simple-select:focus {
   color: #666;
 }
 
-.joinme__inputBox input:focus ~ span,
-.joinme__inputBox input:valid ~ span,
 .joinme__inputBox textarea:focus ~ span,
-.joinme__inputBox textarea:valid ~ span {
+.joinme__inputBox textarea:valid ~ span 
+{
   color: #6F1AA1;
   font-size: 12px;
   transform: translateY(-26px);
@@ -152,10 +162,19 @@ div#demo-simple-select:focus {
   /* background-color: #ecf0f3; */
   text-shadow: 1px 1px 0 #fff;
   box-shadow: inset -5px -5px -20px #fff, inset 5px 5px 20 px #babecc;
-  width: 95%;
+  width: 100%;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
+
+.joinme__button_disabled {
+  opacity: 0.5;
+  cursor: default;
+  box-shadow: none !important;
+}
+
+
+
 .joinme__button i {
   padding-right: 1em;
 }
@@ -183,20 +202,20 @@ div#demo-simple-select:focus {
 
 .joinme__buumInfo .joinme__box  {
   position: relative;
-  padding: 20px 0;
+  padding: 25px 0;
   display: flex;
 }
 
 .joinme__box .joinme__boxIcon {
-  min-width: 60px;
-  height: 60px;
+  min-width: 64px;
+  height: 64px;
   background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  font-size: 22px;
-  color: black;
+  font-size: 25px;
+  color: #555;
   box-shadow: -2px -2px 5px #fff, 2px 2px 5px #babecc;
 }
 
@@ -204,7 +223,7 @@ div#demo-simple-select:focus {
   display: flex;
   margin-left: 30px;
   margin-bottom: 10px;
-  font-size: 1em;
+  font-size: 1.2em;
   color: black;
   flex-direction: column;
 }
