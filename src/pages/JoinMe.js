@@ -1,5 +1,4 @@
 import React from 'react'
-// import ContactMeHeroSection from './JoinMeComponents/ContactMeHeroSection'
 import JoinMeHero from './JoinMeComponents/JoinMeHero'
 
 function JoinMe({ isMobile, click }) {
@@ -8,7 +7,6 @@ function JoinMe({ isMobile, click }) {
       {(isMobile && click)
         ? null
         : <>
-          {/* <ContactMeHeroSection /> */}
           <JoinMeHero />
         </>
       }

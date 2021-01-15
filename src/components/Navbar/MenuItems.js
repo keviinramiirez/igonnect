@@ -19,8 +19,8 @@ export const MenuItems = [
   //   title: 'Vibe Rides',
   //   path: '/viberides'
   // },
-  // {
-  //   title: 'Join Me',
-  //   path: '/joinme'
-  // },
+  {
+    title: 'Join Me',
+    path: '/joinme'
+  },
 ]
