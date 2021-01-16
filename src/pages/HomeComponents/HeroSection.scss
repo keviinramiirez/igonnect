@@ -85,14 +85,14 @@ $phone: 360px;
         .legacy { font-size: 2.8em }
       }
     }
-    @include media('<homecolumns', '<=phone') {
+    @include media('<homecolumns', '<=lgphone') {
       top: 14%;
       left: 6%;
       .hero__content {
-        .succeed { font-size: 2.4em }
-        .without-selling { font-size: 0.8em }
-        .build-your { font-size: 0.8em }
-        .legacy { font-size: 2.4em }
+        .succeed { font-size: 2.2em }
+        .without-selling { font-size: 1em }
+        .build-your { font-size: 1em }
+        .legacy { font-size: 2.2em }
       }
     }
   }
