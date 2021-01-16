@@ -6,7 +6,7 @@ import Home from './pages/Home'
 import Zence from './pages/Zence'
 import IGo from './pages/IGo'
 import BillGenius from './pages/BillGenius'
-import JoinMe from './pages/JoinMe'
+import Join from './pages/Join'
 import { lgphone } from './breakpoints/MediaBreakpoint'
 
 
@@ -58,8 +58,8 @@ class App extends Component {
             <Route path='/billgenius' exact>
               <BillGenius isMobile={this.state.isMobile} click={this.state.click} />
             </Route>
-            <Route path='/joinme' exact>
-              <JoinMe isMobile={this.state.isMobile} click={this.state.click} />
+            <Route path='/join' exact>
+              <Join isMobile={this.state.isMobile} click={this.state.click} />
             </Route>
           </Switch>
         </Router>

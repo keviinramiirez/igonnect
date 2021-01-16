@@ -23,7 +23,7 @@ function AboutMe({ sectionToScroll }) {
               Kevin J Ramirez
             </p>
             <p className='aboutme__email'>
-              kevjramirez@igonnect.com
+              kevjramirez@yahoo.com
             </p>
             <p className='aboutme__phone'>
               (787) 430-7478

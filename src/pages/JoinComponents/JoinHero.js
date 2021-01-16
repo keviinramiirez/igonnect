@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import './JoinMeHero.css';
+import './JoinHero.css';
 import ConnectIcon from '../../assets/SVG/contact_connect.svg';
 import InvestIcon from '../../assets/SVG/contact_invest.svg';
 import FormControl from '@material-ui/core/FormControl';
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-function ContactForm() {
+function JoinHero() {
   const classes = useStyles();
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -75,7 +75,10 @@ function ContactForm() {
     const form = await axios.post('/api/form', {
       name, email, about, message
     })
-    console.log(form)
+    setName('')
+    setEmail('')
+    setAbout('')
+    setMessage('')
   }
 
   const isButtonEnabled = () => {
@@ -84,11 +87,11 @@ function ContactForm() {
   }
 
   return (
-    <div className='joinme__wrapper'>
-      <div className='joinme__card'>
+    <div className='join__wrapper'>
+      <div className='join__card'>
         <h1>Contact Me</h1>
-        <form className='joinme__fields' onSubmit={handleSubmit}>
-          <div className='joinme__name'>
+        <form className='join__fields' onSubmit={handleSubmit}>
+          <div className='join__name'>
             <input
               type='text'
               placeholder='Name'
@@ -96,12 +99,13 @@ function ContactForm() {
               onChange={handleNameChange}
             />
           </div>
-          <div className='joinme__email'>
+          <div className='join__email'>
             <input
               type='email'
               placeholder='Email'
               value={email}
               onChange={handleEmailChange}
+            // formNoValidate
             />
           </div>
 
@@ -122,7 +126,7 @@ function ContactForm() {
             </Select>
           </FormControl>
 
-          <div className='joinme__inputBox'>
+          <div className='join__inputBox'>
             <textarea
               type='text'
               name=''
@@ -133,21 +137,21 @@ function ContactForm() {
             <span>Type your Message...</span>
           </div>
 
-          {/* <button className={`joinme__button${isButtonDisabled() ? '_disabled' : ''}`} onSubmit={handleSubmit} > */}
-          <button className={`joinme__button ${isButtonEnabled() ? '' : 'joinme__button_disabled'}`} onSubmit={handleSubmit} >
+          {/* <button className={`join__button${isButtonDisabled() ? '_disabled' : ''}`} onSubmit={handleSubmit} > */}
+          <button className={`join__button ${isButtonEnabled() ? '' : 'join__button_disabled'}`} onSubmit={handleSubmit} >
             <i class="far fa-paper-plane"></i>
             Send
           </button>
         </form>
       </div>
 
-      <div className='joinme__buumInfo'>
+      <div className='join__buumInfo'>
         {boxInfo.map(({ Icon, title, context }) =>
-          <div className='joinme__box'>
-            <div className='joinme__boxIcon'>
+          <div className='join__box'>
+            <div className='join__boxIcon'>
               {Icon}
             </div>
-            <div className='joinme__boxText'>
+            <div className='join__boxText'>
               <h3>{title}</h3>
               <p>
                 {context}
@@ -160,4 +164,4 @@ function ContactForm() {
   )
 }
 
-export default ContactForm
+export default JoinHero
