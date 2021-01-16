@@ -20,7 +20,7 @@ export const MenuItems = [
   //   path: '/viberides'
   // },
   {
-    title: 'Join Me',
-    path: '/joinme'
+    title: 'Join',
+    path: '/join'
   },
 ]

@@ -4,7 +4,7 @@ import {
   isPathIgo,
   isPathZence,
   isPathBillGenius,
-  isPathJoinMe,
+  isPathJoin,
   checkButtonSize,
   checkIgoButtonSize,
   checkBillButtonSize
@@ -126,7 +126,7 @@ export const Button = ({
       checkColor = 'color__black'
       checkHover = 'hover__primary_bill'
     }
-    else if (isPathJoinMe()) {
+    else if (isPathJoin()) {
       checkBorder = 'border__primary_join';
       checkColor = 'color__black'
       checkHover = 'hover__primary_join'

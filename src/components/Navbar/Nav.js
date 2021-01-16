@@ -5,7 +5,7 @@ import Navlink from './Navlink'
 import './Navbar.css'
 import './Nav.scss'
 import { MenuItems } from './MenuItems'
-import { isPathJoinMe, isPathBillGenius } from '../Util'
+import { isPathJoin, isPathBillGenius } from '../Util'
 
 
 function Nav({ click, showRegularNavbar, handleClick, showButton, closeMobileMenu }) {
@@ -18,7 +18,7 @@ function Nav({ click, showRegularNavbar, handleClick, showButton, closeMobileMen
             <i className={'fas fa-times'} style={{ color: 'white' }} />
           </div>
           :
-          <div className='menu-icon menu-icon-bars' onClick={() => handleClick()} style={{ color: ((isPathBillGenius() || isPathJoinMe()) && !click) ? 'black' : 'white' }}>
+          <div className='menu-icon menu-icon-bars' onClick={() => handleClick()} style={{ color: ((isPathBillGenius() || isPathJoin()) && !click) ? 'black' : 'white' }}>
             <i className={'fas fa-bars'} />
           </div>
         }
@@ -43,14 +43,14 @@ function Nav({ click, showRegularNavbar, handleClick, showButton, closeMobileMen
               )
             })}
             <li
-              key={'joinme'}
+              key={'join'}
               className='nav-item'
               onClick={() => closeMobileMenu()}
               style={{ marginLeft: '2.5em' }}
             >
               {showButton &&
                 <Navlink
-                  path={'/joinme'}
+                  path={'/join'}
                   click={click}>
                   <Button
                     buttonSize='size__navbar'

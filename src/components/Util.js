@@ -4,7 +4,7 @@ export const isPathIgo = () => (window.location.pathname === '/igo');
 export const isPathZence = () => (window.location.pathname === '/zence');
 export const isPathBillGenius = () => (window.location.pathname === '/billgenius');
 export const isPathVibeRides = () => (window.location.pathname === '/viberides');
-export const isPathJoinMe = () => (window.location.pathname === '/joinme');
+export const isPathJoin = () => (window.location.pathname === '/join');
 
 export const checkButtonSize = () => {
   let innerWidth = window.innerWidth;
