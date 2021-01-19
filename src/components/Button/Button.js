@@ -142,9 +142,7 @@ export const Button = ({
     )
   }
 
-
   window.addEventListener('resize', buttonResize);
-
 
   return (
     <div>

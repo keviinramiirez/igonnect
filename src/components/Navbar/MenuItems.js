@@ -1,8 +1,8 @@
 export const MenuItems = [
-  {
-    title: 'Home',
-    path: '/'
-  },
+  // {
+  //   title: 'Home',
+  //   path: '/'
+  // },
   {
     title: 'iGo',
     path: '/igo'

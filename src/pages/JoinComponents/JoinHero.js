@@ -26,7 +26,7 @@ const boxInfo = [
       'entrepreneur with our exclusive technologies.'
   },
   {
-    Icon: <i class="far fa-gem"></i>,
+    Icon: <i className="far fa-gem"></i>,
     title: 'Worldclass Leadership',
     context: 'Join us and our proven leadership in more than 72 countries ' +
       'led by CEO Holton Buggs.'
@@ -46,10 +46,15 @@ const useStyles = makeStyles((theme) => ({
 
 function JoinHero() {
   const classes = useStyles();
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
+  // const [name, setName] = useState('')
+  // const [email, setEmail] = useState('')
+  // const [about, setAbout] = useState('');
+  // const [message, setMessage] = useState('')
+  const [name, setName] = useState('KEVIN')
+  const [email, setEmail] = useState('kevjramirez@yahoo.com')
   const [about, setAbout] = useState('');
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState('MESSAGE')
+  const [test, setTest] = useState('NO VALUE')
 
   const handleNameChange = e => {
     setName(e.target.value);
@@ -72,24 +77,67 @@ function JoinHero() {
       return;
     e.preventDefault();
 
-    const form = await axios.post('/api/form', {
-      name, email, about, message
-    })
-    setName('')
-    setEmail('')
-    setAbout('')
-    setMessage('')
+
+    // const form = await axios.post('/api/form', {
+    //   name, email, about, message
+    // })
+
+    const options = {
+      // Adding method type 
+      method: "post",
+      // Adding body or contents to send 
+      // Adding headers to the request 
+      headers: {
+        // "Content-type": "application/json"
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name: 'name',
+        email: 'email',
+        message: 'message'
+      })
+    }
+    // await window.fetch('/api/form', options)
+    await window.fetch('http://localhost:3001/api/form', options)
+      // await fetch('http://localhost:3001/api/form', options)
+      .then(res => res.json())
+      .then(res => {
+        console.log(res)
+        setTest(res.message)
+      })
+
+    // setName('')
+    // setEmail('')
+    // setAbout('')
+    // setMessage('')
   }
 
   const isButtonEnabled = () => {
-    console.log(name.length === 0, email.length === 0, message.length === 0)
     return name.length > 0 && email.length > 0 && message.length > 0
+  }
+
+  const testing = () => {
+    // fetch("/api/form")
+    //   .then(res => res.json())
+    //   .then(res => {
+    //     console.log(res)
+    //     setTest(res.message)
+    //   })
+
+    // e.preventDefault();
+
+    // const form = await axios.post('/api/form', {
+    //   name, email, about, message
+    // })
   }
 
   return (
     <div className='join__wrapper'>
       <div className='join__card'>
         <h1>Contact Me</h1>
+        <button onClick={() => testing()} style={{ cursor: 'pointer' }}>CLICK ME</button>
+        {test}
         <form className='join__fields' onSubmit={handleSubmit}>
           <div className='join__name'>
             <input
@@ -139,7 +187,7 @@ function JoinHero() {
 
           {/* <button className={`join__button${isButtonDisabled() ? '_disabled' : ''}`} onSubmit={handleSubmit} > */}
           <button className={`join__button ${isButtonEnabled() ? '' : 'join__button_disabled'}`} onSubmit={handleSubmit} >
-            <i class="far fa-paper-plane"></i>
+            <i className="far fa-paper-plane"></i>
             Send
           </button>
         </form>
@@ -147,7 +195,7 @@ function JoinHero() {
 
       <div className='join__buumInfo'>
         {boxInfo.map(({ Icon, title, context }) =>
-          <div className='join__box'>
+          <div className='join__box' key={title}>
             <div className='join__boxIcon'>
               {Icon}
             </div>

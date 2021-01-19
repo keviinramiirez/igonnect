@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Nav from './components/Navbar/Nav'
+import Navbar from './components/Navbar/Navbar'
 import Home from './pages/Home'
 import Zence from './pages/Zence'
 import IGo from './pages/IGo'
@@ -25,7 +26,10 @@ class App extends Component {
 
   handleClick = () => this.setState(prev => ({ click: !prev.click }));
 
-  closeMobileMenu = () => this.setState({ click: false });
+  closeMobileMenu = () => {
+    console.log('closeMobileMenu')
+    this.setState({ click: false })
+  };
 
   handleResponsiveness = () => {
     this.setState({ isMobile: window.innerWidth <= lgphone });
@@ -38,7 +42,14 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          <Nav
+          {/* <Nav
+            handleClick={this.handleClick}
+            click={this.state.click}
+            showButton={!this.state.isMobile}
+            showRegularNavbar={!this.state.isMobile}
+            closeMobileMenu={this.closeMobileMenu}
+          /> */}
+          <Navbar
             handleClick={this.handleClick}
             click={this.state.click}
             showButton={!this.state.isMobile}

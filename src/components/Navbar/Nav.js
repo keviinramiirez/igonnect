@@ -60,7 +60,7 @@ function Nav({ click, showRegularNavbar, handleClick, showButton, closeMobileMen
                     buttonHover='hover__secondary'
                     buttonEffect='effect__move_y'
                   >
-                    Join Me
+                    Join
                   </Button>
                 </Navlink>
               }
