@@ -33,7 +33,7 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
 
   return (
     <div
-      className='navv'
+      className='navbar'
       style={click
         ? {
           backgroundColor: '#242222',
@@ -46,19 +46,21 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
       <header>
         {
           click ?
-            <div className='menu-icon menu-icon-times' onClick={() => handleClick()}>
+            <div
+              className='navbar__menuIcon navbar__menuIconTimes'
+              onClick={() => handleClick()}>
               <i className={'fas fa-times'} style={{ color: 'white' }} />
             </div>
             :
-            <div className='navv__mobileNav'>
-              {
-                <div className='navv__logo'>
-                  <Navlink path='/' onClick={closeMobileMenu}>
-                    {checkLogoSize()}
-                  </Navlink>
-                </div>
-              }
-              <div className='menu-icon menu-icon-bars' onClick={() => handleClick()}
+            <div className='navbar__logoBars'>
+              <div className='navbar__logo'>
+                <Navlink path='/' onClick={closeMobileMenu}>
+                  {checkLogoSize()}
+                </Navlink>
+              </div>
+              <div
+                className='navbar__menuIcon navbar__menuIconBars'
+                onClick={() => handleClick()}
                 style={{ color: ((isPathBillGenius() || isPathJoin()) && !click) ? 'black' : 'white' }}
               >
                 <i className={'fas fa-bars'} />
@@ -67,37 +69,32 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
         }
         {(click || showRegularNavbar) ?
           <nav>
-            <ul className='navv__links'>
+            <ul className='navbar__links'>
               {MenuItems.map(({ title, path }) => {
                 return (
-                  <li key={title} className='navv__item' style={{ marginLeft: (!click ? '2.5em' : 0) }}>
-                    <div className='nav-content'>
-                      <div className='nav-link-component'
-                        onClick={() => closeMobileMenu()}>
-                        <Navlink
-                          path={path}
-                          onClick={closeMobileMenu}
-                        >
-                          {title.includes('Join')
-                            ? null
-                            : title
-                          }
-                          {/* (
-                              click ? null :
-                                <Button
-                                  buttonSize='size__navbar'
-                                  buttonStyle='style__transparent'
-                                  buttonBorder='border__secondary'
-                                  buttonColor='color__white'
-                                  buttonHover='hover__secondary'
-                                  buttonEffect='effect__move_y'
-                                >
-                                  Join
-                              </Button>
-                            ) */}
-                        </Navlink>
-                      </div>
-                    </div>
+                  <li key={title} className='navbar__item' style={{ marginLeft: (!click ? '2.5em' : 0) }}>
+                    <Navlink
+                      path={path}
+                      onClick={closeMobileMenu}
+                    >
+                      {title.includes('Join')
+                        ? null
+                        : title
+                      }
+                      {/* (
+                        click ? null :
+                          <Button
+                            buttonSize='size__navbar'
+                            buttonStyle='style__transparent'
+                            buttonBorder='border__secondary'
+                            buttonColor='color__white'
+                            buttonHover='hover__secondary'
+                            buttonEffect='effect__move_y'
+                          >
+                            Join
+                        </Button>
+                      ) */}
+                    </Navlink>
                   </li>
                 )
               })}
