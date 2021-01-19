@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import './Navbar2.css'
+import './Navbar.css'
 import IgonnectWhiteSvg from '../../assets/SVG/igonnect_logo_white2.svg'
 import IgonnectBlackSvg from '../../assets/SVG/igonnect_logo_black2.svg'
 import Button from '../Button/Button'
@@ -43,35 +43,9 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
         }
         : {}
       }>
-      {/* {(click || showRegularNavbar) ? */}
       <header>
-        {/* {click 
-          ? null
-          :
-          <div className='navv__mobileNav'>
-            <Navlink path='/' onClick={closeMobileMenu}>
-              <img src={checkLogoColor() ? IgonnectWhiteSvg : IgonnectBlackSvg} width='200' height='200' alt='igonnect logo' />
-            </Navlink>
-            <div className='menu-icon menu-icon-bars' onClick={() => handleClick()} style={{ color: ((isPathBillGenius() || isPathJoin()) && !click) ? 'black' : 'white' }}>
-              <i className={'fas fa-bars'} />
-            </div>
-          </div>
-        }
         {
-          click
-            ?
-            <div className='menu-icon menu-icon-times' onClick={() => handleClick()}>
-              <i className={'fas fa-times'} style={{ color: 'white' }} />
-            </div>
-            :
-            <div className='navv__logo'>
-              <Navlink path='/' onClick={closeMobileMenu}>
-                <img src={checkLogoColor() ? IgonnectWhiteSvg : IgonnectBlackSvg} width='200' height='200' alt='igonnect logo' />
-              </Navlink>
-            </div>
-        } */}
-        {
-          (click) ?
+          click ?
             <div className='menu-icon menu-icon-times' onClick={() => handleClick()}>
               <i className={'fas fa-times'} style={{ color: 'white' }} />
             </div>
@@ -80,11 +54,6 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
               {
                 <div className='navv__logo'>
                   <Navlink path='/' onClick={closeMobileMenu}>
-                    {/* <img 
-                    src={checkLogoColor() ? IgonnectWhiteSvg : IgonnectBlackSvg} 
-                    width='200' 
-                    height='200' 
-                    alt='igonnect logo' /> */}
                     {checkLogoSize()}
                   </Navlink>
                 </div>
@@ -109,9 +78,10 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
                           path={path}
                           onClick={closeMobileMenu}
                         >
-                          {title.includes('Join') ?
-                            null
-                            : title}
+                          {title.includes('Join')
+                            ? null
+                            : title
+                          }
                           {/* (
                               click ? null :
                                 <Button

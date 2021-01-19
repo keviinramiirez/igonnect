@@ -2,7 +2,7 @@
 import React from 'react'
 import Button from '../Button/Button'
 import Navlink from './Navlink'
-import './Navbar.css'
+import './Navbar-old.css'
 import './Nav.scss'
 import { MenuItems } from './MenuItems'
 import { isPathJoin, isPathBillGenius } from '../Util'

@@ -1,0 +1,37 @@
+.nav-link-black {
+  color: black !important;
+  font-weight: 400;
+}
+.nav-link-white {
+  color: white !important;
+}
+
+.nav-link-active {
+  color:  #F5E051 !important;
+}
+.nav-link-active-bill {
+  color: #2662A7 !important;
+  font-weight: 500;
+}
+
+.text-hover:hover {
+  color: #F5E051 !important;
+}
+.text-hover-bill:hover {
+  color: #2662A7 !important;
+}
+.text-hover-join:hover {
+  color: #6F1AA1 !important;
+}
+
+
+
+@media screen and (max-width: 425px) {
+  .nav-link:hover {
+    background-color: transparent;
+  }
+
+  .nav-link:focus {
+    outline: none;
+  }
+}
