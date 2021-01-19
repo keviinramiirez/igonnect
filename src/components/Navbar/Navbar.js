@@ -14,6 +14,7 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
     return !(isPathBillGenius() || isPathJoin())
   }
 
+
   const checkLogoSize = () => {
     let innerWidth = window.innerWidth;
     let width = 200, height = 200;
