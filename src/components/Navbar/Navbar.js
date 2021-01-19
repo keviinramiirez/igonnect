@@ -22,7 +22,11 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
     //   width = height = 120;
     // else 
     if (innerWidth <= lgphone)
-      width = height = 150;
+      width = height = 145;
+    else if (innerWidth <= tablet)
+      width = height = 160;
+    else if (innerWidth <= desktop)
+      width = height = 180;
 
     return <img
       src={checkLogoColor() ? IgonnectWhiteSvg : IgonnectBlackSvg}

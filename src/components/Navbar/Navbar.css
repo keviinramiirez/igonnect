@@ -1,7 +1,7 @@
 .navbar {
   position: absolute;
   top: -55px;
-  left: 0;
+  /* padding-left: 20px; */
   width: 100%;
   white-space: nowrap;
 }
@@ -9,12 +9,19 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 30px 10%;
+  /* padding: 30px 10%; */
+  padding: 30px 7% 30px 10%;
 }
 
 
-.navbar li, .navbar a, .navbar button {
-  font-weight: 500;
+.navbar__logo {
+  cursor: pointer;
+  margin-right: auto;
+  z-index: 999;
+}
+
+.navbar li, .navbar a {
+  font-weight: 400;
   font-size: 1.2em;
   text-decoration: none;
 }
@@ -30,11 +37,6 @@
   color: black;
 }
 
-.navbar__logo {
-  cursor: pointer;
-  margin-right: auto;
-}
-
 nav {
   width: 100%;
   display: flex;
@@ -48,7 +50,7 @@ nav .navbar__links {
 
 .navbar__links li {
   display: inline-block;
-  padding: 0 8px 0 8px;
+  /* padding: 0 8px; */
 }
 
 li a {
@@ -62,6 +64,42 @@ li a:hover {
 li.navbar__linkButton {
   padding-left: 2.9em;
 }
+
+@media screen and (max-width: 1024px) {
+  .navbar header {
+    padding: 10px 6% 10px 10%;
+  }
+  
+  .navbar li, .navbar a {
+    font-size: 1.1em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar header {
+    padding: 15px 1% 15px 5%;
+  }
+  
+  .navbar li, .navbar a {
+    font-size: 1.03em;
+  }
+}
+
+@media screen and (max-width: 528px) {
+  .navbar header {
+    padding: 15px 3% 15px 5%;
+  }
+  
+  .navbar li, .navbar a {
+    font-size: 1em;
+  }
+
+  .navbar__links li {
+    display: inline-block;
+    margin: 0 -14px;
+  }
+}
+
 
 
 @media screen and (max-width: 425px) {
@@ -125,7 +163,7 @@ li.navbar__linkButton {
   nav .navbar__links .navbar__item {
     display: flex;
     height: 14vh;
-    padding-top: 6.3em;
+    padding-top: 5.8em;
     width: 100%;
   }
 }

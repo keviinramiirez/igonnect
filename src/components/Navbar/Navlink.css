@@ -39,4 +39,9 @@
   .nav-link:focus {
     outline: none;
   }
+
+  li, a {
+    font-size: 1.2em !important;
+    font-weight: 500 !important;
+  }
 }

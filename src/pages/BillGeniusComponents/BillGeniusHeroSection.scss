@@ -9,13 +9,13 @@
   z-index: -1;
   opacity: 0.7;
   @include media('<desktop') {
-    opacity: 0.5;
+    opacity: 0.4;
   }
   @include media('<desktop', '<=tablet') {
-    opacity: 0.3;
+    opacity: 0.2;
   }
   @include media('<tablet', '<=lgphone') {
-    // opacity: 0.3;
+    opacity: 0.4;
     left: 0;
   }
 }
@@ -37,6 +37,13 @@
   top: 0;
   z-index: -1;
   opacity: 0.4;
+  @include media('<=desktop') {
+    opacity: 0.3;
+  }
+  @include media('<=lgphone') {
+    top: 11%;
+    opacity: 0.2;
+  }
 }
 
 
@@ -290,9 +297,6 @@
               padding: 1.5em 0;
               .card {
                 display: inline;
-
-                // box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
-                // box-shadow: 0 0 8px 0 rgba(2, 216, 169, 0.4);
                 box-shadow: 0 0px 8px 0 rgba(38, 98, 167, 0.8);
                 padding: 1em 1.5em;
                 background-color: #f1f1f1;
@@ -336,6 +340,9 @@
           //     line-height: 2em;
           //   }
           // }
+        }
+        .bill__buttons {
+          margin-top: -14px;
         }
       }
     }
