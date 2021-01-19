@@ -1,0 +1,162 @@
+.navv {
+  /* background-color: #4e0066; */
+  position: absolute;
+  top: -55px;
+  left: 0;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.navv li, .navv a, .navv button {
+  font-weight: 500;
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+.navv header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px 10%;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navv__logo {
+  cursor: pointer;
+  margin-right: auto;
+}
+
+.navv__links {
+  list-style: none;
+}
+
+.navv__links li {
+  display: inline-block;
+  padding: 0 8px 0 8px;
+}
+
+.navv__links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.navv__links li a:hover {
+  color: #F5E051;
+}
+
+.navv__links li.navv__linkButton {
+  padding-left: 2.9em;
+}
+
+/* .navv__links a.nav-link {
+  padding-left: 1em;
+} */
+
+
+@media screen and (max-width: 425px) {
+  ul.active {
+    background: #242222;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .nav-link {
+    width: 100%;
+    display: table;
+  }
+
+
+  .navv__logo {
+    cursor: pointer;
+    margin-right: 0;
+    /* margin-left: 1em; */
+  }
+
+  .navv__topMenu {
+    width: 90%;
+    height: 200px;
+  }
+
+  .navv__mobileNav {
+    width: 89%;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  /* .navv .navv__logo {
+    position: 
+  } */
+  .menu-icon {
+    display: block;
+    /* position: absolute; */
+    /* transform: translate(-140%, -5%); */
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  .menu-icon-times {
+    position: absolute;
+    top: 37px;
+    right: 54px;
+  }
+
+  /* .menu-icon-bars {
+    top: 0px;
+    right: 0px;
+  } */
+
+  .fa-times {
+    color: #fff;
+    font-size: 2rem;
+  }
+
+
+
+
+
+
+  .navv header {
+    position: static;
+    /* height: 100vh; */
+    padding: 0;
+    justify-content: center;
+  }
+  /* header ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+    font-size: 0.6em;
+    padding-top: 0;
+  } */
+
+  nav {
+    justify-content: center;
+  }
+  nav ul .navv__item {
+    display: flex; 
+    width: 100%;
+    
+    /* height: 25vh; */
+    height: 33.33vh;
+    padding: 0.1em;
+    /* padding: 1em; */
+
+    text-align: center;
+    align-items: center;
+  }
+
+  .navv__item .nav-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  /* .nav-content .nav-link-component {
+    flex: 1 0 auto;
+  } */
+}

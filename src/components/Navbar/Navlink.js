@@ -1,11 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './Navbar.css'
-import { isPathBillGenius, isPathJoin } from '../Util'
+import { isPathHome, isPathBillGenius, isPathJoin } from '../Util'
 import { lgphone } from '../../breakpoints/MediaBreakpoint'
 
 
-function Navlink({ children, path, click }) {
+// function Navlink({ children, path, click }) {
+function Navlink({ children, path, onClick }) {
   const checkHoverText = () => {
     if (isPathBillGenius())
       return '-bill'
@@ -18,7 +19,7 @@ function Navlink({ children, path, click }) {
   const checkLinkText = () => {
     if (window.innerWidth <= lgphone)
       return '-white'
-
+    console.log('checkLinkText()')
     return (isPathBillGenius() || isPathJoin())
       ? '-black'
       : '-white'
@@ -31,6 +32,7 @@ function Navlink({ children, path, click }) {
         text-hover${checkHoverText()} 
         nav-link${checkLinkText()}
       `}
+      onClick={onClick}
       activeClassName={`nav-link-active${checkHoverText()}`}
     >
       {children}
