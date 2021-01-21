@@ -55,21 +55,22 @@
     // position: relative;
     // height: 100vh;
     .bill__context {
+      z-index: -1;
       padding-left: 8em;
       max-width: 800px;
       white-space: nowrap;
       margin: 0;
       position: absolute;
-      top: 50%;
-      -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
+      top: 60%;
+      -ms-transform: translateY(-60%);
+      transform: translateY(-60%);
       h1.bill__title {
         // font-size: 6em;
         font-size: 7em;
         @include media('<=1500px') {
           font-size: 6em;
         }
-        // margin-bottom: -16px;
+        margin-bottom: -24px;
       }
       
       h2.bill__subtitle {
@@ -81,7 +82,7 @@
           font-size: 2.2em;
         }
         font-weight: 500;
-        padding-bottom: 0.6em;
+        padding-bottom: 0.1em;
       }
       p.bill__subtitleContext {
         font-size: 1.8em;
@@ -89,7 +90,7 @@
           // font-size: 1.9vw;
           font-size: 1.5em;
         }
-        padding-bottom: 1.2em;
+        padding-bottom: 0.3em;
         // color: #03b48e;
         color: #2662A7;
       }
@@ -98,7 +99,7 @@
         justify-content: space-between;
         ul {
           padding-right: 2em;
-          padding-bottom: 2em;
+          padding-bottom: 1em;
           li {
             list-style: none;
             p {

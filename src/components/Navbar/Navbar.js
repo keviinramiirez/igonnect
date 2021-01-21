@@ -29,9 +29,10 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
       width = height = 180;
 
     return <img
+      className='navbar__logo'
       src={checkLogoColor() ? IgonnectWhiteSvg : IgonnectBlackSvg}
       width={width}
-      height={width}
+      height={height}
       alt='igonnect logo' />
   }
 
