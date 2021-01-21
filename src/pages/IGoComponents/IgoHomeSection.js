@@ -31,7 +31,7 @@ function IgoHomeSection() {
 
   function igoLogo() {
     const innerWidth = window.innerWidth;
-    let height = '250', width = '250';
+    let height = '240', width = '240';
     if (innerWidth <= phone)
       height = width = '100';
     else if (innerWidth <= lgphone)

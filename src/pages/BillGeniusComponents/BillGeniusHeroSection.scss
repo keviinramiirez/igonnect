@@ -9,13 +9,13 @@
   z-index: -1;
   opacity: 0.7;
   @include media('<desktop') {
-    opacity: 0.5;
+    opacity: 0.4;
   }
   @include media('<desktop', '<=tablet') {
-    opacity: 0.3;
+    opacity: 0.2;
   }
   @include media('<tablet', '<=lgphone') {
-    // opacity: 0.3;
+    opacity: 0.4;
     left: 0;
   }
 }
@@ -37,6 +37,13 @@
   top: 0;
   z-index: -1;
   opacity: 0.4;
+  @include media('<=desktop') {
+    opacity: 0.3;
+  }
+  @include media('<=lgphone') {
+    top: 11%;
+    opacity: 0.2;
+  }
 }
 
 
@@ -48,21 +55,22 @@
     // position: relative;
     // height: 100vh;
     .bill__context {
+      z-index: -1;
       padding-left: 8em;
       max-width: 800px;
       white-space: nowrap;
       margin: 0;
       position: absolute;
-      top: 50%;
-      -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
+      top: 60%;
+      -ms-transform: translateY(-60%);
+      transform: translateY(-60%);
       h1.bill__title {
         // font-size: 6em;
         font-size: 7em;
         @include media('<=1500px') {
           font-size: 6em;
         }
-        // margin-bottom: -16px;
+        margin-bottom: -24px;
       }
       
       h2.bill__subtitle {
@@ -74,7 +82,7 @@
           font-size: 2.2em;
         }
         font-weight: 500;
-        padding-bottom: 0.6em;
+        padding-bottom: 0.1em;
       }
       p.bill__subtitleContext {
         font-size: 1.8em;
@@ -82,7 +90,7 @@
           // font-size: 1.9vw;
           font-size: 1.5em;
         }
-        padding-bottom: 1.2em;
+        padding-bottom: 0.3em;
         // color: #03b48e;
         color: #2662A7;
       }
@@ -91,7 +99,7 @@
         justify-content: space-between;
         ul {
           padding-right: 2em;
-          padding-bottom: 2em;
+          padding-bottom: 1em;
           li {
             list-style: none;
             p {
@@ -290,9 +298,6 @@
               padding: 1.5em 0;
               .card {
                 display: inline;
-
-                // box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
-                // box-shadow: 0 0 8px 0 rgba(2, 216, 169, 0.4);
                 box-shadow: 0 0px 8px 0 rgba(38, 98, 167, 0.8);
                 padding: 1em 1.5em;
                 background-color: #f1f1f1;
@@ -336,6 +341,9 @@
           //     line-height: 2em;
           //   }
           // }
+        }
+        .bill__buttons {
+          margin-top: -14px;
         }
       }
     }
