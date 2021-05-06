@@ -14,8 +14,9 @@ import ZenceLavenderVerticalSvg from '../../assets/SVG/zence_lavender_vertical.s
 import ZenceEucalyptusVerticalSvg from '../../assets/SVG/zence_eucalyptus_vertical.svg'
 import ZenceLemonVerticalSvg from '../../assets/SVG/zence_lemon_vertical.svg'
 
-import { Button } from '../../components/Button/Button'
-import Modal from '../../components/Modal/Modal'
+import Button from '../../components/Button/Button'
+// import VideoModal from '../../components/Modal/VideoModal'
+import VideoCard from './VideoCard'
 
 function ZenceHeroSection() {
   const BUTTON_WRAPPER_STYLES = {
@@ -23,8 +24,15 @@ function ZenceHeroSection() {
     zIndex: 1
   }
 
-  const [modalOpen, setModalOpen] = useState(false);
   const [rotateSvgs, setRotateSvgs] = useState(window.innerWidth > 768)
+  const [videoIsShown, setVideoIsShown] = useState(false)
+
+  const showVideoHandler = () => {
+    setVideoIsShown(true)
+  }
+  const hideVideoHandler = () => {
+    setVideoIsShown(false)
+  }
 
   const isTabletSize = () => {
     setRotateSvgs(window.innerWidth > 768)
@@ -61,7 +69,6 @@ function ZenceHeroSection() {
   return (
     <div className='zence__wrapper'>
       {zenceSvgs()}
-      {/* <div style={{ position: 'absolute', opacity: '0.7', width: '50%', height: '100vh', top: '0', left: '0', zIndex: -1, backgroundColor: 'black' }}> */}
       <div className='zence__transHalfBlack'>
         <div className='zence__heroContentWrapper'>
           <div className='zence__heroContent'>
@@ -79,14 +86,8 @@ function ZenceHeroSection() {
             <div className='zence__buttons'>
               <div style={{ marginRight: '1em', }}>
                 <Button
-                  // buttonSize='size__large'
-                  // buttonSize={buttonSize}
-                  // checkButtonSize={checkButtonSize}
-                  buttonStyle='style__transparent'
-                  buttonBorder='border__secondary'
-                  buttonColor='color__secondary'
-                  buttonHover='hover__secondary'
-                  // href='true'
+                  buttonVariant='outlined'
+                  buttonColor='primary'
                   onClick={() => window.open("https://izence.com/", "_blank")}
                 >
                   Learn More
@@ -94,29 +95,20 @@ function ZenceHeroSection() {
               </div>
               <div style={BUTTON_WRAPPER_STYLES}>
                 <Button
-                  // buttonSize={buttonSize}
-                  buttonStyle='style__primary'
-                  buttonBorder='border__primary'
-                  buttonColor='color__white'
-                  buttonHover='hover__secondary'
-                  onClick={() => setModalOpen(true)}
+                  buttonVariant='contained'
+                  buttonColor='secondary'
+                  // onClick={() => setModalOpen(true)}
+                  onClick={() => showVideoHandler(true)}
                 >
                   Watch Video
                 </Button>
 
-                <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
-                  <div className='zence__iframeContainer'>
-                    <iframe
-                      title={'Zence Commercial'}
-                      width="560"
-                      height="315"
-                      src="https://www.youtube.com/embed/tucWP9pkibQ"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen="true">
-                    </iframe>
-                  </div>
-                </Modal>
+                {videoIsShown && (
+                  <VideoCard
+                    videoIsShown={videoIsShown}
+                    onClose={hideVideoHandler}
+                  />
+                )}
               </div>
             </div>
           </div>
