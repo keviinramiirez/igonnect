@@ -4,7 +4,8 @@ import { ReactComponent as BillBottomSVG } from '../../assets/SVG/bill_bottomMas
 import { ReactComponent as BillSVG } from '../../assets/SVG/bill.svg'
 import { ReactComponent as BillCenteredSVG } from '../../assets/SVG/bill_centered.svg'
 import { ReactComponent as BillTopSVG } from '../../assets/SVG/bill_topMasked.svg'
-import { Button } from '../../components/Button/Button'
+import Button from '../../components/Button/Button'
+
 import './BillGeniusHeroSection.scss'
 import { lgphone, desktop } from '../../breakpoints/MediaBreakpoint'
 
@@ -86,21 +87,19 @@ function BillGeniusHeroSection() {
     return (
       (window.innerWidth <= lgphone) ?
         <>
-          {utilities.map(util => {
-            return (
-              (util === 'and more...')
-                ? null :
-                <li>
-                  <div className='card'>
-                    <p>{util}</p>
-                  </div>
-                </li>
-            )
-          })}
+          {utilities.map((util, i) => (
+            ((util !== 'and more...') && (
+              <li key={i}>
+                <div className='card'>
+                  <p>{util}</p>
+                </div>
+              </li>
+            ))
+          ))}
         </> :
         <>
-          {utilities.map(util => (
-            <li><p>{util}</p></li>
+          {utilities.map((util, i) => (
+            <li key={i}><p>{util}</p></li>
           ))}
         </>
     )
@@ -126,21 +125,17 @@ function BillGeniusHeroSection() {
               {bill__utilityBills(utilities1)}
             </ul>
             <ul className='bill__utilityBills'>
-              {
-                (window.innerWidth > lgphone) ?
-                  <>
-                    {bill__utilityBills(utilities2)}
-                  </>
-                  : null
-              }
+              {(window.innerWidth > lgphone) && (
+                <>
+                  {bill__utilityBills(utilities2)}
+                </>
+              )}
             </ul>
           </div>
           <div className='bill__buttons'>
             <Button
-              buttonStyle='style__transparent'
-              buttonBorder='border__primary_bill'
-              buttonColor='color__primary_bill'
-              buttonHover='hover__secondary'
+              buttonVariant='contained'
+              buttonColor='primary'
               onClick={() => window.open("https://www.billgenius.com/", "_blank")}
             >
               Learn More
