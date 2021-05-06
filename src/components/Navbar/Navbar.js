@@ -39,13 +39,12 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
   return (
     <div
       className='navbar'
-      style={click
-        ? {
-          backgroundColor: '#242222',
-          height: (window.outerHeight + 'px'),
-          overflow: 'hidden',
-          top: '0'
-        }
+      style={click ? {
+        backgroundColor: '#242222',
+        height: (window.outerHeight + 'px'),
+        overflow: 'hidden',
+        top: '0'
+      }
         : {}
       }>
       <header>
@@ -72,7 +71,7 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
               </div>
             </div>
         }
-        {(click || showRegularNavbar) ?
+        {(click || showRegularNavbar) && (
           <nav>
             <ul className='navbar__links'>
               {navHeaders.map(({ title, path }) => {
@@ -82,10 +81,7 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
                       path={path}
                       onClick={closeMobileMenu}
                     >
-                      {title.includes('Join')
-                        ? null
-                        : title
-                      }
+                      {!title.includes('Join') && title}
                       {/* (
                         click ? null :
                           <Button
@@ -105,8 +101,7 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
               })}
             </ul>
           </nav>
-          : null
-        }
+        )}
       </header>
     </div>
   )
