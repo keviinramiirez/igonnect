@@ -4,7 +4,7 @@ import IgonnectWhiteSvg from '../../assets/SVG/igonnect_logo_white2.svg'
 import IgonnectBlackSvg from '../../assets/SVG/igonnect_logo_black2.svg'
 import Button from '../Button/Button'
 import Navlink from './Navlink'
-import { MenuItems } from './MenuItems'
+import { navHeaders } from './navHeaders'
 import { isPathBillGenius, isPathJoin } from '../Util'
 import { desktop, tablet, lgphone, phone } from '../../breakpoints/MediaBreakpoint'
 
@@ -75,7 +75,7 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
         {(click || showRegularNavbar) ?
           <nav>
             <ul className='navbar__links'>
-              {MenuItems.map(({ title, path }) => {
+              {navHeaders.map(({ title, path }) => {
                 return (
                   <li key={title} className='navbar__item' style={{ marginLeft: (!click ? '2.5em' : 0) }}>
                     <Navlink
