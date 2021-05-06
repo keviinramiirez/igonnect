@@ -92,7 +92,6 @@ function JoinHero() {
     <div className='join__wrapper'>
       <div className='join__card'>
         <h1>Contact Me</h1>
-        <button onClick={() => testing()} style={{ cursor: 'pointer' }}>CLICK ME</button>
         {test}
         <form className='join__fields' onSubmit={handleSubmit}>
           <div className='join__name'>
