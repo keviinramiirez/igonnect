@@ -7,7 +7,6 @@ import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
-import axios from 'axios';
 
 
 const boxInfo = [
@@ -78,35 +77,6 @@ function JoinHero() {
     e.preventDefault();
 
 
-    // const form = await axios.post('/api/form', {
-    //   name, email, about, message
-    // })
-
-    const options = {
-      // Adding method type 
-      method: "post",
-      // Adding body or contents to send 
-      // Adding headers to the request 
-      headers: {
-        // "Content-type": "application/json"
-        "Accept": "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        name: 'name',
-        email: 'email',
-        message: 'message'
-      })
-    }
-    // await window.fetch('/api/form', options)
-    await window.fetch('http://localhost:3001/api/form', options)
-      // await fetch('http://localhost:3001/api/form', options)
-      .then(res => res.json())
-      .then(res => {
-        console.log(res)
-        setTest(res.message)
-      })
-
     // setName('')
     // setEmail('')
     // setAbout('')
@@ -117,26 +87,10 @@ function JoinHero() {
     return name.length > 0 && email.length > 0 && message.length > 0
   }
 
-  const testing = () => {
-    // fetch("/api/form")
-    //   .then(res => res.json())
-    //   .then(res => {
-    //     console.log(res)
-    //     setTest(res.message)
-    //   })
-
-    // e.preventDefault();
-
-    // const form = await axios.post('/api/form', {
-    //   name, email, about, message
-    // })
-  }
-
   return (
     <div className='join__wrapper'>
       <div className='join__card'>
         <h1>Contact Me</h1>
-        <button onClick={() => testing()} style={{ cursor: 'pointer' }}>CLICK ME</button>
         {test}
         <form className='join__fields' onSubmit={handleSubmit}>
           <div className='join__name'>
