@@ -41,13 +41,6 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          {/* <Nav
-            handleClick={this.handleClick}
-            click={this.state.click}
-            showButton={!this.state.isMobile}
-            showRegularNavbar={!this.state.isMobile}
-            closeMobileMenu={this.closeMobileMenu}
-          /> */}
           <Navbar
             handleClick={this.handleClick}
             click={this.state.click}
