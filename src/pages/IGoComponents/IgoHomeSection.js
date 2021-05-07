@@ -74,12 +74,9 @@ function IgoHomeSection() {
           </div>
           <div className='igo__button'>
             <Button
-              className='btns'
-              // buttonSize='size__xlarge'
-              buttonStyle='style__secondary_igo'
-              buttonBorder='border__primary_igo'
-              buttonColor='color__primary_igo'
-              buttonHover='hover__secondary_igo'
+              // className='btns'
+              buttonVariant='contained'
+              buttonColor='primary'
               onClick={() => window.open("https://home.ibuumerang.com/igo/", "_blank")}
             >
               Learn More

@@ -1,19 +1,19 @@
-export const MenuItems = [
+export const navHeaders = [
   // {
   //   title: 'Home',
   //   path: '/'
   // },
   {
     title: 'iGo',
-    path: '/igo'
+    path: '/igo',
   },
   {
     title: 'Zence',
-    path: '/zence'
+    path: '/zence',
   },
   {
     title: 'Bill Genius',
-    path: '/billgenius'
+    path: '/billgenius',
   },
   // {
   //   title: 'Vibe Rides',
@@ -21,6 +21,6 @@ export const MenuItems = [
   // },
   {
     title: 'Join',
-    path: '/join'
+    path: '/join',
   },
 ]
