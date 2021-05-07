@@ -77,7 +77,6 @@ function JoinHero() {
     e.preventDefault();
 
 
-
     // setName('')
     // setEmail('')
     // setAbout('')

@@ -1,0 +1,15 @@
+.large > .MuiButtonBase-root > span.MuiButton-label {
+  padding: 10px;
+}
+
+.medium > .MuiButtonBase-root > span.MuiButton-label {
+  padding: 10px;
+}
+
+.small > .MuiButtonBase-root > span.MuiButton-label {
+  padding: 5px;
+}
+
+.color__white > button.MuiButtonBase-root.MuiButton-root > span.MuiButton-label {
+  color: white !important;
+}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './Navlink.css'
-import { isPathHome, isPathBillGenius, isPathJoin } from '../Util'
+import { isPathBillGenius, isPathJoin } from '../Util'
 import { lgphone } from '../../breakpoints/MediaBreakpoint'
 
 

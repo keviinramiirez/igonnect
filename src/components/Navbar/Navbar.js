@@ -4,7 +4,7 @@ import IgonnectWhiteSvg from '../../assets/SVG/igonnect_logo_white2.svg'
 import IgonnectBlackSvg from '../../assets/SVG/igonnect_logo_black2.svg'
 import Button from '../Button/Button'
 import Navlink from './Navlink'
-import { MenuItems } from './MenuItems'
+import { navHeaders } from './navHeaders'
 import { isPathBillGenius, isPathJoin } from '../Util'
 import { desktop, tablet, lgphone, phone } from '../../breakpoints/MediaBreakpoint'
 
@@ -39,13 +39,12 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
   return (
     <div
       className='navbar'
-      style={click
-        ? {
-          backgroundColor: '#242222',
-          height: (window.outerHeight + 'px'),
-          overflow: 'hidden',
-          top: '0'
-        }
+      style={click ? {
+        backgroundColor: '#242222',
+        height: (window.outerHeight + 'px'),
+        overflow: 'hidden',
+        top: '0'
+      }
         : {}
       }>
       <header>
@@ -72,20 +71,17 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
               </div>
             </div>
         }
-        {(click || showRegularNavbar) ?
+        {(click || showRegularNavbar) && (
           <nav>
             <ul className='navbar__links'>
-              {MenuItems.map(({ title, path }) => {
+              {navHeaders.map(({ title, path }) => {
                 return (
                   <li key={title} className='navbar__item' style={{ marginLeft: (!click ? '2.5em' : 0) }}>
                     <Navlink
                       path={path}
                       onClick={closeMobileMenu}
                     >
-                      {title.includes('Join')
-                        ? null
-                        : title
-                      }
+                      {!title.includes('Join') && title}
                       {/* (
                         click ? null :
                           <Button
@@ -105,8 +101,7 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
               })}
             </ul>
           </nav>
-          : null
-        }
+        )}
       </header>
     </div>
   )

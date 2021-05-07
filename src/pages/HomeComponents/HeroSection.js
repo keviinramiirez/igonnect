@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '../../components/Button/Button'
+import Button from '../../components/Button/Button'
 import './HeroSection.scss'
 import GoDiamondVideo from '../../assets/videos/go-diamond-cancun-tease.mp4'
 
@@ -22,10 +22,8 @@ function HeroSection({ toScroll }) {
         </div>
         <div className='hero__btns'>
           <Button
-            buttonStyle='style__transparent'
-            buttonBorder='border__secondary'
-            buttonColor='color__secondary'
-            buttonHover='hover__secondary'
+            buttonVariant='contained'
+            buttonColor='primary'
             onClick={toScroll}
           >
             About Me

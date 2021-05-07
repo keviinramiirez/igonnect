@@ -35,7 +35,6 @@ class App extends Component {
   }
 
 
-
   render() {
     window.addEventListener('resize', this.handleResponsiveness);
     return (
