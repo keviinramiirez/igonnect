@@ -8,9 +8,8 @@ import ScrollToTop from '../components/ScrollToTop/ScrollToTop'
 import './Home.css'
 
 
-function Home({ isMobile, click }) {
+function Home({ isMobile, click, closeMobileMenu }) {
   const sectionToScroll = useRef(null);
-  const [test, setTest] = useState('')
   const toScroll = () => {
     window.scrollTo({ top: sectionToScroll.current.offsetTop, behavior: 'smooth' })
   }
@@ -21,8 +20,7 @@ function Home({ isMobile, click }) {
         ? null
         : <>
           <ScrollToTop />
-          {test ? test : null}
-          <HeroSection toScroll={toScroll} />
+          <HeroSection toScroll={toScroll} closeMobileMenu={closeMobileMenu} />
           <PribSection />
           <ModernizedSection />
           <BenefitsSection />

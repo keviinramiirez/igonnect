@@ -33,7 +33,11 @@ $phone: 360px;
     white-space: nowrap !important;
     // padding: 1.5em; /* this is MOBILE padding */
     max-width: 1200px; /* impedir width que cubra toda la pantalla cuando disminuye */
-    
+    .hero__buttons {
+      margin-top: 1em;
+      display: flex;
+      flex-direction: row;
+    }
     .hero__content {
       padding-bottom: 3em;
       font-weight: 700;

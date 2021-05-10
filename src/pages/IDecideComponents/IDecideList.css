@@ -1,0 +1,16 @@
+/* .idecideList {
+  display: flex;
+  justify-content: space-evenly;
+} */
+
+.idecideList {
+  /* grid-template-columns: 33% 33% 33%; */
+  margin: 8em 7em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-rows: 1fr 1fr 1fr; */
+  /* gap: 1.5em; */
+  gap: 2.5em;
+  /* column-gap: 0; */
+  /* row-gap: 1.5em; */
+}
