@@ -13,6 +13,10 @@
 .nav-link-active {
   color:  #F5E051 !important;
 }
+.nav-link-active-skintech {
+  color: #4400ff !important;
+  font-weight: 500;
+}
 .nav-link-active-bill {
   color: #2662A7 !important;
   font-weight: 500;
@@ -20,6 +24,9 @@
 
 .text-hover:hover {
   color: #F5E051 !important;
+}
+.text-hover-skintech:hover {
+  color: #4F1AE2 !important;
 }
 .text-hover-bill:hover {
   color: #2662A7 !important;

@@ -22,6 +22,17 @@
   place-self: center center;
 }
 
+@media only screen and (max-width: 600px) {
+  .modal {
+    width: 100%;
+  }
+  iframe {
+    width: 300px;
+    height: 165px;
+  }
+}
+
+
 /* .modal {
   position: fixed;
   top: 15vh;

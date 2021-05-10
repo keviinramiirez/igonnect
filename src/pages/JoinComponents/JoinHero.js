@@ -107,7 +107,6 @@ function JoinHero() {
               placeholder='Email'
               value={email}
               onChange={handleEmailChange}
-            // formNoValidate
             />
           </div>
 

@@ -5,13 +5,13 @@ import IgonnectBlackSvg from '../../assets/SVG/igonnect_logo_black2.svg'
 import Button from '../Button/Button'
 import Navlink from './Navlink'
 import { navHeaders } from './navHeaders'
-import { isPathBillGenius, isPathJoin } from '../Util'
+import { isPathSkintech, isPathBillGenius, isPathIDecides, isPathJoin } from '../Util'
 import { desktop, tablet, lgphone, phone } from '../../breakpoints/MediaBreakpoint'
 
 
 function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobileMenu }) {
-  const checkLogoColor = () => {
-    return !(isPathBillGenius() || isPathJoin())
+  const blackNavColor = () => {
+    return isPathSkintech() || isPathBillGenius() || isPathIDecides() || isPathJoin()
   }
 
 
@@ -22,18 +22,19 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
     //   width = height = 120;
     // else 
     if (innerWidth <= lgphone)
-      width = height = 145;
+      width = height = 140;
     else if (innerWidth <= tablet)
-      width = height = 160;
+      width = height = 150;
     else if (innerWidth <= desktop)
-      width = height = 180;
+      width = height = 170;
 
     return <img
       className='navbar__logo'
-      src={checkLogoColor() ? IgonnectWhiteSvg : IgonnectBlackSvg}
+      src={blackNavColor() ? IgonnectBlackSvg : IgonnectWhiteSvg}
       width={width}
       height={height}
-      alt='igonnect logo' />
+      alt='igonnect logo'
+    />
   }
 
   return (
@@ -65,7 +66,7 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
               <div
                 className='navbar__menuIcon navbar__menuIconBars'
                 onClick={() => handleClick()}
-                style={{ color: ((isPathBillGenius() || isPathJoin()) && !click) ? 'black' : 'white' }}
+                style={{ color: (blackNavColor() && !click) ? 'black' : 'white' }}
               >
                 <i className={'fas fa-bars'} />
               </div>

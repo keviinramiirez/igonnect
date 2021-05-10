@@ -4,7 +4,7 @@ import { Button } from '@material-ui/core'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import { checkButtonSize, paletteColors, themeShape } from './material-ui'
 import {
-  // checkButtonSize,
+  isPathSkintech,
   isPathIgo,
   isPathBillGenius,
 } from '../Util'
@@ -22,6 +22,10 @@ const ZenceButton = ({
       primary = paletteColors.igoPrimary
       secondary = paletteColors.igoSecondary
     }
+    else if (isPathSkintech()) {
+      primary = paletteColors.skintechPrimary
+      secondary = paletteColors.skintechSecondary
+    }
     else if (isPathBillGenius()) {
       primary = paletteColors.billPrimary
       secondary = paletteColors.billSecondary
@@ -35,29 +39,20 @@ const ZenceButton = ({
     shape: themeShape,
   });
 
-  const materialButtonSize = () => {
-    const buttonSize = checkButtonSize()
-    if (buttonSize === 'small' || buttonSize === 'xsmall')
-      return 'small'
-    if (buttonSize === 'medium')
-      return 'medium'
-    return 'large'
-  }
-
-
-  const checkLabelColor = () => {
+  const isWhiteLabelColor = () => {
+    if (isPathSkintech())
+      return ''
     return (buttonVariant === 'outlined' || buttonColor === 'secondary') ? 'color__white' : ''
   }
 
   return (
     <div>
       <ThemeProvider theme={igonnectTheme}>
-        <div className={`${checkButtonSize()} ${checkLabelColor()}`} style={{ display: 'inline' }}>
+        <div className={`${checkButtonSize()} ${isWhiteLabelColor()}`} style={{ display: 'inline' }}>
           <Button
             variant={buttonVariant}
             color={buttonColor}
             onClick={onClick}
-            // size={materialButtonSize()}
             size={checkButtonSize()}
           >
             {children}

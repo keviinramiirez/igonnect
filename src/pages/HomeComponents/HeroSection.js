@@ -2,8 +2,17 @@ import React from 'react'
 import Button from '../../components/Button/Button'
 import './HeroSection.scss'
 import GoDiamondVideo from '../../assets/videos/go-diamond-cancun-tease.mp4'
+// import { useHistory } from 'react-router-dom'
 
 function HeroSection({ toScroll }) {
+  // function HeroSection({ toScroll, closeMobileMenu }) {
+  // const history = useHistory()
+
+  // const toChangeNavbarColor = () => {
+  //   closeMobileMenu() //causes navbar to rerender
+  //   history.push('/idecides')
+  // }
+
   return (
     <div className='hero__wrapper'>
       <video autoPlay='autoplay' playsInline='playsinline' loop muted style={{ pointerEvents: 'none' }}>
@@ -20,14 +29,23 @@ function HeroSection({ toScroll }) {
             <span className='legacy'>legacy</span>
           </p>
         </div>
-        <div className='hero__btns'>
-          <Button
+        <div className='hero__buttons'>
+          <div style={{ marginRight: '1em', }}>
+            <Button
+              buttonVariant='contained'
+              buttonColor='primary'
+              onClick={toScroll}
+            >
+              About Me
+            </Button>
+          </div>
+          {/* <Button
             buttonVariant='contained'
-            buttonColor='primary'
-            onClick={toScroll}
+            buttonColor='secondary'
+            onClick={toChangeNavbarColor}
           >
-            About Me
-          </Button>
+            iDecides
+          </Button> */}
         </div>
       </div>
     </div>

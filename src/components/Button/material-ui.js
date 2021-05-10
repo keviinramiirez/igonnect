@@ -1,12 +1,14 @@
 import { desktop, lgphone, phone } from '../../breakpoints/MediaBreakpoint'
-import { isPathIgo, isPathBillGenius } from '../Util'
+import { isPathIgo, isPathBillGenius, isPathSkintech } from '../Util'
 
 export const checkButtonSize = () => {
   let innerWidth = window.innerWidth;
   // console.log(innerWidth <= phone, innerWidth <= lgphone, innerWidth <= desktop)
   if (innerWidth <= phone)
     return 'xsmall'
-  else if (innerWidth <= lgphone && !isPathBillGenius())
+  else if (innerWidth <= 600 && isPathSkintech())
+    return 'xsmall'
+  else if ((innerWidth <= lgphone && !isPathBillGenius()) || (innerWidth <= lgphone && isPathSkintech()))
     return 'small'
   else if (innerWidth <= desktop && !isPathIgo())
     return 'medium'
@@ -26,6 +28,18 @@ export const paletteColors = {
     main: '#8529b9',
     dark: '#760cb4',
     contrastText: '#fff',
+  },
+  skintechPrimary: {
+    light: '#6e39ff',
+    main: '#4F1AE2',
+    dark: '#291d83',
+    contrastText: '#000',
+  },
+  skintechSecondary: {
+    light: '#95efff',
+    main: '#25D8F6',
+    dark: '#03acca',
+    contrastText: '#000',
   },
   igoPrimary: {
     light: '#ffe56f',

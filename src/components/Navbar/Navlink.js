@@ -1,26 +1,28 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './Navlink.css'
-import { isPathBillGenius, isPathJoin } from '../Util'
+import { isPathSkintech, isPathBillGenius, isPathIDecides, isPathJoin } from '../Util'
 import { lgphone } from '../../breakpoints/MediaBreakpoint'
 
 
-// function Navlink({ children, path, click }) {
 function Navlink({ children, path, onClick }) {
   const checkHoverText = () => {
+    if (isPathSkintech())
+      return '-skintech'
     if (isPathBillGenius())
       return '-bill'
-    else if (isPathJoin())
+    if (isPathIDecides())
+      return '-skintech'
+    if (isPathJoin())
       return '-join'
-    else
-      return '';
+    return '';
   }
 
   const checkLinkText = () => {
     if (window.innerWidth <= lgphone)
       return '-white'
     console.log('checkLinkText()')
-    return (isPathBillGenius() || isPathJoin())
+    return (isPathSkintech() || isPathBillGenius() || isPathIDecides() || isPathJoin())
       ? '-black'
       : '-white'
   }
