@@ -2,11 +2,11 @@ import React from 'react'
 import Button from '../../components/Button/Button'
 import './HeroSection.scss'
 import GoDiamondVideo from '../../assets/videos/go-diamond-cancun-tease.mp4'
-import { useHistory } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 
 function HeroSection({ toScroll }) {
   // function HeroSection({ toScroll, closeMobileMenu }) {
-  const history = useHistory()
+  // const history = useHistory()
 
   // const toChangeNavbarColor = () => {
   //   closeMobileMenu() //causes navbar to rerender

@@ -1,12 +1,14 @@
 import { desktop, lgphone, phone } from '../../breakpoints/MediaBreakpoint'
-import { isPathIgo, isPathBillGenius } from '../Util'
+import { isPathIgo, isPathBillGenius, isPathSkintech } from '../Util'
 
 export const checkButtonSize = () => {
   let innerWidth = window.innerWidth;
   // console.log(innerWidth <= phone, innerWidth <= lgphone, innerWidth <= desktop)
   if (innerWidth <= phone)
     return 'xsmall'
-  else if (innerWidth <= lgphone && !isPathBillGenius())
+  else if (innerWidth <= 600 && isPathSkintech())
+    return 'xsmall'
+  else if ((innerWidth <= lgphone && !isPathBillGenius()) || (innerWidth <= lgphone && isPathSkintech()))
     return 'small'
   else if (innerWidth <= desktop && !isPathIgo())
     return 'medium'

@@ -10,27 +10,12 @@ import './BillGeniusHeroSection.scss'
 import { lgphone, desktop } from '../../breakpoints/MediaBreakpoint'
 
 function BillGeniusHeroSection() {
-  // const [svgReduceAmount, setSvgReduceAmount] = useState(0)
-
-  // const isDesktopSize = () => {
-  //   // console.log(window.innerWidth <= desktop);
-  //   // // if (window.innerWidth <= 425)
-  //   // //   setSvgReduceAmount(300)
-  //   // // else 
-  //   // if (window.innerWidth <= 150)
-  //   //   setSvgReduceAmount(100)
-  //   // // else
-  //   // //   setSvgReduceAmount(0)
-  // }
-
   function logos() {
     if (window.innerWidth <= lgphone + 10) {
       return (
         <>
           <div className='bill__billLogoBottom' style={{ overflow: 'hidden' }}>
             <BillCenteredSVG height={String(770)} width={String(422)} viewBox="0 -455 650 602" alt='iGo Logo' />
-            {/* <BillCenteredSVG height={String(770)} width={String(422)} viewBox="27 -550 650 602" alt='iGo Logo' /> */}
-            {/* <BillCenteredSVG height={String(650)} width={String(302)} viewBox="0 -400 650 602" alt='iGo Logo' /> */}
           </div>
           <div className='bill__billLogoTop'>
             <BillTopSVG height={String(350)} width={String(102)} viewBox="50 800 650 602" alt='iGo Logo' />
@@ -121,10 +106,10 @@ function BillGeniusHeroSection() {
             You don't pay unless it saves you money
           </p>
           <div className='bill__listWrapper'>
-            <ul className='bill__utilityBills'>
+            <ul>
               {bill__utilityBills(utilities1)}
             </ul>
-            <ul className='bill__utilityBills'>
+            <ul>
               {(window.innerWidth > lgphone) && (
                 <>
                   {bill__utilityBills(utilities2)}

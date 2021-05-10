@@ -39,7 +39,7 @@ const ZenceButton = ({
     shape: themeShape,
   });
 
-  const checkLabelColor = () => {
+  const isWhiteLabelColor = () => {
     if (isPathSkintech())
       return ''
     return (buttonVariant === 'outlined' || buttonColor === 'secondary') ? 'color__white' : ''
@@ -48,7 +48,7 @@ const ZenceButton = ({
   return (
     <div>
       <ThemeProvider theme={igonnectTheme}>
-        <div className={`${checkButtonSize()} ${checkLabelColor()}`} style={{ display: 'inline' }}>
+        <div className={`${checkButtonSize()} ${isWhiteLabelColor()}`} style={{ display: 'inline' }}>
           <Button
             variant={buttonVariant}
             color={buttonColor}
