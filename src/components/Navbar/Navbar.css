@@ -1,4 +1,5 @@
 .navbar {
+  z-index: 1;
   position: absolute;
   top: -60px;
   /* padding-left: 20px; */
@@ -67,7 +68,7 @@ li.navbar__linkButton {
 
 @media screen and (max-width: 1024px) {
   .navbar header {
-    padding: 10px 6% 10px 10%;
+    padding: 35px 6% 10px 10%;
   }
   
   .navbar li, .navbar a {
@@ -77,21 +78,21 @@ li.navbar__linkButton {
 
 @media screen and (max-width: 768px) {
   .navbar header {
-    padding: 15px 1% 15px 5%;
+    padding: 25px 1% 15px 5%;
   }
   
   .navbar li, .navbar a {
-    font-size: 1.03em;
+    font-size: 1.04em;
   }
 }
 
 @media screen and (max-width: 528px) {
   .navbar header {
-    padding: 15px 3% 15px 5%;
+    padding: 30px 3% 15px 5%;
   }
   
   .navbar li, .navbar a {
-    font-size: 1em;
+    font-size: 0.8em;
   }
 
   .navbar__links li {
@@ -103,31 +104,24 @@ li.navbar__linkButton {
 
 
 @media screen and (max-width: 425px) {
-  /* .navbar__links.active {
-    background: #242222;
-    opacity: 1;
-    transition: all 0.5s ease;
-    z-index: 1;
-  } */
-
   .navbar header {
     position: static;
-    padding: 0;
+    padding-top: 0;
     justify-content: center;
   }
 
   .navbar__menuIcon {
     display: block;
-    /* position: absolute; */
-    /* transform: translate(-140%, -5%); */
     font-size: 1.8rem;
     cursor: pointer;
   }
   
   .navbar__menuIconTimes {
     position: absolute;
-    top: 37px;
-    right: 54px;
+    top: 25px;
+    right: 35px;
+    /* top: 37px;
+    right: 54px; */
   }
 
   .navbar__logoBars {
@@ -147,14 +141,6 @@ li.navbar__linkButton {
     color: #fff;
     font-size: 2rem;
   }
-  
-  /* header .navbar__links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-items: center;
-    font-size: 0.6em;
-    padding-top: 0;
-  } */
 
   nav {
     justify-content: center;
@@ -162,8 +148,8 @@ li.navbar__linkButton {
   }
   nav .navbar__links .navbar__item {
     display: flex;
-    height: 14vh;
-    padding-top: 5.8em;
+    height: 5vh;
+    padding-top: 5em;
     width: 100%;
   }
 }

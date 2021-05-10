@@ -7,10 +7,10 @@ export const navHeaders = [
     title: 'Zence',
     path: '/zence',
   },
-  // {
-  //   title: 'SkinTech',
-  //   path: '/skintech'
-  // },
+  {
+    title: 'SkinTech',
+    path: '/skintech'
+  },
   {
     title: 'Bill Genius',
     path: '/billgenius',

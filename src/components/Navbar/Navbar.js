@@ -22,18 +22,19 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
     //   width = height = 120;
     // else 
     if (innerWidth <= lgphone)
-      width = height = 145;
+      width = height = 140;
     else if (innerWidth <= tablet)
-      width = height = 160;
+      width = height = 150;
     else if (innerWidth <= desktop)
-      width = height = 180;
+      width = height = 170;
 
     return <img
       className='navbar__logo'
       src={blackNavColor() ? IgonnectBlackSvg : IgonnectWhiteSvg}
       width={width}
       height={height}
-      alt='igonnect logo' />
+      alt='igonnect logo'
+    />
   }
 
   return (
