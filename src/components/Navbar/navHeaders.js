@@ -1,8 +1,4 @@
 export const navHeaders = [
-  // {
-  //   title: 'Home',
-  //   path: '/'
-  // },
   {
     title: 'iGo',
     path: '/igo',
@@ -11,14 +7,14 @@ export const navHeaders = [
     title: 'Zence',
     path: '/zence',
   },
+  // {
+  //   title: 'SkinTech',
+  //   path: '/skintech'
+  // },
   {
     title: 'Bill Genius',
     path: '/billgenius',
   },
-  // {
-  //   title: 'Vibe Rides',
-  //   path: '/viberides'
-  // },
   {
     title: 'Join',
     path: '/join',

@@ -27,6 +27,18 @@ export const paletteColors = {
     dark: '#760cb4',
     contrastText: '#fff',
   },
+  skintechPrimary: {
+    light: '#6e39ff',
+    main: '#4F1AE2',
+    dark: '#291d83',
+    contrastText: '#000',
+  },
+  skintechSecondary: {
+    light: '#95efff',
+    main: '#25D8F6',
+    dark: '#03acca',
+    contrastText: '#000',
+  },
   igoPrimary: {
     light: '#ffe56f',
     main: '#e4c01e',

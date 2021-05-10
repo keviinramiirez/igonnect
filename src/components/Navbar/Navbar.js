@@ -5,13 +5,13 @@ import IgonnectBlackSvg from '../../assets/SVG/igonnect_logo_black2.svg'
 import Button from '../Button/Button'
 import Navlink from './Navlink'
 import { navHeaders } from './navHeaders'
-import { isPathBillGenius, isPathJoin } from '../Util'
+import { isPathSkintech, isPathBillGenius, isPathIDecides, isPathJoin } from '../Util'
 import { desktop, tablet, lgphone, phone } from '../../breakpoints/MediaBreakpoint'
 
 
 function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobileMenu }) {
-  const checkLogoColor = () => {
-    return !(isPathBillGenius() || isPathJoin())
+  const blackNavColor = () => {
+    return isPathSkintech() || isPathBillGenius() || isPathIDecides() || isPathJoin()
   }
 
 
@@ -30,7 +30,7 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
 
     return <img
       className='navbar__logo'
-      src={checkLogoColor() ? IgonnectWhiteSvg : IgonnectBlackSvg}
+      src={blackNavColor() ? IgonnectBlackSvg : IgonnectWhiteSvg}
       width={width}
       height={height}
       alt='igonnect logo' />
@@ -65,7 +65,7 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
               <div
                 className='navbar__menuIcon navbar__menuIconBars'
                 onClick={() => handleClick()}
-                style={{ color: ((isPathBillGenius() || isPathJoin()) && !click) ? 'black' : 'white' }}
+                style={{ color: (blackNavColor() && !click) ? 'black' : 'white' }}
               >
                 <i className={'fas fa-bars'} />
               </div>

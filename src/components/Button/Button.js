@@ -4,7 +4,7 @@ import { Button } from '@material-ui/core'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import { checkButtonSize, paletteColors, themeShape } from './material-ui'
 import {
-  // checkButtonSize,
+  isPathSkintech,
   isPathIgo,
   isPathBillGenius,
 } from '../Util'
@@ -22,6 +22,10 @@ const ZenceButton = ({
       primary = paletteColors.igoPrimary
       secondary = paletteColors.igoSecondary
     }
+    else if (isPathSkintech()) {
+      primary = paletteColors.skintechPrimary
+      secondary = paletteColors.skintechSecondary
+    }
     else if (isPathBillGenius()) {
       primary = paletteColors.billPrimary
       secondary = paletteColors.billSecondary
@@ -35,17 +39,9 @@ const ZenceButton = ({
     shape: themeShape,
   });
 
-  const materialButtonSize = () => {
-    const buttonSize = checkButtonSize()
-    if (buttonSize === 'small' || buttonSize === 'xsmall')
-      return 'small'
-    if (buttonSize === 'medium')
-      return 'medium'
-    return 'large'
-  }
-
-
   const checkLabelColor = () => {
+    if (isPathSkintech())
+      return ''
     return (buttonVariant === 'outlined' || buttonColor === 'secondary') ? 'color__white' : ''
   }
 
@@ -57,7 +53,6 @@ const ZenceButton = ({
             variant={buttonVariant}
             color={buttonColor}
             onClick={onClick}
-            // size={materialButtonSize()}
             size={checkButtonSize()}
           >
             {children}

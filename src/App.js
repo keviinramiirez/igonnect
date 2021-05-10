@@ -4,9 +4,11 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Home from './pages/Home'
 import Zence from './pages/Zence'
+import SkinTech from './pages/SkinTech'
 import IGo from './pages/IGo'
 import BillGenius from './pages/BillGenius'
 import Join from './pages/Join'
+import IDecides from './pages/IDecides'
 import { lgphone } from './breakpoints/MediaBreakpoint'
 
 
@@ -38,7 +40,7 @@ class App extends Component {
   render() {
     window.addEventListener('resize', this.handleResponsiveness);
     return (
-      <div className="App">
+      <>
         <Router>
           <Navbar
             handleClick={this.handleClick}
@@ -49,7 +51,7 @@ class App extends Component {
           />
           <Switch>
             <Route path='/' exact>
-              <Home isMobile={this.state.isMobile} click={this.state.click} />
+              <Home isMobile={this.state.isMobile} click={this.state.click} closeMobileMenu={this.closeMobileMenu} />
             </Route>
             <Route path='/igo' exact>
               <IGo isMobile={this.state.isMobile} click={this.state.click} />
@@ -57,15 +59,21 @@ class App extends Component {
             <Route path='/zence' exact>
               <Zence isMobile={this.state.isMobile} click={this.state.click} />
             </Route>
+            <Route path='/skintech' exact>
+              <SkinTech isMobile={this.state.isMobile} click={this.state.click} />
+            </Route>
             <Route path='/billgenius' exact>
               <BillGenius isMobile={this.state.isMobile} click={this.state.click} />
             </Route>
             <Route path='/join' exact>
               <Join isMobile={this.state.isMobile} click={this.state.click} />
             </Route>
+            <Route path='/idecides' exact>
+              <IDecides isMobile={this.state.isMobile} click={this.state.click} />
+            </Route>
           </Switch>
         </Router>
-      </div>
+      </>
     );
   }
 }
