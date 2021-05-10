@@ -66,8 +66,31 @@ function ZenceHeroSection() {
     )
   };
 
+  const buttonView = (cssClass) => (
+    <div className={cssClass}>
+      <div style={{ marginRight: '1em', }}>
+        <Button
+          buttonVariant='outlined'
+          buttonColor='primary'
+          onClick={() => window.open("https://izence.com/", "_blank")}
+        >
+          Learn More
+        </Button>
+      </div>
+      <div>
+        <Button
+          buttonVariant='contained'
+          buttonColor='secondary'
+          onClick={() => showVideoHandler(true)}
+        >
+          Watch Video
+        </Button>
+      </div>
+    </div>
+  )
+
   return (
-    <div className='zence__wrapper'>
+    <>
       {zenceSvgs()}
       <div className='zence__transHalfBlack'>
         <div className='zence__heroContentWrapper'>
@@ -83,38 +106,21 @@ function ZenceHeroSection() {
                 with Essential Oils.
               </p>
             </div>
-            <div className='zence__buttons'>
-              <div style={{ marginRight: '1em', }}>
-                <Button
-                  buttonVariant='outlined'
-                  buttonColor='primary'
-                  onClick={() => window.open("https://izence.com/", "_blank")}
-                >
-                  Learn More
-                </Button>
-              </div>
-              <div style={BUTTON_WRAPPER_STYLES}>
-                <Button
-                  buttonVariant='contained'
-                  buttonColor='secondary'
-                  // onClick={() => setModalOpen(true)}
-                  onClick={() => showVideoHandler(true)}
-                >
-                  Watch Video
-                </Button>
-
-                {videoIsShown && (
-                  <VideoCard
-                    videoIsShown={videoIsShown}
-                    onClose={hideVideoHandler}
-                  />
-                )}
-              </div>
-            </div>
+            {window.innerWidth > 768 && buttonView('zence__buttons')}
+            {videoIsShown && (
+              <VideoCard
+                videoIsShown={videoIsShown}
+                onClose={hideVideoHandler}
+              />
+            )}
           </div>
         </div>
       </div>
-    </div>
+      {/* on mobile, need to keep it outside above overlays */}
+      {window.innerWidth <= 768 && (
+        buttonView('zence__mobileButtons')
+      )}
+    </>
   )
 }
 
