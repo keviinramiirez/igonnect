@@ -1,10 +1,9 @@
 
 
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './ZenceHeroSection.scss'
-import { desktop, tablet, lgphone, phone } from '../../breakpoints/MediaBreakpoint'
-
+import Button from '../../components/Button/Button'
 import ZenceBackSvg from '../../assets/SVG/purple-neon.svg'
 import ZenceLavenderSvg from '../../assets/SVG/zence_lavender.svg'
 import ZenceEucalyptusSvg from '../../assets/SVG/zence_eucalyptus.svg'
@@ -13,10 +12,8 @@ import ZenceBackVerticalSvg from '../../assets/SVG/purple-neon-vertical.svg'
 import ZenceLavenderVerticalSvg from '../../assets/SVG/zence_lavender_vertical.svg'
 import ZenceEucalyptusVerticalSvg from '../../assets/SVG/zence_eucalyptus_vertical.svg'
 import ZenceLemonVerticalSvg from '../../assets/SVG/zence_lemon_vertical.svg'
-
-import Button from '../../components/Button/Button'
-// import VideoModal from '../../components/Modal/VideoModal'
-import VideoCard from './VideoCard'
+import VideoCard from '../../components/Modal/VideoCard'
+import SkintechVideo from '../../assets/videos/zence_commercial.mp4'
 
 function ZenceHeroSection() {
   const [rotateSvgs, setRotateSvgs] = useState(window.innerWidth > 768)
@@ -35,7 +32,7 @@ function ZenceHeroSection() {
 
   window.addEventListener('resize', isTabletSize);
 
-  function zenceSvgs() {
+  const zenceSvgs = () => {
     return (
       <div className='zence__img'>
         <img src={rotateSvgs ? ZenceBackSvg : ZenceBackVerticalSvg} alt='Zence Background' />
@@ -89,7 +86,7 @@ function ZenceHeroSection() {
             {window.innerWidth > 768 && buttonView('zence__buttons')}
             {videoIsShown && (
               <VideoCard
-                videoIsShown={videoIsShown}
+                VideoLink={SkintechVideo}
                 onClose={hideVideoHandler}
               />
             )}
