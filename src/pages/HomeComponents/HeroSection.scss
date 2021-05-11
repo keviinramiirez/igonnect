@@ -106,27 +106,10 @@ $phone: 360px;
 
   @include media('<desktop', '<=1000px') {
     height: 60vh;
-    // height: 10vh;
     width: 100%;
     video {
       height: 60vh;
       width: 100%;
     }
   }
-
-  @include media('<1000px', '<=1000px') {
-    height: 60vh;
-    // height: 10vh;
-    width: 100%;
-    video {
-      height: 60vh;
-      width: 100%;
-    }
-  }
-  // @include media('<1000px', '<=tablet') {
-  //   height: 60vh;
-  //   video {
-  //     height: 60vh;
-  //   }
-  // }
 }

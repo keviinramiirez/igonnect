@@ -82,17 +82,17 @@ li.navbar__linkButton {
   }
   
   .navbar li, .navbar a {
-    font-size: 1.04em;
+    font-size: 0.9em;
   }
 }
 
 @media screen and (max-width: 528px) {
   .navbar header {
-    padding: 30px 3% 15px 5%;
+    padding: 38px 3% 15px 5%;
   }
   
   .navbar li, .navbar a {
-    font-size: 0.8em;
+    font-size: 0.85em;
   }
 
   .navbar__links li {
