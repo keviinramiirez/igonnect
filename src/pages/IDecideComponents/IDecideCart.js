@@ -1,11 +1,9 @@
-import './IDecideCart.css'
+// import './IDecideCart.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Igo from '../../assets/idecide-igo.jpg'
 
@@ -22,6 +20,11 @@ const useStyles = makeStyles({
 function IDecideCart({ title, image, context, link }) {
   const classes = useStyles();
 
+  const width = window.innerWidth
+
+  // const [tittleVariant, setTitleVariant] = useState((width > 768) ? 'h6' : 'body1')
+  // const [contextVariant, setContextVariant] = useState((width > 768) ? 'body2' : 'caption')
+
   return (
     <div className='idecideCart'>
       <Card className={classes.root} onClick={() => window.open(link, '_blank')}>
@@ -32,22 +35,14 @@ function IDecideCart({ title, image, context, link }) {
             title={title}
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
+            <Typography gutterBottom variant={(width > 560) ? 'h6' : 'body1'} component='h2'>
               {title}
             </Typography>
-            <Typography variant="body2" color="textSecondary" >
+            <Typography variant={(width > 560) ? 'body2' : 'caption'} color='textSecondary' >
               {context}
             </Typography>
           </CardContent>
         </CardActionArea>
-        {/* <CardActions>
-          <Button size="small" color="primary">
-            Share
-        </Button>
-          <Button size="small" color="primary">
-            Learn More
-        </Button>
-        </CardActions> */}
       </Card>
     </div>
   )
