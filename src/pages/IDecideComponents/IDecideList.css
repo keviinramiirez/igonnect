@@ -11,7 +11,6 @@ img.idecideList__background {
   position: absolute;
   z-index: -1;
   margin-top: -200px;
-  /* border-radius: 50px; */
 }
 
 .idecideList img {
@@ -21,10 +20,9 @@ img.idecideList__background {
 }
 
 .idecideList__list {
-  /* margin: 8em 7em; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 2.5em;
+  gap: 40px;
   justify-items: center;
 }
 
@@ -46,7 +44,7 @@ img.idecideList__background {
   .idecideList { margin: 6em 0 }
   .idecideList__list {
     margin: 0 2.4em;
-    gap: 2.3em;
+    gap: 36px;
   }
 }
 
