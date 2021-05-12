@@ -49,30 +49,17 @@ img.idecideList__background {
 }
 
 @media screen and (max-width: 480px) {
-  .idecideList { margin-bottom: 2em }
+  .idecideList { margin-bottom: 0 }
   .idecideList img { margin-bottom: 1em }
   .idecideList__list {
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    padding: 1em;
+    padding: 1em 0.4em 0;
+    gap: normal; /* mobile not supporting gap */
   }
   .MuiPaper-root.MuiCard-root {
     max-width: none;
   }
 }
-
-/* @media screen and (max-width: 444px) {
-  .idecideList__list {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    padding: 1em;
-  }
-
-  .MuiPaper-root.MuiCard-root {
-    max-width: none;
-  }
-} */
