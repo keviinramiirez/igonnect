@@ -43,7 +43,7 @@ function HeroSection({ toScroll, closeMobileMenu }) {
             buttonColor='secondary'
             onClick={toChangeNavbarColor}
           >
-            iDecides
+            Interact
           </Button>
         </div>
       </div>
