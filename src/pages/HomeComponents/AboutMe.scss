@@ -37,7 +37,6 @@
         font-size: calc(1em + 0.5vw);
         line-height: 1.5em;
         font-family: 'Alegreya Sans';
-        // text-align: justify;
         span {
           font-size: 0.8em;
           color: #6F1AA1;
@@ -46,17 +45,21 @@
       }
     }
 
-    .aboutme__info {
+    .aboutme__infoWrapper {
       display: flex;
       justify-content: flex-end;
       align-items: center;
       margin: 30px 20px 30px 0;
-      .aboutme__myInfo {
+      .aboutme__info {
         padding-right: 2em;
         line-height: 2.7em;
         text-align: end;
         font-weight: 600;
         color: #6F1AA1;
+        // p {
+        //   font-size: 15px;
+        //   font-family: 'Alegreya Sans' !important;
+        // }
       }
       img {
         min-width: 70px;
@@ -65,7 +68,6 @@
         height: 160px;
         border-radius: 50%;
         border: 3px solid #6F1AA1;
-        // z-index: 999;
       }
     }
     
@@ -75,15 +77,11 @@
       // height: 6vh;
       .aboutme__testimonialWrapper {
         width: 115%;
-        .aboutme__testimonial {
-          // font-size: 1.11em;
-          // font-weight: 500;
-        }
       }
       
-      .aboutme__info {
+      .aboutme__infoWrapper {
         margin: 20px -70px 30px 0;
-        .aboutme__myInfo {
+        .aboutme__info {
           font-size: 0.9em;
           padding-right: 1.5em;
         }
@@ -102,14 +100,11 @@
         .aboutme__quotesIcon {
           font-size: 2.6em;
         }
-        .aboutme__testimonial {
-          // font-size: 1.1em;
-        }
       }
       
-      .aboutme__info {
+      .aboutme__infoWrapper {
         margin: 45px -90px 30px 0;
-        .aboutme__myInfo {
+        .aboutme__info {
           font-size: 0.85em;
           padding-right: 1.5em;
         }
@@ -121,17 +116,17 @@
       left: 38%;
       .aboutme__testimonialWrapper {
         .aboutme__quotesIcon {
-          font-size: 2.2em;
+          font-size: 2em;
         }
         .aboutme__testimonial {
-          font-size: 1em;
+          font-size: 1.02em;
           letter-spacing: 0.011em;
         }
       }
       
-      .aboutme__info {
-        margin: 35px -60px 30px 0;
-        .aboutme__myInfo {
+      .aboutme__infoWrapper {
+        margin: 35px -60px 0 0;
+        .aboutme__info {
           font-size: 0.8em;
           padding-right: 1em;
         }
@@ -143,19 +138,22 @@
     }
 
     @include media('<lgphone', '<=phone') {
-      left: 50%;
+      left: 48%;
       top: 50%;
       .aboutme__testimonialWrapper {
-        width: 100%;
+        width: 108%;
+        .aboutme__quotesIcon {
+          font-size: 1.5em;
+        }
         .aboutme__testimonial {
           font-size: 0.9em;
         }
       }
       
-      .aboutme__info {
-        margin: 35px 0 30px;
-        .aboutme__myInfo {
-          font-size: 0.6em;
+      .aboutme__infoWrapper {
+        margin: 30px 0 80px;
+        .aboutme__info {
+          font-size: 0.7em;
           padding-right: 1em;
         }
         img {

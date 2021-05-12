@@ -17,15 +17,15 @@ function AboutMe({ sectionToScroll }) {
             don't miss out on this one.
           </p>
         </div>
-        <div className='aboutme__info'>
-          <div className='aboutme__myInfo'>
-            <p className='aboutme__name'>
+        <div className='aboutme__infoWrapper'>
+          <div className='aboutme__info'>
+            <p>
               Kevin J Ramirez
             </p>
-            <p className='aboutme__email'>
+            <p>
               kevjramirez@yahoo.com
             </p>
-            <p className='aboutme__phone'>
+            <p>
               (787) 430-7478
             </p>
           </div>
