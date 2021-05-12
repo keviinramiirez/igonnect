@@ -1,7 +1,7 @@
 import './IDecideList.css'
 import IDecideBanner from '../../assets/idecide_banner.png'
 import IDecideBackSVG from '../../assets/SVG/idecide_background.svg'
-import IDecideCart from './IDecideCart'
+import IDecideCard from './IDecideCard'
 import iDecideData from './iDecideData'
 import { desktop } from '../../breakpoints/MediaBreakpoint'
 
@@ -33,7 +33,8 @@ function IDecideList() {
         {iDecideBanner()}
         <div className='idecideList__list'>
           {iDecideData.map(({ title, image, context, link }) => (
-            <IDecideCart
+            <IDecideCard
+              key={link}
               title={title}
               image={image}
               context={context}

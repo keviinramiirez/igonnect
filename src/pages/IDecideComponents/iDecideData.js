@@ -12,7 +12,7 @@ const iDecideData = [
   {
     title: 'Vide Ride',
     image: VideRide,
-    context: 'Legacy Management Platform: Immersing financial literacy and forex trading education.',
+    context: 'New Driveshare Concept: 3 ways for drivers to earn. Clients power to choose their vibe.',
     link: 'https://umustsee.net/PMH1CD' //marielairc@gmail.com
   },
   {

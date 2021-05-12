@@ -1,4 +1,4 @@
-// import './IDecideCart.css'
+import './IDecideCard.css'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -17,7 +17,7 @@ const useStyles = makeStyles({
   },
 });
 
-function IDecideCart({ title, image, context, link }) {
+function IDecideCard({ title, image, context, link }) {
   const classes = useStyles();
 
   const width = window.innerWidth
@@ -26,7 +26,7 @@ function IDecideCart({ title, image, context, link }) {
   // const [contextVariant, setContextVariant] = useState((width > 768) ? 'body2' : 'caption')
 
   return (
-    <div className='idecideCart'>
+    <div className='idecideCard'>
       <Card className={classes.root} onClick={() => window.open(link, '_blank')}>
         <CardActionArea>
           <CardMedia
@@ -48,4 +48,4 @@ function IDecideCart({ title, image, context, link }) {
   )
 }
 
-export default IDecideCart
+export default IDecideCard
