@@ -68,7 +68,7 @@ class App extends Component {
             <Route path='/join' exact>
               <Join isMobile={this.state.isMobile} click={this.state.click} />
             </Route>
-            <Route path='/idecides' exact>
+            <Route path='/idecide' exact>
               <IDecides isMobile={this.state.isMobile} click={this.state.click} />
             </Route>
           </Switch>
