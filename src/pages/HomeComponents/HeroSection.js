@@ -9,7 +9,7 @@ function HeroSection({ toScroll, closeMobileMenu }) {
 
   const toChangeNavbarColor = () => {
     closeMobileMenu() //causes navbar to rerender
-    history.push('/idecides')
+    history.push('/idecide')
   }
 
   return (
