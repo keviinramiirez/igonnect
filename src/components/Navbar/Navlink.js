@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './Navlink.css'
-import { isPathSkintech, isPathBillGenius, isPathIDecides, isPathJoin } from '../Util'
+import { isPathSkintech, isPathBillGenius, isPathIDecide, isPathJoin } from '../Util'
 import { lgphone } from '../../breakpoints/MediaBreakpoint'
 
 
@@ -11,7 +11,7 @@ function Navlink({ children, path, onClick }) {
       return '-skintech'
     if (isPathBillGenius())
       return '-bill'
-    if (isPathIDecides())
+    if (isPathIDecide())
       return '-skintech'
     if (isPathJoin())
       return '-join'
@@ -22,7 +22,7 @@ function Navlink({ children, path, onClick }) {
     if (window.innerWidth <= lgphone)
       return '-white'
     console.log('checkLinkText()')
-    return (isPathSkintech() || isPathBillGenius() || isPathIDecides() || isPathJoin())
+    return (isPathSkintech() || isPathBillGenius() || isPathIDecide() || isPathJoin())
       ? '-black'
       : '-white'
   }

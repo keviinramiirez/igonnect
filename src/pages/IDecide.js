@@ -1,6 +1,6 @@
 import IDecideList from "./IDecideComponents/IDecideList"
 
-function IDecides({ isMobile, click }) {
+function IDecide({ isMobile, click }) {
   return (
     <>
       {(isMobile && click)
@@ -13,4 +13,4 @@ function IDecides({ isMobile, click }) {
   )
 }
 
-export default IDecides
+export default IDecide

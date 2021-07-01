@@ -8,7 +8,7 @@ import SkinTech from './pages/SkinTech'
 import IGo from './pages/IGo'
 import BillGenius from './pages/BillGenius'
 import Join from './pages/Join'
-import IDecides from './pages/IDecides'
+import IDecide from './pages/IDecide'
 import { lgphone } from './breakpoints/MediaBreakpoint'
 
 
@@ -68,8 +68,8 @@ class App extends Component {
             <Route path='/join' exact>
               <Join isMobile={this.state.isMobile} click={this.state.click} />
             </Route>
-            <Route path='/idecides' exact>
-              <IDecides isMobile={this.state.isMobile} click={this.state.click} />
+            <Route path='/idecide' exact>
+              <IDecide isMobile={this.state.isMobile} click={this.state.click} />
             </Route>
           </Switch>
         </Router>

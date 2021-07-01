@@ -5,13 +5,13 @@ import IgonnectBlackSvg from '../../assets/SVG/igonnect_logo_black2.svg'
 import Button from '../Button/Button'
 import Navlink from './Navlink'
 import { navHeaders } from './navHeaders'
-import { isPathSkintech, isPathBillGenius, isPathIDecides, isPathJoin } from '../Util'
+import { isPathSkintech, isPathBillGenius, isPathIDecide, isPathJoin } from '../Util'
 import { desktop, tablet, lgphone, phone } from '../../breakpoints/MediaBreakpoint'
 
 
 function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobileMenu }) {
   const blackNavColor = () => {
-    return isPathSkintech() || isPathBillGenius() || isPathIDecides() || isPathJoin()
+    return isPathSkintech() || isPathBillGenius() || isPathIDecide() || isPathJoin()
   }
 
 
