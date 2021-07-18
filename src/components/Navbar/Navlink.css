@@ -38,6 +38,7 @@
 
 
 
+
 @media screen and (max-width: 425px) {
   .nav-link:hover {
     background-color: transparent;
@@ -50,5 +51,21 @@
   li, a {
     font-size: 1.2em !important;
     font-weight: 500 !important;
+  }
+
+  
+  /* #nested-list-subheader {
+    font-size: 1.2em !important
+  }
+  a > .MuiListItem-button {
+    font-size: 0.8em !important
+  } */
+
+  #nested-list-subheader {
+    font-size: 0.8em;
+    color: #F5E051
+  }
+  a > .MuiListItem-button {
+    font-size: 0.9em !important
   }
 }

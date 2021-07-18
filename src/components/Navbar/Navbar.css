@@ -14,6 +14,52 @@
   padding: 30px 7% 30px 10%;
 }
 
+.navbar__items {
+  position: absolute;
+  color: white;
+  font-size: 1.2em;
+}
+
+.toggleMenu__button > .MuiButton-label {
+  font-size: 1.2em;
+  padding: 6px;
+}
+.MuiButtonBase-root.MuiListItem-root {
+  font-size: 0.9em;
+}
+
+/* .MuiList-root.makeStyles-root-15.MuiList-padding.MuiList-subheader {
+
+} */
+
+/* .MuiList-root.MuiList-padding.MuiList-subheader {
+  display: flex;
+  flex-direction: column;
+  color: white
+} */
+
+/* .MuiList-root.MuiList-subheader {
+  display: flex;
+  flex-direction: column;
+  color: white
+} */
+
+
+
+#nested-list-subheader {
+/* .MuiListItem-root.MuiListItem-gutters.MuiListItem-button { */
+  /* margin-top: 3em; */
+  font-size: 1.5em;
+  color: rgba(255, 255, 255, 0.70)
+}
+span.MuiTypography-root {
+  font-size: 1em !important;
+}
+/* .test {
+  font-size: 2.6em !important;
+} */
+
+/* MuiList-root MuiList-padding MuiList-subheader */
 
 .navbar__logo {
   cursor: pointer;
@@ -24,7 +70,6 @@
 .navbar li, .navbar a {
   font-weight: 400;
   font-size: 1.2em;
-  text-decoration: none;
 }
 
 .navbar__menuIconTimes, .navbar__menuIconBars {
@@ -45,13 +90,14 @@ nav {
   align-items: center;
 }
 
-nav .navbar__links {
+.navbar__links, a {
   list-style: none;
+  text-decoration: none;
 }
 
 .navbar__links li {
   display: inline-block;
-  /* padding: 0 8px; */
+  padding: 0 15px;
 }
 
 li a {
@@ -71,8 +117,12 @@ li.navbar__linkButton {
     padding: 35px 6% 10px 10%;
   }
   
-  .navbar li, .navbar a {
+  .navbar li, .navbar a,
+  .toggleMenu__button > .MuiButton-label {
     font-size: 1.1em;
+  }
+  .MuiButtonBase-root.MuiListItem-root {
+    font-size: 0.7em
   }
 }
 
@@ -81,8 +131,12 @@ li.navbar__linkButton {
     padding: 25px 1% 15px 5%;
   }
   
-  .navbar li, .navbar a {
-    font-size: 0.9em;
+  .navbar li, .navbar a,
+  .toggleMenu__button > .MuiButton-label {
+    font-size: 1.1em;
+  }
+  .MuiButtonBase-root.MuiListItem-root {
+    font-size: 0.75em
   }
 }
 
@@ -91,8 +145,12 @@ li.navbar__linkButton {
     padding: 38px 3% 15px 5%;
   }
   
-  .navbar li, .navbar a {
-    font-size: 0.85em;
+  .navbar li, .navbar a,
+  .toggleMenu__button > .MuiButton-label {
+    font-size: 0.9em;
+  }
+  .MuiButtonBase-root.MuiListItem-root {
+    font-size: 0.8em;
   }
 
   .navbar__links li {

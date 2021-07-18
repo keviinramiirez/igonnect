@@ -20,7 +20,7 @@ class App extends Component {
 
     this.state = {
       click: false,
-      isMobile: window.innerWidth <= lgphone,
+      isMobile: window.innerWidth <= lgphone+1,
     }
   }
 
@@ -35,7 +35,6 @@ class App extends Component {
   handleResponsiveness = () => {
     this.setState({ isMobile: window.innerWidth <= lgphone });
   }
-
 
   render() {
     window.addEventListener('resize', this.handleResponsiveness);
