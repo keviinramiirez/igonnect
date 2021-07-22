@@ -1,9 +1,10 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import './Navbar.css'
 import ToggleMenu from './ToggleMenu'
 import IgonnectWhiteSvg from '../../assets/SVG/igonnect_logo_white2.svg'
 import IgonnectBlackSvg from '../../assets/SVG/igonnect_logo_black2.svg'
 import Navlink from './Navlink'
+import Label from './Label'
 import { isPathSkintech, isPathBillGenius, isPathIDecide, isPathJoin, isPathEllev8 } from '../Util'
 import { desktop, tablet, lgphone, phone } from '../../breakpoints/MediaBreakpoint'
 import Paper from '@material-ui/core/Paper';
@@ -26,15 +27,15 @@ const services = [{
   title: 'iGo',
   mobileTitle: 'iGo 4 less',
   path: '/igo',
-  free: true
+  isFree: true
 }, {
   title: 'Bill Genius',
   path: '/billgenius',
-  free: true
+  isFree: true
 }, {
   title: 'Ellev8',
   path: '/ellev8',
-  free: false
+  isFree: false
 }]
 
 const products = [{
@@ -48,9 +49,10 @@ const products = [{
 function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobileMenu }) {
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const [isProductsOpen, setIsProductsOpen] = useState(false)
+  const [itemRefs, setItemRefs] = useState([])
+  const itemEls = useRef(new Array())
 
-  const service = services[0]
-  console.log(service.mobileTitle ? service.mobileTitle : service.title)
+  // const itemRefs = [];
 
   const servicesRef = useRef(null);
   const productsRef = useRef(null);
@@ -117,6 +119,44 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
   }));
 
   const classes = useStyles();
+
+  const test = (i, itemRef, element) => {
+    // console.log('-', itemRef, element)
+    itemEls.current.push(element)
+
+    // if (itemRefs)
+    // if (itemRef && itemRefs.length <= services.length) {
+    //   console.log('itemRef', itemRef)
+
+    //   const newItemRefs = [...itemRefs]
+    //   newItemRefs.push(itemRef.offsetTop)
+    //   setItemRefs(newItemRefs)
+
+    //   // setItemRefs(itemRefs => {
+    //   //   const newItemRefs = itemRefs
+    //   //   // console.log('itemRef.offsetTop', itemRef.offsetTop)
+    //   //   newItemRefs.push(itemRef.offsetTop)
+    //   //   return newItemRefs
+    //   // })
+    //   // setItemRefChanged(i)
+    //   console.log(itemRefs)
+    // }
+    // else 
+    console.log('else')
+  }
+
+  const testRef = (i) => {
+    setTimeout(() => {
+      console.log('i', i, itemEls.current[i])
+      console.log(itemEls.current[i] ? itemEls.current[i].offsetTop : -1)
+      return itemEls.current[i] ? itemEls.current[i].offsetTop : 0
+    }, 1000)
+  }
+
+  // const itemElsCurrent = itemEls.current[0]
+  // useEffect(() => {
+  //   console.log('changed')
+  // }, [itemElsCurrent])
 
   return (
     <>
@@ -223,21 +263,39 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
             aria-labelledby="nested-list-subheader"
             subheader={<ListSubheader component="div" id="nested-list-subheader">Services</ListSubheader>}
             className={classes.root}>
-            {services.map(service => (
-              <Navlink
-                key={service.title}
-                path={service.path}
-                isMobile={true}
-                onClick={closeMobileMenu}
-              >
-                <ListItem button>
-                  <ListItemText
-                    primary={service.mobileTitle ? service.mobileTitle : service.title}
-                    style={{ fontSize: '2.6em !important' }}
-                  />
-                </ListItem>
-              </Navlink>
-            ))}
+            {services.map((service, i) => {
+              // console.log('index', i)
+              return (
+                <Navlink
+                  key={service.title}
+                  path={service.path}
+                  isMobile={true}
+                  onClick={closeMobileMenu}
+                >
+                  {/* <ListItem button ref={item => test(i, item)}> */}
+                  {/* <ListItem button ref={(element) => itemEls.current.push(element)}> */}
+                  {/* <ListItem button ref={(element) => test(i, itemEls, element)}> */}
+                  <ListItem button>
+                    <ListItemText
+                      primary={service.mobileTitle ? service.mobileTitle : service.title}
+                      style={{ fontSize: '2.6em !important' }}
+                    />
+                  </ListItem>
+
+
+                  {/* {service.isFree && itemRefs[i] > -1 && */}
+                  {/* {service.isFree &&
+                    // <span className='freeLabel' style={itemRefs[i] ? { top: itemRefs[i] } : {}}>
+                    // <span className='freeLabel' style={{ top: testRef(itemRefs[i]) }}>
+                    // <span className='freeLabel' style={{ top: testRef(itemEls.current) }}>
+                    // <span className='freeLabel' style={{ top: testRef(i) }}>
+                    //   Free {i}
+                    // </span>
+                    <Label topPos={testRef(i)} />
+                  } */}
+                </Navlink>
+              )
+            })}
           </List>
           <hr />
           <List

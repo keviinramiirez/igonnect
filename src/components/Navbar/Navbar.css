@@ -146,9 +146,35 @@ li.navbar__linkButton {
 
 
 @media screen and (max-width: 425px) {
-  .MuiTypography-root {
+  /* .MuiTypography-root {
+    padding-left: 16px;
+  } */
+
+  #nested-list-subheader {
+    font-size: 1.1em;
+    color: #F5E051
+  }
+
+  span.MuiTypography-root {
+    font-size: 1.4em !important;
     padding-left: 16px;
   }
+
+  a > .MuiListItem-button {
+    font-size: 0.9em !important
+  }
+
+  /* .MuiList-root.makeStyles-root-63.MuiList-padding.MuiList-subheader {
+    margin-bottom: 3em;
+  }
+  a > span.freeLabel {
+    position: absolute;
+    top: 250px;
+    left: 0;
+    color: #F5E051;
+    font-size: 1.1em;
+  } */
+
   .navbar header {
     position: static;
     padding-top: 0;

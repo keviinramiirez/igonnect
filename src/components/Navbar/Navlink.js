@@ -32,17 +32,16 @@ function Navlink({ children, path, onClick, isMobile }) {
 
 
   useEffect(() => {//eslint-disable-line
-    console.log('pasandp por quie', window.innerWidth <= lgphone, window.innerWidth, lgphone)
     if (window.innerWidth <= lgphone)
       setLinkColor('white')
-    else 
-    setLinkColor('black')
+    else
+      setLinkColor('black')
   })
 
   return (
     <NavLink exact to={path}
-      style={{ 
-        color: isMobile ? 'white' : 'black', 
+      style={{
+        color: isMobile ? 'white' : 'black',
         width: isMobile ? '100%' : '',
       }}
       onClick={onClick}

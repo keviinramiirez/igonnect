@@ -11,8 +11,8 @@ function PribSection() {
   const pribPng = () => {
     const innerWidth = window.innerWidth;
     let width = 550, height = 437;
-    if (innerWidth <= phone) {
-      width -= 300; height -= 260;
+    if (innerWidth <= 350) {
+      width -= 250; height -= 210;
     }
     else if (innerWidth <= lgphone) {
       width -= 200; height -= 180;
@@ -56,7 +56,15 @@ function PribSection() {
               <h1>Technology that works <span className='prib__forYou'>for you</span></h1>
             </div>
             <div className='modern__lightContext'>
-              <p>Our technologies are build around The PRIB.</p>
+              {/* <p>
+                Builds you a business <strong>globally</strong> in a systematic
+                way with an ecosystem of different products
+                and services from multiple industries.
+              </p> */}
+              <p>
+                Builds you a <strong>global business</strong> with
+                an ecosystem of different products and services from multiple industries.
+              </p>
             </div>
           </div>
         </div>
