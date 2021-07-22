@@ -12,13 +12,16 @@
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     color: black;
-    @include media('<=lgphone') {
+    @include media('<=800px') {
+      left: 6%
+    }
+    @include media('<=500px') {
       position: static;
       top: 0;
       left: 0;
       -ms-transform: none;
       transform: none;
-      padding-top: 4em;
+      padding-top: 6em;
     }
 
     .skintech__heroTitle {
@@ -27,25 +30,63 @@
         font-size: 6.5em;
         // font-size: 5vw;
         color: #4F1AE2;
+        height: 120px;
       }
       .glove {
         font-size: 6.2em;
         // font-size: 5.3vw;
         color: #25D8F6; 
-        // padding-top: -10px;
       }
     }
-    .skintech__heroSubtitle {
+    .skintech__heroText {
       font-size: 1.5em;
       // font-size: 1.2vw;
-      line-height: 2.2em;
+      line-height: 2em;
       font-weight: 300;
       padding-bottom: 1em;
     }
-    .skintech__heroSubtitle > p > span {
+
+
+
+
+
+
+    // .skintech__textHeader {
+    //   font-size: 0.7em;
+    //   font-weight: 400;
+    // }
+
+    // .skintech__textSubheader {
+    //   font-size: 0.7em;
+    //   font-weight: 200;
+    // }
+    
+    // .skintech__textHeader > span {
+    //   color: #460edf;
+    //   font-weight: 500;
+    // }
+
+    .skintech__textSubheader {
+      font-size: 0.8em;
+      font-weight: 600;
+    }
+
+    .skintech__textHeader {
+      font-size: 0.7em;
+      font-weight: 200;
+    }
+    
+    .skintech__textHeader > span {
       color: #460edf;
       font-weight: 500;
     }
+    
+
+
+
+
+
+
     .skintech__buttons {
       margin-top: 1em;
       display: flex;
@@ -56,56 +97,100 @@
       .skintech__heroTitle {
         .protective {
           // font-size: 6.5em;
-          font-size: 7vw;
+          font-size: 7.3vw;
           // margin-bottom: 0.1em;
+          height: 100px;
+
         }
         .glove {
-          // font-size: 6.2em;
-          font-size: 6.6vw;
+          font-size: 6.7vw;
         }
       }
-      .skintech__heroSubtitle {
-        // font-size: 1.5em;
-        font-size: 2.05vw;
-        font-weight: 200;
-        line-height: 2.1em;
+
+      .skintech__textSubheader {
+        font-size: 1.7vw;
+      }
+  
+      .skintech__textHeader {
+        font-size: 1.5vw;
       }
     }
 
-    @include media('<1280px', '<=600px') {
+    @include media('<1280px', '<=1050px') {
+      .skintech__heroTitle {
+        .protective { height: 80px }
+      }
+    }
+
+    @include media('<1050px', '<=800px') {
       .skintech__heroTitle {
         .protective {
-          font-size: 8vw;
+          font-size: 9vw;
+          height: 60px;
         }
         .glove {
-          font-size: 7.5vw;
+          font-size: 8.5vw;
         }
       }
-      .skintech__heroSubtitle {
-        font-size: 2.5vw;
+      .skintech__heroText {
+        line-height: 1.5em;
+      }
+
+      .skintech__textSubheader {
+        font-size: 2vw;
+      }
+  
+      .skintech__textHeader {
+        font-size: 1.8vw;
+      }
+
+      .skintech__buttons {
+        margin-top: 0;
       }
     }
 
-    @include media('<600px', '<=lgphone') {
+    @include media('<800px', '<=500px') {
       text-align: center;
       .skintech__heroTitle {
         .protective {
-          font-size: 10vw;
+          font-size: 42px;
         }
         .glove {
-          font-size: 9.5vw;
+          font-size: 42px;
         }
       }
-      .skintech__heroSubtitle {
-        font-size: 4.5vw;
-        line-height: 2em;
-        font-weight: 300;
-        margin-top: 0.5em;
+
+      .skintech__textSubheader {
+        font-size: 14px;
       }
+  
+      .skintech__textHeader {
+        font-size: 12px;
+        font-weight: 300;
+      }
+
       .skintech__buttons {
         justify-content: center;
-        margin-top: 0.5em;
+        margin-top: 0em;
       }
+    }
+  }
+
+  @include media('<500px', '<=425px') {
+    text-align: center;
+
+    .skintech__textSubheader {
+      font-size: 11px !important;
+    }
+
+    .skintech__textHeader {
+      font-size: 10px !important;
+      font-weight: 300;
+    }
+
+    .skintech__buttons {
+      justify-content: center;
+      margin-top: 0em;
     }
   }
 
@@ -121,23 +206,21 @@
     transform: rotate(-10deg);
   }
 
-  @include media('<=lgphone') {
+  @include media('<=800px') {
+    .skintech__img {
+      position: absolute;
+      left: 76%;
+      top: 54%;
+    }
+  }
+
+  @include media('<800px', '<=500px') {
     .skintech__img {
       position: absolute;
       left: 48%;
       bottom: 50%;
-      // transform: translate(5%, -50%);
-      // transform: none;
     }
   }
-
-  // @include media('<1280px') {
-
-  // }
-
-  // @include media('<1500px', '<=tablet') {
-
-  // }
 }
 
 
@@ -242,15 +325,15 @@
 //           // padding-top: -10px;
 //         }
 //       }
-//       .skintech__heroSubtitle {
+//       .skintech__heroText {
 //         font-size: 1.5em;
 //         // font-size: 1.2vw;
 //         line-height: 2.2em;
 //         font-weight: 300;
 //         padding-bottom: 1em;
 //       }
-//       // .skintech__heroSubtitle > p > span {
-//       //   color: #7E58AF;
+// .skintech__heroText > .skintech__textHeader > span {
+  //       //   color: #7E58AF;
 //       // }
 //       .skintech__buttons {
 //         margin-top: 1em;

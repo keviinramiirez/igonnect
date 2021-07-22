@@ -45,22 +45,6 @@
 } */
 
 
-
-#nested-list-subheader {
-/* .MuiListItem-root.MuiListItem-gutters.MuiListItem-button { */
-  /* margin-top: 3em; */
-  font-size: 1.5em;
-  color: rgba(255, 255, 255, 0.70)
-}
-span.MuiTypography-root {
-  font-size: 1em !important;
-}
-/* .test {
-  font-size: 2.6em !important;
-} */
-
-/* MuiList-root MuiList-padding MuiList-subheader */
-
 .navbar__logo {
   cursor: pointer;
   margin-right: auto;
@@ -162,6 +146,9 @@ li.navbar__linkButton {
 
 
 @media screen and (max-width: 425px) {
+  .MuiTypography-root {
+    padding-left: 16px;
+  }
   .navbar header {
     position: static;
     padding-top: 0;

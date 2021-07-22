@@ -9,6 +9,7 @@ import IGo from './pages/IGo'
 import BillGenius from './pages/BillGenius'
 import Join from './pages/Join'
 import IDecide from './pages/IDecide'
+import Ellev8 from './pages/Ellev8'
 import { lgphone } from './breakpoints/MediaBreakpoint'
 
 
@@ -20,7 +21,7 @@ class App extends Component {
 
     this.state = {
       click: false,
-      isMobile: window.innerWidth <= lgphone+1,
+      isMobile: window.innerWidth <= lgphone + 1,
     }
   }
 
@@ -63,6 +64,9 @@ class App extends Component {
             </Route>
             <Route path='/billgenius' exact>
               <BillGenius isMobile={this.state.isMobile} click={this.state.click} />
+            </Route>
+            <Route path='/ellev8' exact>
+              <Ellev8 isMobile={this.state.isMobile} click={this.state.click} />
             </Route>
             <Route path='/join' exact>
               <Join isMobile={this.state.isMobile} click={this.state.click} />

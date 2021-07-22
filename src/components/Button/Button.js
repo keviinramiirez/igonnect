@@ -7,6 +7,7 @@ import {
   isPathSkintech,
   isPathIgo,
   isPathBillGenius,
+  isPathEllev8
 } from '../Util'
 
 const ZenceButton = ({
@@ -29,6 +30,10 @@ const ZenceButton = ({
     else if (isPathBillGenius()) {
       primary = paletteColors.billPrimary
       secondary = paletteColors.billSecondary
+    }
+    else if (isPathEllev8()) {
+      primary = paletteColors.ellev8Primary
+      secondary = paletteColors.ellev8Primary
     }
 
     return { primary, secondary }
@@ -54,6 +59,7 @@ const ZenceButton = ({
             color={buttonColor}
             onClick={onClick}
             size={checkButtonSize()}
+            className={isPathEllev8() ? 'blackText' : ''}
           >
             {children}
           </Button>

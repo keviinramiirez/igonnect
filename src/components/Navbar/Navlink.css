@@ -53,17 +53,12 @@
     font-weight: 500 !important;
   }
 
-  
-  /* #nested-list-subheader {
-    font-size: 1.2em !important
-  }
-  a > .MuiListItem-button {
-    font-size: 0.8em !important
-  } */
-
   #nested-list-subheader {
-    font-size: 0.8em;
+    font-size: 1.1em;
     color: #F5E051
+  }
+  span.MuiTypography-root {
+    font-size: 1.4em !important;
   }
   a > .MuiListItem-button {
     font-size: 0.9em !important
