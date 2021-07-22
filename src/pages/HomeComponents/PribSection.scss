@@ -39,6 +39,7 @@
     }
     .prib__right {
       .prib__context {
+        width: 380px;
         .prib__thePribContainer {
           color: #F5E051;
           .the {
@@ -54,12 +55,13 @@
     
       .prib__subtitle > h1 {
         line-height: 1.3em;
-        font-weight: 500;
+        font-weight: 600;
         width: 430px;
         padding: -100px 0 10px 0;
         margin-top: -10px;
         font-size: 2.5em;
         .prib__forYou {
+          // color: #F5E051;
           color: #b57cdb;
           font-weight: 600;
         }
@@ -69,6 +71,9 @@
         font-size: 1.3em;
         font-weight: 200;
         padding-top: 11px;
+        // color: #F5E051;
+      }
+      .modern__lightContext > p > strong {
         color: #F5E051;
       }
       
@@ -204,7 +209,7 @@
           font-size: 1.1em;
           font-weight: 200;
           padding-top: 11px;
-          color: #F5E051;
+          // color: #F5E051;
           // width: 380px;
         }
       }
@@ -219,9 +224,9 @@
         // margin-left: -7em;
         // padding-right: 
         text-align: center;
-        width: 100%;
+        // width: 100%;
         .prib__context {
-          // width: 90%;
+          width: 319px;
           h1 > p.prib__thePribContainer {
             .the {
               // font-size: 1.5em;
@@ -260,12 +265,20 @@
             font-size: 3.6vw;
             font-weight: 300;
             padding-top: 11px;
-            color: #F5E051;
+            // color: #F5E051;
             width: 100%;
             p {
               margin: 0;
             }
           }
+        }
+      }
+    }
+
+    @include media('<lgphone', '<=phone') {
+      .prib__right {
+        .prib__context {
+          width: 290px;
         }
       }
     }

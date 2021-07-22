@@ -212,11 +212,15 @@
           }
         }
         .modern__subtitleContext {
+          margin-top: -10px;
           font-size: 0.9em;
         }
       }
+      .modern__subtitleContext {
+        line-height: 2.6em;
+      }
       .modern__right {
-        padding-top: 1em;
+        padding-top: 2.2em;
         .modern__iconText p {
           font-size: 0.9em;
         }
@@ -225,7 +229,7 @@
   }
 
   @include media('<lgphone', '<=phone') {
-    padding: 0 1em 8em 4em;
+    padding: 0 0 8em 0;
     .modern__innerWrapper {
       .modern__left {
         // width: 300px;

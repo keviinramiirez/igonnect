@@ -47,7 +47,7 @@ function ModernizedSection() {
                   onInit={typewriter => {
                     typewriter
                       .changeDelay(100)
-                      .typeString('SHARING')
+                      .typeString('SHARING!')
                       .pauseFor(4500)
                       .deleteAll(100)
                       .changeDelay(100)
@@ -64,7 +64,7 @@ function ModernizedSection() {
               </div>
             </div>
             <p className='modern__secondSentence'>
-              Our patented technologies and get <br />paid while consumers save money.
+              Online business to build generational<br />wealth with perpetual residual income.
             </p>
           </div>
         </div>

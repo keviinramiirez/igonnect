@@ -64,13 +64,14 @@ function SkinTechHero() {
       <div className='skintech__heroContent'>
         <div className='skintech__heroTitle'>
           <p className='protective'>Protective</p>
-          <p className='glove'>Glove</p>
+          <p className='glove'>Foam</p>
         </div>
-        <div className='skintech__heroSubtitle'>
-          <p>
-            <span>100% protection </span>for 4 hours <br />
-                killing bacteria viruses on contact.
-              </p>
+        <div className='skintech__heroText'>
+          <p className='skintech__textSubheader'>Alcohol-free, non-irritating, non-toxic, and safe for kids.</p>
+          <p className='skintech__textHeader'>
+            <span>100% protection </span>for 4 hours
+            killing bacteria viruses on contact.
+          </p>
         </div>
         <div className='skintech__buttons'>
           <div style={{ marginRight: '1em', }}>
@@ -154,7 +155,7 @@ export default SkinTechHero
 //                 <p className='protective'>Protective</p>
 //                 <p className='glove'>Glove</p>
 //               </div>
-//               <div className='skintech__heroSubtitle'>
+//               <div className='skintech__heroText'>
 //                 <p>
 //                   <span>100% protection </span>for four hours <br />
 //                 killing bacteria viruses on contact.
