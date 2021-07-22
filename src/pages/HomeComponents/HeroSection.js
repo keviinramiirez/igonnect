@@ -1,12 +1,20 @@
-import React, { useState, useEffect } from 'react'
-import { Button } from '../../components/Button/Button'
+import React from 'react'
+import Button from '../../components/Button/Button'
 import './HeroSection.scss'
 import GoDiamondVideo from '../../assets/videos/go-diamond-cancun-tease.mp4'
+import { useHistory } from 'react-router-dom'
 
-function HeroSection({ toScroll }) {
+function HeroSection({ toScroll, closeMobileMenu }) {
+  const history = useHistory()
+
+  const toChangeNavbarColor = () => {
+    closeMobileMenu() //causes navbar to rerender
+    history.push('/idecide')
+  }
+
   return (
     <div className='hero__wrapper'>
-      <video autoplay='autoplay' playsinline='playsinline' loop muted style={{ pointerEvents: 'none' }}>
+      <video autoPlay='autoplay' playsInline='playsinline' loop muted style={{ pointerEvents: 'none' }}>
         <source src={GoDiamondVideo} type='video/mp4' />
       </video>
       <div className='hero__innerWrapper'>
@@ -20,15 +28,22 @@ function HeroSection({ toScroll }) {
             <span className='legacy'>legacy</span>
           </p>
         </div>
-        <div className='hero__btns'>
+        <div className='hero__buttons'>
+          <div style={{ marginRight: '1em', }}>
+            <Button
+              buttonVariant='outlined'
+              buttonColor='primary'
+              onClick={toScroll}
+            >
+              About Me
+            </Button>
+          </div>
           <Button
-            buttonStyle='style__transparent'
-            buttonBorder='border__secondary'
-            buttonColor='color__secondary'
-            buttonHover='hover__secondary'
-            onClick={toScroll}
+            buttonVariant='contained'
+            buttonColor='secondary'
+            onClick={toChangeNavbarColor}
           >
-            About Me
+            Interact
           </Button>
         </div>
       </div>

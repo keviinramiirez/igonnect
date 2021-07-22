@@ -1,28 +1,32 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
-import './Navbar.css'
-import { isPathBillGenius, isPathJoinMe } from '../Util'
+import './Navlink.css'
+import { isPathSkintech, isPathBillGenius, isPathIDecide, isPathJoin } from '../Util'
 import { lgphone } from '../../breakpoints/MediaBreakpoint'
 
 
-function Navlink({ children, path, click }) {
+function Navlink({ children, path, onClick }) {
   const checkHoverText = () => {
+    if (isPathSkintech())
+      return '-skintech'
     if (isPathBillGenius())
       return '-bill'
-    else if (isPathJoinMe())
+    if (isPathIDecide())
+      return '-skintech'
+    if (isPathJoin())
       return '-join'
-    else
-      return '';
+    return '';
   }
 
   const checkLinkText = () => {
     if (window.innerWidth <= lgphone)
       return '-white'
-
-    return (isPathBillGenius() || isPathJoinMe())
+    console.log('checkLinkText()')
+    return (isPathSkintech() || isPathBillGenius() || isPathIDecide() || isPathJoin())
       ? '-black'
       : '-white'
   }
+
 
   return (
     <NavLink exact to={path}
@@ -31,6 +35,7 @@ function Navlink({ children, path, click }) {
         text-hover${checkHoverText()} 
         nav-link${checkLinkText()}
       `}
+      onClick={onClick}
       activeClassName={`nav-link-active${checkHoverText()}`}
     >
       {children}

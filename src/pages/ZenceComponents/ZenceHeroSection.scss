@@ -8,168 +8,186 @@
   }
   width: 100%;
   height: 100%;
-  position: fixed;
+  position: absolute;
   box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.4);
   z-index: -1;
 }
 
+.zence__mobileButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  @include media('<1470px', '<=tablet') {
+    margin-top: -7em;
+  }
+  @include media('<tablet', '<=lgphone') {
+    margin-top: -5.5em;
+  }
+  @include media('<lgphone', '<=425px') {
+    margin-top: -4.5em;
+  }
+  @include media('<425px', '<=phone') {
+    margin-top: -4em;
+  }
+}
 
-.zence__wrapper {
-  .zence__transHalfBlack {
-    position: absolute;
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
-    width: 50%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    .zence__heroContentWrapper {
-      display: grid;
-      height: 100vh;
-      .zence__heroContent {
-        place-self: center;
+
+.zence__transHalfBlack {
+  position: absolute;
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  .zence__heroContentWrapper {
+    display: grid;
+    height: 100vh;
+    .zence__heroContent {
+      place-self: center;
+      .zence__heroTitle {
+        font-weight: bold;
+        .wearable {
+          font-size: 6.5em;
+          // font-size: 5vw;
+        }
+        .technology {
+          font-size: 6.2em;
+          // font-size: 5.3vw;
+          color: #b57cdb; 
+        }
+      }
+      .zence__heroSubtitle {
+        font-size: 1.5em;
+        // font-size: 1.2vw;
+        line-height: 2.2em;
+        font-weight: 300;
+        padding-bottom: 1em;
+      }
+      .zence__heroSubtitle > p > span {
+        color: #F5E051;
+      }
+      .zence__buttons {
+        margin-top: 1em;
+        display: flex;
+        flex-direction: row;
+      }
+      
+      @include media('<=1500px') {
         .zence__heroTitle {
-          font-weight: bold;
           .wearable {
-            font-size: 6.5em;
-            // font-size: 5vw;
+            // font-size: 6.5em;
+            font-size: 6.5vw;
+            // margin-bottom: 0.1em;
           }
           .technology {
-            font-size: 6.2em;
-            // font-size: 5.3vw;
-            color: #b57cdb; 
+            // font-size: 6.2em;
+            font-size: 6.1vw;
           }
         }
         .zence__heroSubtitle {
-          font-size: 1.5em;
-          // font-size: 1.2vw;
-          line-height: 2.2em;
-          font-weight: 300;
-          padding-bottom: 1em;
-        }
-        .zence__heroSubtitle > p > span {
-          color: #F5E051;
+          // font-size: 1.5em;
+          font-size: 1.5vw;
+          font-weight: 200;
+          line-height: 2.3em;
         }
         .zence__buttons {
-          margin-top: 1em;
-          display: flex;
-          flex-direction: row;
+          margin-top: 1.2em;
         }
-        
-        @include media('<=1500px') {
-          .zence__heroTitle {
-            .wearable {
-              // font-size: 6.5em;
-              font-size: 6.5vw;
-              // margin-bottom: 0.1em;
-            }
-            .technology {
-              // font-size: 6.2em;
-              font-size: 6.1vw;
-            }
-          }
-          .zence__heroSubtitle {
-            // font-size: 1.5em;
-            font-size: 1.5vw;
-            font-weight: 200;
-            line-height: 2.3em;
-          }
-          .zence__buttons {
-            margin-top: 1.2em;
-          }
-        }
+      }
 
-        @include media('<1500px', '<=tablet') {
-          .zence__heroTitle {
-            margin: 1em 0;
-            .wearable {
-              font-size: 3.2em;
-              // font-size: 6.5vw;
-              // margin-bottom: 0.1em;
-            }
-            .technology {
-              font-size: 3.2em;
-              // font-size: 6.1vw;
-            }
+      @include media('<1500px', '<=tablet') {
+        margin-top: -1em;
+        .zence__heroTitle {
+          margin: 1em 0;
+          .wearable {
+            font-size: 3.2em;
+            // font-size: 6.5vw;
+            // margin-bottom: 0.1em;
           }
-          .zence__heroSubtitle {
-            font-size: 1em;
-            // font-size: 1.5vw;
-            // font-weight: 200;
-            // line-height: 2.5em;
-          }
-          .zence__buttons {
-            justify-content: center;
+          .technology {
+            font-size: 3.2em;
+            // font-size: 6.1vw;
           }
         }
+        .zence__heroSubtitle {
+          font-size: 1em;
+          // font-size: 1.5vw;
+          // font-weight: 200;
+          // line-height: 2.5em;
+        }
+        .zence__buttons {
+          justify-content: center;
+        }
+      }
 
-        @include media('<tablet', '<=lgphone') {
-          .zence__heroTitle {
-            .wearable {
-              font-size: 6vh;
-              // margin-bottom: 0.1em;
-            }
-            .technology {
-              // font-size: 3.2em;
-              font-size: 6vh;
-            }
+      @include media('<tablet', '<=lgphone') {
+        margin-top: -2em;
+        .zence__heroTitle {
+          .wearable {
+            font-size: 6vh;
+            // margin-bottom: 0.1em;
           }
-          .zence__heroSubtitle {
-            // font-size: 0.8em;
-            font-size: 4vw;
-            // font-weight: 200;
-            line-height: 2em;
+          .technology {
+            // font-size: 3.2em;
+            font-size: 6vh;
           }
         }
-        @include media('<lgphone', '<=phone') {
-          .zence__heroTitle {
-            margin-bottom: -10px;
-          }
-          .zence__heroSubtitle {
-            margin-bottom: -10px;
-            line-height: 2em;
-          }
+        .zence__heroSubtitle {
+          // font-size: 0.8em;
+          font-size: 4vw;
+          // font-weight: 200;
+          line-height: 2em;
+        }
+      }
+      @include media('<lgphone', '<=phone') {
+        .zence__heroTitle {
+          margin-bottom: -10px;
+        }
+        .zence__heroSubtitle {
+          margin-bottom: -10px;
+          line-height: 2em;
         }
       }
     }
   }
-  
-  // zence__wrapper
-  @include media('<=tablet') {
-  // @include media('<desktop', '<=tablet') {
-    .zence__transHalfBlack {
-      // position: absolute;
-      position: relative;
+}
+
+// zence__wrapper
+@include media('<=tablet') {
+// @include media('<desktop', '<=tablet') {
+  .zence__transHalfBlack {
+    // position: absolute;
+    position: relative;
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+    text-align: center;
+    // margin:20px;
+    .zence__heroContentWrapper {
+      //https://www.freecodecamp.org/news/how-to-center-anything-with-css-align-a-div-text-and-more/
       height: 50vh;
-      width: 100%;
-      background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
-      text-align: center;
-      // margin:20px;
-      .zence__heroContentWrapper {
-        //https://www.freecodecamp.org/news/how-to-center-anything-with-css-align-a-div-text-and-more/
-        height: 50vh;
-        position: relative;
-      }
+      position: relative;
     }
   }
+}
 
 
-  @include media("<lgphone", "<=355px") {
-    .zence__transHalfBlack {
-      .zence__heroContentWrapper {
-        // left: 8%;
-      }
+@include media("<lgphone", "<=355px") {
+  .zence__transHalfBlack {
+    .zence__heroContentWrapper {
+      // left: 8%;
     }
   }
+}
 
-  @include media("<lgphone", "<=phone") {
-    .zence__transHalfBlack {
-      .zence__heroContentWrapper {
-        .zence__heroContent {
-          .zence__heroSubtitle {
-            font-weight: 200;
-            padding: 0.8em 0 1.4em;
-          }
+@include media("<lgphone", "<=phone") {
+  .zence__transHalfBlack {
+    .zence__heroContentWrapper {
+      .zence__heroContent {
+        .zence__heroSubtitle {
+          font-weight: 200;
+          padding: 0.8em 0 1.4em;
         }
       }
     }

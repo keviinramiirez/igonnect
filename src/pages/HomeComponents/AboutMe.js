@@ -8,7 +8,7 @@ function AboutMe({ sectionToScroll }) {
       <div className='aboutme__innerWrapper'>
         <div className='aboutme__testimonialWrapper'>
           <div className='aboutme__quotesIcon'>
-            <i class="fas fa-quote-left"></i>
+            <i className="fas fa-quote-left"></i>
           </div>
           <p className='aboutme__testimonial'>
             I quantify my hapiness in the number of people who's life I made a little bit better.
@@ -17,19 +17,19 @@ function AboutMe({ sectionToScroll }) {
             don't miss out on this one.
           </p>
         </div>
-        <div className='aboutme__info'>
-          <div className='aboutme__myInfo'>
-            <p className='aboutme__name'>
+        <div className='aboutme__infoWrapper'>
+          <div className='aboutme__info'>
+            <p>
               Kevin J Ramirez
             </p>
-            <p className='aboutme__email'>
-              kevjramirez@igonnect.com
+            <p>
+              kevjramirez@yahoo.com
             </p>
-            <p className='aboutme__phone'>
+            <p>
               (787) 430-7478
             </p>
           </div>
-          <img src={Kevin} alt="Kevin's Picture" />
+          <img src={Kevin} alt="Kevin" />
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import HeroSection from './HomeComponents/HeroSection'
 import PribSection from './HomeComponents/PribSection'
 import ModernizedSection from './HomeComponents/ModernizedSection'
@@ -8,9 +8,11 @@ import ScrollToTop from '../components/ScrollToTop/ScrollToTop'
 import './Home.css'
 
 
-function Home({ isMobile, click }) {
+function Home({ isMobile, click, closeMobileMenu }) {
   const sectionToScroll = useRef(null);
-  const toScroll = () => window.scrollTo({ top: sectionToScroll.current.offsetTop, behavior: 'smooth' })
+  const toScroll = () => {
+    window.scrollTo({ top: sectionToScroll.current.offsetTop, behavior: 'smooth' })
+  }
 
   return (
     <div className='home'>
@@ -18,7 +20,7 @@ function Home({ isMobile, click }) {
         ? null
         : <>
           <ScrollToTop />
-          <HeroSection toScroll={toScroll} />
+          <HeroSection toScroll={toScroll} closeMobileMenu={closeMobileMenu} />
           <PribSection />
           <ModernizedSection />
           <BenefitsSection />

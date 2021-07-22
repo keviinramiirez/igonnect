@@ -1,0 +1,322 @@
+.join__wrapper {
+  height: 100vh;
+  background-color: #ecf0f3;
+  /* background-color: #dde1e7; */
+  /* background-color: #fff; */
+  background-image: linear-gradient(to bottom right, #fff, #dde1e7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 8em 0 8em 0; */
+}
+
+.join__card {
+  width: 35%;
+  margin-top: 4em;
+  padding: 40px;
+  background: #ecf0f3;
+  border-radius: 25px;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+}
+
+.join__card h1 {
+  color: #6F1AA1;
+  text-align: center;
+}
+
+.join__fields {
+  width: 100%;
+  /* padding: 0px 10px 10px 10px; */
+}
+
+.join__fields input {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 18px;
+  padding: 20px 0 20px 1.6em;
+  /* padding: 20px 0 20px 0; */
+  border-radius: 300px;
+  /* padding-left: 1.5em; */
+  /* margin-right: 1.5em; */
+  width: 95%;
+}
+
+.join__name, .join__email {
+  /* margin: 0 8px 8px; */
+  margin: 1.5em 0;
+  border-radius: 300px;
+  box-shadow: inset 2px 2px 5px #cbced1, inset -5px -5px 10px #fff;
+  transition: all -.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+  /* width: 95%; */
+}
+
+
+.join__name input:focus,
+.join__email input:focus {
+  /* box-shadow: inset 3px 3px 4px #babecc, inset -3px -3px 5px #fff; */
+  /* box-shadow: inset 1px 0 0 #6F1AA1, inset 4px 0 0 #fff; */
+  /* box-shadow: inset 1px 0 0 #babecc, inset 3px 0 0 #6F1AA1; */
+  /* box-shadow: -5px -5px -20px #fff, 5px 5px 20 px #babecc; */
+  /* box-shadow: 1px 0 0 #babecc, 3px 0 0 #6F1AA1; */
+  /* box-shadow: inset 1px 0 0 #babecc, inset 3px 0 0 #fff; */
+  box-shadow: inset 4px 0 0 #ccc, inset 1px 0 0 #fff;
+  /* width: 95%; */
+}
+
+
+
+
+/* -------- Form Control Select Field -------- */
+
+label.MuiInputLabel-formControl {
+  top: -15.6px;
+  font-size: 1.2em;
+  left: 12px;
+  padding: 16px;
+}
+.MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl.MuiInputLabel-animated.MuiInputLabel-shrink.MuiFormLabel-filled {
+  top: -30.6px;
+  color: #6F1AA1;
+}
+
+.MuiInputBase-formControl.MuiInput-formControl {
+  margin-top: 2px;
+  margin-right: 24px;
+  /* margin-left: 30px; */
+  padding: 16px;
+}
+
+.MuiFormControl-root {
+  box-shadow: inset 2px 2px 4px #babecc, inset -3px -3px 5px #fff;
+}
+
+div#demo-simple-select:focus {
+  background-color: #ecf0f3;
+  /* background-color: red; */
+}
+
+.MuiFormLabel-root.Mui-focused {
+  color: #6F1AA1 !important;
+  top: -30px;
+}
+
+/* -------- End of Form Control Select Field -------- */
+
+
+
+
+.join__fields .join__inputBox {
+  position: relative;
+  margin: 1em 0 0.4em;
+}
+
+.join__inputBox textarea {
+  background-color: #ecf0f3;
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 10px 10px 30px;
+  border: none;
+  outline: none;
+  width: 97%;
+  box-shadow: inset 2px 2px 4px #babecc, inset -3px -3px 5px #fff;
+  border-radius: 10px;
+}
+
+.join__inputBox span {
+  position: absolute;
+  top: 2px;
+  left: 16px;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  pointer-events: none;
+  transition: 0.5s;
+  color: #666;
+}
+
+.join__inputBox textarea:focus ~ span,
+.join__inputBox textarea:valid ~ span 
+{
+  color: #6F1AA1;
+  font-size: 12px;
+  transform: translateY(-26px);
+}
+
+
+
+
+
+
+
+
+.join__button {
+  border: 0;
+  outline: 0;
+  font-size: 1.1em;
+  font-weight: 600;
+  /* border-radius: 300px; */
+  background-color: #e3e5e7;
+  /* background-color: #ecf0f3; */
+  text-shadow: 1px 1px 0 #fff;
+  box-shadow: inset -5px -5px -20px #fff, inset 5px 5px 20 px #babecc;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.join__button_disabled {
+  opacity: 0.5;
+  cursor: default;
+  box-shadow: none !important;
+}
+
+
+
+.join__button i {
+  padding-right: 1em;
+}
+
+
+.join__button:hover {
+  box-shadow: -2px -2px 5px #fff, 2px 2px 5px #babecc;
+}
+
+/* .join__button button:active {
+  box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
+} */
+
+
+
+
+
+.join__wrapper .join__buumInfo {
+  width: 50%;
+  padding-left: 4em;
+  display: flex;
+  flex-direction: column;
+  margin-top: 4em;
+}
+
+.join__buumInfo .join__box  {
+  position: relative;
+  padding: 25px 0;
+  display: flex;
+}
+
+.join__box .join__boxIcon {
+  min-width: 64px;
+  height: 64px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 25px;
+  color: #555;
+  box-shadow: -2px -2px 5px #fff, 2px 2px 5px #babecc;
+}
+
+.join__boxText {
+  display: flex;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: black;
+  flex-direction: column;
+}
+
+.join__boxText h3 {
+  margin-bottom: 10px;
+}
+
+
+.join__boxText h3 {
+  font-weight: 600;
+  color: #6F1AA1;
+}
+
+.join__boxText p {
+  font-size: 14px;
+  font-weight: 500;
+  font-size: 0.8em;
+  color: #555;
+  width: 90%;
+}
+
+@media (max-width: 1024px) {
+  .join__wrapper {
+    padding: 130px 50px 50px;
+    height: 100%;
+    flex-direction: column-reverse;
+  }
+  .join__wrapper .join__buumInfo {
+    margin-bottom: 50px;
+    margin-top: 0;
+  }
+  .join__wrapper .join__buumInfo {
+    width: 100%;
+    padding: 0px;
+  }
+
+  .join__wrapper .join__boxText p {
+    text-align: start;
+    color: #555;
+    width: 100%;
+  }
+
+  .join__card {
+    width: 90%;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 425px) {
+  .join__wrapper .join__buumInfo {
+    width: 120%;
+    margin-top: -2em;
+  }
+
+  .join__wrapper .join__boxText {
+    margin-left: 15px;
+  }
+
+  .join__wrapper .join__boxText p {
+    width: 100%;
+    font-size: 0.8em;
+  }
+
+  .join__fields {
+    width: 105%;
+    /* padding: 0px 10px 10px 10px; */
+  }
+  
+  input:focus {
+    box-shadow: inset 2px 2px 4px #babecc, inset -3px -3px 5px #fff;
+    width: 90.5%;
+  }
+}
+
+
+
+
+
+/* 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.neu {
+  height: 300px;
+  width: 300px;
+  background: #dde1e7;
+  border-radius: 25px;
+  box-shadow: inset -3px -3px 5px #ffffff70, inset 3px 3px 15px #00000070;
+}
+ */
