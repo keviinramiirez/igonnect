@@ -55,8 +55,16 @@ function PribSection() {
             <div className='prib__subtitle'>
               <h1>Technology that works <span className='prib__forYou'>for you</span></h1>
             </div>
-            <div className='modern__lightContext'>
-              <p>Our technologies are build around The PRIB.</p>
+            <div className='prib__lightContext'>
+              {/* <p>
+                Builds you a business <strong>globally</strong> in a systematic
+                way with an ecosystem of different products
+                and services from multiple industries.
+              </p> */}
+              <p>
+                Builds you a <strong>global business</strong> with
+                an ecosystem of different products and services from multiple industries.
+              </p>
             </div>
           </div>
         </div>

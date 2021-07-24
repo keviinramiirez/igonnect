@@ -65,10 +65,13 @@
         }
       }
     
-      .modern__lightContext {
+      .prib__lightContext {
         font-size: 1.3em;
         font-weight: 200;
         padding-top: 11px;
+        width: 500px;
+      }
+      .prib__lightContext > p > strong {
         color: #F5E051;
       }
       
@@ -92,8 +95,9 @@
           }
         }
       
-        .modern__lightContext {
+        .prib__lightContext {
           font-size: 1em;
+          width: 400px;
         }
       }
 
@@ -114,14 +118,14 @@
           font-size: 1.9em;
         }
       
-        .modern__lightContext {
-          font-size: 0.9em;
+        .prib__lightContext {
+          font-size: 1em;
+          width: 315px;
         }
       }
 
       @include media('<desktop', '<=tablet') {
         .prib__context {
-          // width: 300px;
           .prib__thePribContainer {
             .the {
               font-size: 0.8em;
@@ -133,40 +137,45 @@
         }
       
         .prib__subtitle > h1 {
-          width: 200px;
+          width: inherit;
           font-size: 1.4em;
+          width: 270px
         }
       
-        .modern__lightContext {
+        .prib__lightContext {
           font-size: 0.8em;
           font-weight: 400;
           white-space: wrap !important;
         }
       }
 
-    //   @include media('<desktop', '<=720px') { 
-    //     .prib__context {
-    //       .prib__thePribContainer {
-    //         .the {
-    //           font-size: 1em;
-    //         }
-    //         .prib {
-    //           font-size: 2.2em;
-    //         }
-    //       }
-    //     }
+      @include media('<tablet', '<=800px') { 
+        padding-bottom: 2em;
+        .prib__context {
+          .prib__thePribContainer {
+            .the {
+              font-size: 1em;
+            }
+            .prib {
+              font-size: 2.2em;
+            }
+          }
+        }
       
-    //     .prib__subtitle > h1 {
-    //       font-size: 1.5em;
-    //     }
+        .prib__subtitle > h1 {
+          font-size: 1.5em;
+          width: 350px;
+        }
       
-    //     .modern__lightContext {
-    //       font-size: 0.9em;
-    //       font-weight: 300;
-    //       white-space: wrap !important;
-    //     }
-    //   }
+        .prib__lightContext {
+          font-size: 0.9em;
+          font-weight: 300;
+          white-space: wrap !important;
+        }
+      }
     }
+
+
 
     @include media('<tablet', '<=homecolumns') {
       flex-direction: column-reverse;
@@ -200,7 +209,7 @@
           // font-size: 6.7vw;
         }
       
-        .modern__lightContext {
+        .prib__lightContext {
           font-size: 1.1em;
           font-weight: 200;
           padding-top: 11px;
@@ -211,7 +220,6 @@
     }
     
     @include media('<homecolumns', '<=lgphone') {
-      align-items: center;
       // width: 100%;
       .prib__right {
         padding-left: 0;
@@ -255,13 +263,14 @@
             }
           }
       
-          .modern__lightContext {
+          .prib__lightContext {
             // font-size: 0.9em;
             font-size: 3.6vw;
             font-weight: 300;
             padding-top: 11px;
             color: #F5E051;
             width: 100%;
+            // padding: 0 10px 3em;
             p {
               margin: 0;
             }

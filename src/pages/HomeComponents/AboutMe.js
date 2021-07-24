@@ -11,10 +11,14 @@ function AboutMe({ sectionToScroll }) {
             <i className="fas fa-quote-left"></i>
           </div>
           <p className='aboutme__testimonial'>
-            I quantify my hapiness in the number of people who's life I made a little bit better.
+            {/* I quantify my hapiness in the number of people who's life I made a little bit better.
             At <span className='aboutme__ibuumerang'>iBuumerang</span>, the philosophy of giving back is at the heart of our culture. Your brain
             is designed to keep you confortable against "too good to be true" opportunities, but
-            don't miss out on this one.
+            don't miss out on this one. */}
+            Soy ingeniero de profesión. Amo lo que hago, pero quería más. La oportunidad con 
+            <span className='aboutme__ibuumerang'> iBuumerang </span>elevó mi éxito a nivel mundial   
+            y estoy ready para eliminar las mentalidades negativas que has tenido toda tu vida  
+            y conectarte al éxito con la mejor empresa del mundo.
           </p>
         </div>
         <div className='aboutme__infoWrapper'>
