@@ -65,6 +65,12 @@ export const paletteColors = {
     dark: '#0e4f99',
     contrastText: '#fff',
   },
+  ellev8Primary: {
+    light: '#8affc8',
+    main: '#26dd88',
+    dark: '#2ab675',
+    contrastText: '#000',
+  },
 }
 
 export const themeShape = {

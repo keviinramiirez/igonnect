@@ -11,8 +11,8 @@ function PribSection() {
   const pribPng = () => {
     const innerWidth = window.innerWidth;
     let width = 550, height = 437;
-    if (innerWidth <= phone) {
-      width -= 300; height -= 260;
+    if (innerWidth <= 350) {
+      width -= 250; height -= 210;
     }
     else if (innerWidth <= lgphone) {
       width -= 200; height -= 180;

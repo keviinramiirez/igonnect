@@ -13,3 +13,8 @@
 .color__white > button.MuiButtonBase-root.MuiButton-root > span.MuiButton-label {
   color: white !important;
 }
+
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedSecondary.blackText > span.MuiButton-label {
+  color: black !important
+}

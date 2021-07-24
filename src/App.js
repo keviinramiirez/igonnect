@@ -8,7 +8,8 @@ import SkinTech from './pages/SkinTech'
 import IGo from './pages/IGo'
 import BillGenius from './pages/BillGenius'
 import Join from './pages/Join'
-import IDecides from './pages/IDecides'
+import IDecide from './pages/IDecide'
+import Ellev8 from './pages/Ellev8'
 import { lgphone } from './breakpoints/MediaBreakpoint'
 
 
@@ -20,7 +21,7 @@ class App extends Component {
 
     this.state = {
       click: false,
-      isMobile: window.innerWidth <= lgphone,
+      isMobile: window.innerWidth <= lgphone + 1,
     }
   }
 
@@ -35,7 +36,6 @@ class App extends Component {
   handleResponsiveness = () => {
     this.setState({ isMobile: window.innerWidth <= lgphone });
   }
-
 
   render() {
     window.addEventListener('resize', this.handleResponsiveness);
@@ -65,11 +65,14 @@ class App extends Component {
             <Route path='/billgenius' exact>
               <BillGenius isMobile={this.state.isMobile} click={this.state.click} />
             </Route>
+            <Route path='/ellev8' exact>
+              <Ellev8 isMobile={this.state.isMobile} click={this.state.click} />
+            </Route>
             <Route path='/join' exact>
               <Join isMobile={this.state.isMobile} click={this.state.click} />
             </Route>
-            <Route path='/idecides' exact>
-              <IDecides isMobile={this.state.isMobile} click={this.state.click} />
+            <Route path='/idecide' exact>
+              <IDecide isMobile={this.state.isMobile} click={this.state.click} />
             </Route>
           </Switch>
         </Router>

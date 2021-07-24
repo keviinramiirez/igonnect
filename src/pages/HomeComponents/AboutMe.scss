@@ -5,9 +5,7 @@
   z-index: 1;
   position: relative;
   background: #f7f7f7;
-  // background: #4F0E74;
-  height: 70vh;
-  margin-top: -2em;
+  height: 65vh;
   @include media('<=desktop') {
     height: 55vh;
   }
@@ -125,7 +123,7 @@
       }
       
       .aboutme__infoWrapper {
-        margin: 35px -60px 0 0;
+        margin: 35px -60px 30px 0;
         .aboutme__info {
           font-size: 0.8em;
           padding-right: 1em;

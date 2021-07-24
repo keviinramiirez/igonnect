@@ -1,0 +1,9 @@
+.toggleMenu {
+    padding: 1em;
+}
+
+.toggleMenu__button {
+    padding: 1em;
+}
+
+/* MuiButtonBase-root MuiButton-root MuiButton-text toggleMenu__button */
