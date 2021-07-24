@@ -56,12 +56,10 @@
       .prib__subtitle > h1 {
         line-height: 1.3em;
         font-weight: 600;
-        width: 430px;
         padding: -100px 0 10px 0;
         margin-top: -10px;
         font-size: 2.5em;
         .prib__forYou {
-          // color: #F5E051;
           color: #b57cdb;
           font-weight: 600;
         }
@@ -75,6 +73,7 @@
       }
       .prib__lightContext > p > strong {
         color: #F5E051;
+        font-weight: 600;
       }
       
       @include media('<=1300px') {

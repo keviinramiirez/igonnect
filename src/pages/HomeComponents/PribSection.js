@@ -27,7 +27,8 @@ function PribSection() {
       width -= 250; height -= 240;
     }
     else if (innerWidth <= desktop) {
-      width -= 180; height -= 200;
+      console.log('siiip')
+      width -= 200; height -= 190;
     }
     else if (innerWidth <= heroVideoCutout) {
       width -= 50; height -= 50;
@@ -62,7 +63,7 @@ function PribSection() {
                 and services from multiple industries.
               </p> */}
               <p>
-                Builds you a <strong>global business</strong> with
+                Builds you a <span>global business</span> with
                 an ecosystem of different products and services from multiple industries.
               </p>
             </div>
