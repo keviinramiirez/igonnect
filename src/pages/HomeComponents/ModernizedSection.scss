@@ -46,11 +46,12 @@
       .modern__subtitleContext {
         // font-weight: 300;
         .modern_firstSentence {
-          padding-top: 0.5em;
+          // padding-top: 0.4em;
           display: flex;
           white-space: nowrap !important;
           width: 360px;
-          // font-size: 1em;
+          font-size: 1.3em;  
+          font-weight: 500;        
           .prib__typewriter {
             display: inline;
             margin: 0 0.5em; 
@@ -58,9 +59,11 @@
             font-weight: 600;
           }
         }
-        // .modern__secondSentence {
-        //   max-width: 360px;
-        // }
+        .modern__secondSentence {
+          // max-width: 360px;
+          font-size: 1.3em;
+          font-weight: 200;
+        }
       }
     }
     .modern__right {
@@ -93,7 +96,8 @@
     padding: 0 5em 8em 4em;
   }
   @include media('<=1300px', '<=desktop') {
-    padding: 0 4em 8em 4em;
+    // padding: 0 4em 8em 4em;
+    padding: 0 5em 8em 5em;
     .modern__innerWrapper {
       // display: flex;
       justify-content: space-between;
@@ -137,6 +141,18 @@
 
   @include media('<=desktop', '<1000px') {
     padding: 0 6em 8em 6em;
+    .modern__innerWrapper {
+      .modern__left {
+        .modern__subtitleContext {
+          .modern_firstSentence {
+            font-size: 1.2em;
+          }
+          .modern__secondSentence {
+            font-size: 1.1em;
+          }
+        }
+      }
+    }
   }
   @include media('<=1000px', '<=720px') {
     .modern__innerWrapper {
@@ -148,6 +164,23 @@
           }
           .modern__modernized {
             font-size: 2.7em;
+          }
+        }
+        .modern__subtitleContext {
+          .modern_firstSentence {
+            font-size: 1.2em;  
+            // font-weight: 500;        
+            .prib__typewriter {
+              display: inline;
+              margin: 0 0.5em; 
+              color: #F5E051;
+              font-weight: 600;
+            }
+          }
+          .modern__secondSentence {
+            // max-width: 360px;
+            font-size: 1.3em;
+            font-weight: 200;
           }
         }
       }
@@ -184,8 +217,7 @@
             padding-top: 0.3em;
           }
           .modern__secondSentence {
-            line-height: 2em;
-            margin-top: 0;
+            font-size: 1.2em;
           }
         }
       }
