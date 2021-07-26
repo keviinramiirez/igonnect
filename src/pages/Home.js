@@ -10,9 +10,9 @@ import './Home.css'
 
 function Home({ isMobile, click, closeMobileMenu }) {
   const sectionToScroll = useRef(null);
-  const toScroll = () => {
-    window.scrollTo({ top: sectionToScroll.current.offsetTop, behavior: 'smooth' })
-  }
+  // const toScroll = () => {
+  //   window.scrollTo({ top: sectionToScroll.current.offsetTop, behavior: 'smooth' })
+  // }
 
   return (
     <div className='home'>
@@ -20,7 +20,7 @@ function Home({ isMobile, click, closeMobileMenu }) {
         ? null
         : <>
           <ScrollToTop />
-          <HeroSection toScroll={toScroll} closeMobileMenu={closeMobileMenu} />
+          <HeroSection closeMobileMenu={closeMobileMenu} />
           <PribSection />
           <ModernizedSection />
           <BenefitsSection />
