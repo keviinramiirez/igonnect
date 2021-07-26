@@ -16,13 +16,13 @@ const benefitColumns = [
     Icon: MembershipIcon,
     iconAlt: 'Free Membership Icon',
     title: 'Free Membership',
-    context: 'Exclusive lifetime access to all the amazing technologies and huge savings'
+    context: 'Exclusive lifetime access to all the amazing technologies and life savings'
   },
   {
     Icon: CharityIcon,
     iconAlt: 'Charity Icon',
     title: 'Charity',
-    context: 'The BüüM Foundation provides 300K+ servings of nutrition to underprivileged children'
+    context: 'The BüüM Foundation has provided over 105 million servings to children in 89 countries'
   },
   {
     Icon: FlexibilityIcon,
