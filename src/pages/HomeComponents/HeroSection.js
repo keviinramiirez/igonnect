@@ -4,12 +4,16 @@ import './HeroSection.scss'
 import GoDiamondVideo from '../../assets/videos/go-diamond-cancun-tease.mp4'
 import { useHistory } from 'react-router-dom'
 
-function HeroSection({ toScroll, closeMobileMenu }) {
+function HeroSection({ closeMobileMenu }) {
   const history = useHistory()
 
   const toChangeNavbarColor = () => {
     closeMobileMenu() //causes navbar to rerender
     history.push('/idecide')
+  }
+
+  const goToPoweredByIgo = () => {
+    window.open("https://poweredbyigo.com/igo/TSA5861509", "_blank")
   }
 
   return (
@@ -33,17 +37,17 @@ function HeroSection({ toScroll, closeMobileMenu }) {
             <Button
               buttonVariant='outlined'
               buttonColor='primary'
-              onClick={toScroll}
+              onClick={toChangeNavbarColor}
             >
-              About Me
+              Interact
             </Button>
           </div>
           <Button
             buttonVariant='contained'
             buttonColor='secondary'
-            onClick={toChangeNavbarColor}
+            onClick={goToPoweredByIgo}
           >
-            Interact
+            Powered By iGo
           </Button>
         </div>
       </div>
