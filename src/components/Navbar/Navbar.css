@@ -20,6 +20,17 @@
   font-size: 1.2em;
 }
 
+.navbar__label {
+  position: absolute;
+  /* top: 6px; */
+  left: 2%;
+  font-size: 7px;
+  background-color: #F5E051;
+  border-radius: 100px;
+  padding: 0px 4px;
+  color: black;
+}
+
 .toggleMenu__button > .MuiButton-label {
   font-size: 1.2em;
   padding: 6px;
