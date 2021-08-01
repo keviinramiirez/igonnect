@@ -1,27 +1,21 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import MenuItem from '@material-ui/core/MenuItem';
+import MenuList from '@material-ui/core/MenuList';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import ListSubheader from '@material-ui/core/ListSubheader';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 import './Navbar.css'
 import ToggleMenu from './ToggleMenu'
 import IgonnectWhiteSvg from '../../assets/SVG/igonnect_logo_white2.svg'
 import IgonnectBlackSvg from '../../assets/SVG/igonnect_logo_black2.svg'
 import Navlink from './Navlink'
-import Label from './Label'
-import { isPathSkintech, isPathBillGenius, isPathIDecide, isPathJoin, isPathEllev8 } from '../Util'
-import { desktop, tablet, lgphone, phone } from '../../breakpoints/MediaBreakpoint'
-import Paper from '@material-ui/core/Paper';
-import MenuItem from '@material-ui/core/MenuItem';
-import MenuList from '@material-ui/core/MenuList';
-
-
-import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-
-
-
-import { makeStyles } from '@material-ui/core/styles';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+import { isPathSkintech, isPathBillGenius, isPathIDecide, isPathJoin } from '../Util'
+import { desktop, tablet, lgphone } from '../../breakpoints/MediaBreakpoint'
 
 const services = [{
   title: 'iGo',
@@ -49,11 +43,6 @@ const products = [{
 function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobileMenu }) {
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const [isProductsOpen, setIsProductsOpen] = useState(false)
-  const [itemRefs, setItemRefs] = useState([])
-  const itemEls = useRef(new Array())
-
-  // const itemRefs = [];
-
   const servicesRef = useRef(null);
   const productsRef = useRef(null);
 
@@ -93,13 +82,11 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
   }
 
   const handleServicesRef = () => {
-    console.log('handleServicesRef')
     setIsServicesOpen(true)
     setIsProductsOpen(false)
   }
 
   const handleProductsRef = () => {
-    console.log('handleProductsRef')
     setIsServicesOpen(false)
     setIsProductsOpen(true)
   }
@@ -120,44 +107,6 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
 
   const classes = useStyles();
 
-  const test = (i, itemRef, element) => {
-    // console.log('-', itemRef, element)
-    itemEls.current.push(element)
-
-    // if (itemRefs)
-    // if (itemRef && itemRefs.length <= services.length) {
-    //   console.log('itemRef', itemRef)
-
-    //   const newItemRefs = [...itemRefs]
-    //   newItemRefs.push(itemRef.offsetTop)
-    //   setItemRefs(newItemRefs)
-
-    //   // setItemRefs(itemRefs => {
-    //   //   const newItemRefs = itemRefs
-    //   //   // console.log('itemRef.offsetTop', itemRef.offsetTop)
-    //   //   newItemRefs.push(itemRef.offsetTop)
-    //   //   return newItemRefs
-    //   // })
-    //   // setItemRefChanged(i)
-    //   console.log(itemRefs)
-    // }
-    // else 
-    console.log('else')
-  }
-
-  const testRef = (i) => {
-    setTimeout(() => {
-      console.log('i', i, itemEls.current[i])
-      console.log(itemEls.current[i] ? itemEls.current[i].offsetTop : -1)
-      return itemEls.current[i] ? itemEls.current[i].offsetTop : 0
-    }, 1000)
-  }
-
-  // const itemElsCurrent = itemEls.current[0]
-  // useEffect(() => {
-  //   console.log('changed')
-  // }, [itemElsCurrent])
-
   return (
     <>
       <div
@@ -175,15 +124,20 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
             style={{ top: (servicesRef?.current.offsetTop + servicesRef?.current.offsetHeight), left: servicesRef?.current.offsetLeft + 7 }}>
             <Paper>
               <MenuList onClick={closeMenuItems}>
-                {services.map(serviceItem => (
-                  <Navlink
-                    key={serviceItem.title}
-                    path={serviceItem.path}
-                    onClick={closeMobileMenu}
-                  >
-                    <MenuItem>{serviceItem.title}</MenuItem>
-                  </Navlink>
-                ))}
+                {services.map(serviceItem => {
+                  let topPos = (serviceItem.title === 'iGo') ? 10 : 50;
+                  return (
+                    <Navlink
+                      key={serviceItem.title}
+                      path={serviceItem.path}
+                      onClick={closeMobileMenu}
+                    >
+                      <MenuItem>{serviceItem.title}</MenuItem>
+                      {/* <p className='navbar__label' style={{ top: labelTop }}>free</p> */}
+                      {serviceItem.isFree && <p className='navbar__label' style={{ top: topPos }}>free</p>}
+                    </Navlink>
+                  )
+                })}
               </MenuList>
             </Paper>
           </div>
@@ -230,8 +184,6 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
                 </div>
               </div>
           }
-          {/* {(click || showRegularNavbar) && ( */}
-          {/* {((!click && showRegularNavbar) || (!click && !showRegularNavbar)) && ( */}
           {(!click && showRegularNavbar) && (
             <nav>
               <ul className='navbar__links'>
@@ -263,8 +215,7 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
             aria-labelledby="nested-list-subheader"
             subheader={<ListSubheader component="div" id="nested-list-subheader">Services</ListSubheader>}
             className={classes.root}>
-            {services.map((service, i) => {
-              // console.log('index', i)
+            {services.map((service) => {
               return (
                 <Navlink
                   key={service.title}
@@ -272,27 +223,13 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
                   isMobile={true}
                   onClick={closeMobileMenu}
                 >
-                  {/* <ListItem button ref={item => test(i, item)}> */}
-                  {/* <ListItem button ref={(element) => itemEls.current.push(element)}> */}
-                  {/* <ListItem button ref={(element) => test(i, itemEls, element)}> */}
                   <ListItem button>
                     <ListItemText
                       primary={service.mobileTitle ? service.mobileTitle : service.title}
                       style={{ fontSize: '2.6em !important' }}
                     />
+                    {service.isFree && <p className='navbar__label' style={{ top: 0, left: 20, fontSize: '10px' }}>free</p>}
                   </ListItem>
-
-
-                  {/* {service.isFree && itemRefs[i] > -1 && */}
-                  {/* {service.isFree &&
-                    // <span className='freeLabel' style={itemRefs[i] ? { top: itemRefs[i] } : {}}>
-                    // <span className='freeLabel' style={{ top: testRef(itemRefs[i]) }}>
-                    // <span className='freeLabel' style={{ top: testRef(itemEls.current) }}>
-                    // <span className='freeLabel' style={{ top: testRef(i) }}>
-                    //   Free {i}
-                    // </span>
-                    <Label topPos={testRef(i)} />
-                  } */}
                 </Navlink>
               )
             })}

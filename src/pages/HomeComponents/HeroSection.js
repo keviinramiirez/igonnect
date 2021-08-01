@@ -1,6 +1,7 @@
 import React from 'react'
-import Button from '../../components/Button/Button'
 import './HeroSection.scss'
+import Button from '../../components/Button/Button'
+import SonarButton from '../../components/Button/SonarButton'
 import GoDiamondVideo from '../../assets/videos/go-diamond-cancun-tease.mp4'
 import { useHistory } from 'react-router-dom'
 
@@ -37,18 +38,11 @@ function HeroSection({ closeMobileMenu }) {
             <Button
               buttonVariant='outlined'
               buttonColor='primary'
-              onClick={toChangeNavbarColor}
-            >
+              onClick={toChangeNavbarColor}>
               Interact
             </Button>
           </div>
-          <Button
-            buttonVariant='contained'
-            buttonColor='secondary'
-            onClick={goToPoweredByIgo}
-          >
-            Powered By iGo
-          </Button>
+          <SonarButton text='POWERED BY IGO' />
         </div>
       </div>
     </div>

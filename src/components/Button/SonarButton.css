@@ -1,0 +1,78 @@
+.sonar-wrapper {
+  position: relative;
+  z-index: 0;
+}
+
+.sonar-emitter {
+  position: relative;
+  /* margin: 32px auto; */
+  width: 220px;
+  height: 61.6px;
+  border-radius: 100px;
+  /* background-color: #8529b9; */
+  background-color: #5d0d8b;
+  text-align: center;
+  cursor: pointer !important;
+}
+
+.sonar-emitter > p {
+  position: relative;
+  top: 32%;
+  color: white;
+  text-transform: capitalize !important;
+}
+
+.sonar-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  /* background-color: #8529b9; */
+  background-color: #5d0d8b;
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.sonar-wave1 {
+  animation: sonarWave 2s linear infinite;
+}
+
+.sonar-wave2 {
+  animation: sonarWave 2s 1s linear infinite;
+}
+
+/* .sonar-wave3 {
+  animation: sonarWave 1.5s 1s linear infinite;
+} */
+
+@keyframes sonarWave {
+  from {
+    opacity: 0.9;
+  }
+  to {
+    transform:  scale(1.15, 1.8);
+    opacity: 0;
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .sonar-emitter {
+    font-size: 14px;
+    width: 175px;
+    height: 56px;
+  }
+  .sonar-emitter > p { top: 30% }
+}
+
+@media screen and (max-width: 425px) {
+  .sonar-emitter {
+    font-size: 13px;
+    width: 150px;
+    height: 40.4px;
+  }
+  .sonar-emitter > p { top: 27.5% }
+}
