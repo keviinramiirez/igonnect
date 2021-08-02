@@ -4,6 +4,7 @@ import Button from '../../components/Button/Button'
 import SonarButton from '../../components/Button/SonarButton'
 import GoDiamondVideo from '../../assets/videos/go-diamond-cancun-tease.mp4'
 import { useHistory } from 'react-router-dom'
+import HomeBackground from '../../assets/home-back.jpeg'
 
 function HeroSection({ closeMobileMenu }) {
   const history = useHistory()
@@ -19,9 +20,14 @@ function HeroSection({ closeMobileMenu }) {
 
   return (
     <div className='hero__wrapper'>
-      <video autoPlay='autoplay' playsInline='playsinline' loop muted style={{ pointerEvents: 'none' }}>
+      {/* <video autoPlay='autoplay' playsInline='playsinline' loop muted style={{ pointerEvents: 'none' }}>
         <source src={GoDiamondVideo} type='video/mp4' />
-      </video>
+      </video> */}
+      {window.innerWidth > 425 ? (
+        <video autoPlay='autoplay' playsInline='playsinline' loop muted style={{ pointerEvents: 'none' }}>
+          <source src={GoDiamondVideo} type='video/mp4' />
+        </video>)
+        : <img src={HomeBackground} alt='hero background' />}
       <div className='hero__innerWrapper'>
         <div className='hero__content'>
           <p>

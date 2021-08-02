@@ -16,7 +16,7 @@ const benefitColumns = [
     Icon: MembershipIcon,
     iconAlt: 'Free Membership Icon',
     title: 'Free Membership',
-    context: 'Exclusive lifetime access to all the amazing technologies and huge savings'
+    context: 'Exclusive lifetime access to all the amazing technologies and life savings'
   },
   {
     Icon: CharityIcon,
