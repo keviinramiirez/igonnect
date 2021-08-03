@@ -48,7 +48,10 @@ function HeroSection({ closeMobileMenu }) {
               Interact
             </Button>
           </div>
-          <SonarButton text='POWERED BY IGO' />
+          <SonarButton
+            text='POWERED BY IGO'
+            onClick={goToPoweredByIgo}
+          />
         </div>
       </div>
     </div>
