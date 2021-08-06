@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import HeroSection from './HomeComponents/HeroSection'
 import PribSection from './HomeComponents/PribSection'
 import ModernizedSection from './HomeComponents/ModernizedSection'

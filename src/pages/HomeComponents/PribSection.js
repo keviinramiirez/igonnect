@@ -5,7 +5,7 @@ import './PribSection.scss'
 // import PribPng from '../../assets/prib_trans.png'
 import PribPng from '../../assets/prib.PNG'
 // import { ReactComponent as PribSvg } from '../../assets/SVG/prib3.svg'
-import { phone, lgphone, tablet, desktop, heroVideoCutout } from '../../breakpoints/MediaBreakpoint'
+import { lgphone, tablet, desktop, heroVideoCutout } from '../../breakpoints/MediaBreakpoint'
 
 function PribSection() {
   const pribPng = () => {
