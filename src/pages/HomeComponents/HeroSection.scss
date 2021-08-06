@@ -123,5 +123,9 @@ $phone: 360px;
       width: 100%;
     }
   }
+
+  @include media('<1000px', '<=lgphone') {
+    height: 50vh;
+  }
 }
 
