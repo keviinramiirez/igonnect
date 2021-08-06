@@ -98,7 +98,7 @@ $phone: 360px;
     }
     @include media('<homecolumns', '<=lgphone') {
       top: 14%;
-      left: 6%;
+      left: 10%;
       .hero__content {
         .succeed { font-size: 2.2em }
         .without-selling { font-size: 1em }
@@ -109,10 +109,14 @@ $phone: 360px;
         margin-top: 0;
       }
     }
+    @include media('<lgphone', '<=phone') {
+      top: 14%;
+      left: 6%;
+    }
   }
 
   @include media('<desktop', '<=1000px') {
-    height: 70vh;
+    height: 60vh;
     width: 100%;
     video {
       height: 70vh;
@@ -120,3 +124,4 @@ $phone: 360px;
     }
   }
 }
+

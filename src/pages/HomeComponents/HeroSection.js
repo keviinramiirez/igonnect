@@ -1,7 +1,6 @@
 import React from 'react'
 import './HeroSection.scss'
 import Button from '../../components/Button/Button'
-import SonarButton from '../../components/Button/SonarButton'
 import GoDiamondVideo from '../../assets/videos/go-diamond-cancun-tease.mp4'
 import { useHistory } from 'react-router-dom'
 import HomeBackground from '../../assets/home-back.jpeg'
@@ -15,6 +14,7 @@ function HeroSection({ closeMobileMenu }) {
   }
 
   const goToPoweredByIgo = () => {
+    console.log('fuck')
     window.open("https://poweredbyigo.com/igo/TSA5861509", "_blank")
   }
 
@@ -40,18 +40,17 @@ function HeroSection({ closeMobileMenu }) {
           </p>
         </div>
         <div className='hero__buttons'>
-          <div style={{ marginRight: '1em', }}>
-            <Button
-              buttonVariant='outlined'
-              buttonColor='primary'
-              onClick={toChangeNavbarColor}>
-              Interact
-            </Button>
-          </div>
-          <SonarButton
-            text='POWERED BY IGO'
-            onClick={goToPoweredByIgo}
-          />
+          <Button
+            buttonVariant='outlined'
+            buttonColor='primary'
+            onClick={toChangeNavbarColor}>
+            Interact
+          </Button>
+          <Button
+            isPoweredByIgo={true}
+            onClick={goToPoweredByIgo}>
+            POWERED BY IGO
+          </Button>
         </div>
       </div>
     </div>

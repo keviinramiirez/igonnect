@@ -53,7 +53,7 @@ function JoinHero() {
   const [email, setEmail] = useState('kevjramirez@yahoo.com')
   const [about, setAbout] = useState('');
   const [message, setMessage] = useState('MESSAGE')
-  const [test, setTest] = useState('NO VALUE')
+  // const [test, setTest] = useState('NO VALUE')
 
   const handleNameChange = e => {
     setName(e.target.value);
