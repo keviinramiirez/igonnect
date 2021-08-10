@@ -232,7 +232,6 @@ li.navbar__linkButton {
     text-align: center;
     margin-top: 17px;
     border-radius: 100px;
-    animation: MoveUpDown 1s linear infinite;
   }
   @-webkit-keyframes upDown {
     0% { transform: translateY(0); }
