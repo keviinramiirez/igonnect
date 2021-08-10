@@ -39,23 +39,6 @@
   font-size: 0.9em;
 }
 
-/* .MuiList-root.makeStyles-root-15.MuiList-padding.MuiList-subheader {
-
-} */
-
-/* .MuiList-root.MuiList-padding.MuiList-subheader {
-  display: flex;
-  flex-direction: column;
-  color: white
-} */
-
-/* .MuiList-root.MuiList-subheader {
-  display: flex;
-  flex-direction: column;
-  color: white
-} */
-
-
 .navbar__logo {
   cursor: pointer;
   margin-right: auto;
@@ -66,6 +49,7 @@
   font-weight: 400;
   font-size: 1.2em;
 }
+
 
 .navbar__menuIconTimes, .navbar__menuIconBars {
   display: none;
@@ -90,9 +74,17 @@ nav {
   text-decoration: none;
 }
 
+i.fa-info-circle,
+i.fa-angle-double-right {
+  color: #F5E051;
+  margin-left: 6px;
+  font-size: larger;
+  /* font-size: 2em */
+}
+
 .navbar__links li {
   display: inline-block;
-  padding: 0 15px;
+  padding: 0 20px 0 0px;
 }
 
 li a {
@@ -119,23 +111,31 @@ li.navbar__linkButton {
   .MuiButtonBase-root.MuiListItem-root {
     font-size: 0.7em
   }
+  
+  .navbar__links li {
+    padding-right: 0px;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .navbar header {
-    padding: 25px 1% 15px 5%;
+    padding: 35px 3% 15px 5%;
   }
   
   .navbar li, .navbar a,
   .toggleMenu__button > .MuiButton-label {
-    font-size: 1.1em;
+    font-size: 1em;
   }
   .MuiButtonBase-root.MuiListItem-root {
     font-size: 0.75em
   }
+
+  .MuiButton-endIcon.MuiButton-iconSizeMedium {
+    margin-left: 2px
+  }
 }
 
-@media screen and (max-width: 528px) {
+@media screen and (max-width: 560px) {
   .navbar header {
     padding: 38px 3% 15px 5%;
   }
@@ -149,18 +149,13 @@ li.navbar__linkButton {
   }
 
   .navbar__links li {
-    display: inline-block;
-    margin: 0 -14px;
+    /* margin: 0 -6px; */
   }
 }
 
 
 
 @media screen and (max-width: 425px) {
-  /* .MuiTypography-root {
-    padding-left: 16px;
-  } */
-
   #nested-list-subheader {
     font-size: 1.1em;
     color: #F5E051
@@ -168,27 +163,16 @@ li.navbar__linkButton {
 
   span.MuiTypography-root {
     font-size: 1.4em !important;
-    padding-left: 16px;
+    padding-left: 36px;
   }
 
   a > .MuiListItem-button {
     font-size: 0.9em !important
   }
 
-  /* .MuiList-root.makeStyles-root-63.MuiList-padding.MuiList-subheader {
-    margin-bottom: 3em;
-  }
-  a > span.freeLabel {
-    position: absolute;
-    top: 250px;
-    left: 0;
-    color: #F5E051;
-    font-size: 1.1em;
-  } */
-
   .navbar header {
     position: static;
-    padding-top: 0;
+    padding-top: 10px;
     justify-content: center;
   }
 
@@ -196,19 +180,19 @@ li.navbar__linkButton {
     display: block;
     font-size: 1.8rem;
     cursor: pointer;
+    z-index: 1000;
   }
   
   .navbar__menuIconTimes {
     position: absolute;
-    top: 25px;
-    right: 35px;
-    /* top: 37px;
-    right: 54px; */
+    top: 28px;
+    right: 32px;
   }
 
   .navbar__logoBars {
     width: 89%;
     height: 200px;
+    /* margin-top: 26px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -233,5 +217,36 @@ li.navbar__linkButton {
     height: 5vh;
     padding-top: 5em;
     width: 100%;
+  }
+
+  .MuiListSubheader-gutters {
+    padding-left: 33px;
+  }
+
+  .navbar__learnMore {
+    background-color: #F5E051;
+    color: black;
+    width: 83%;
+    margin: auto;
+    height: 55px;
+    text-align: center;
+    margin-top: 17px;
+    border-radius: 100px;
+    animation: MoveUpDown 1s linear infinite;
+  }
+  @-webkit-keyframes upDown {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+  }
+  @keyframes upDown {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+  }
+
+  .navbar__learnMore > p {
+    font-weight: 500;
+    font-size: medium;
+    padding-top: 15px;
+    cursor: pointer;
   }
 }

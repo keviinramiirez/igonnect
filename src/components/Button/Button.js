@@ -15,7 +15,9 @@ const ZenceButton = ({
   buttonVariant,
   buttonColor,
   onClick,
-  isPoweredByIgo
+  style,
+  isPoweredByIgo,
+  isNavbarButton
 }) => {
   const checkPalette = () => {
     let primary = paletteColors.defaultPrimary
@@ -56,13 +58,14 @@ const ZenceButton = ({
       {isPoweredByIgo && <button type="submit" class="glowButton" onClick={onClick}>{children}</button>}
       {!isPoweredByIgo &&
         <ThemeProvider theme={igonnectTheme}>
-          <div className={`${checkButtonSize()} ${isWhiteLabelColor()}`} style={{ display: 'inline' }}>
+          <div className={`${checkButtonSize(isNavbarButton)} ${isWhiteLabelColor()}`}
+            style={{ display: 'inline', ...style }}>
             <Button
               variant={buttonVariant}
               color={buttonColor}
               onClick={onClick}
-              size={checkButtonSize()}
-              className={isPathEllev8() ? 'blackText' : ''}
+              size={checkButtonSize(isNavbarButton)}
+              className={`${isPathEllev8() ? 'blackText' : ''} ${isNavbarButton ? 'upDownAnimation' : ''}`}
             >
               {children}
             </Button>
