@@ -14,7 +14,6 @@ function HeroSection({ closeMobileMenu }) {
   }
 
   const goToPoweredByIgo = () => {
-    console.log('fuck')
     window.open("https://poweredbyigo.com/igo/TSA5861509", "_blank")
   }
 
