@@ -12,9 +12,9 @@ function AboutMe({ sectionToScroll }) {
           </div>
           <p className='aboutme__testimonial'>
             Soy ingeniero de profesión. Amo lo que hago, pero quería más. La oportunidad con
-            <span className='aboutme__ibuumerang'> iBuumerang </span>elevó mi éxito a nivel global
-            generando ingreso residual en multiples industrias sin dejar lo que estoy haciendo.
-            ¿Quieres alcanzar libertad financiera? Te enseñamos a obtener resultados rápido!
+            <span className='aboutme__ibuumerang'> iBuumerang </span>elevó mi éxito y el de muchos latinos
+            a nivel global generando ingreso residual en multiples industrias sin tener que vender nada.
+            ¿Deseas alcanzar libertad financiera? Te adiestramos a obtener resultados immediatos!
           </p>
         </div>
         <div className='aboutme__infoWrapper'>

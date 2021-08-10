@@ -19,9 +19,6 @@
   color: black !important
 }
 
-
-
-
 .glowButton {
   border: 1px transparent;
   -webkit-border-radius: 100px;
@@ -32,7 +29,7 @@
   padding: 8px 30px;
   text-align: center;
   text-decoration: none;
-  margin-left: 35px;
+  margin-left: 30px;
   font-weight: 600;
   -webkit-animation: glowing 1300ms infinite;
   -moz-animation: glowing 1300ms infinite;
@@ -89,4 +86,17 @@
     background-color: #531f72;
     box-shadow: 0 0 3px #531f72;
   }
+}
+
+.upDownAnimation:hover {
+  animation: MoveUpDown 0.3s ease-out forwards;
+}
+
+@-webkit-keyframes MoveUpDown {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-3px); }
+}
+@keyframes MoveUpDown {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-3px); }
 }
