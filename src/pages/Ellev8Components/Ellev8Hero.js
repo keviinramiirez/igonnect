@@ -18,48 +18,46 @@ function Ellev8Hero() {
   }
 
   return (
-    <>
-      <div className='ellev8'>
-        <img className='ellev8__backgroundImg' src={Ellev8BackSvg} alt='Ellev8 Background' />
-        {/* <div className='ellev8__img'>
+    <div className='ellev8' style={{ height: (window.outerHeight + 'px') }}>
+      <img className='ellev8__backgroundImg' src={Ellev8BackSvg} alt='Ellev8 Background' />
+      {/* <div className='ellev8__img'>
         <img src={Ellev8BackSvg} alt='Ellev8 Background' />
       </div> */}
 
-        <div className='ellev8__content'>
-          <img src={Ellev8IconSvg} alt='Ellev8 Icon' />
-          <p className='ellev8__header'>FOREX TRADING LEGACY</p>
-          <p className='ellev8__subheader'>{(window.innerWidth > 425) ? 'Technology that t' : 'T'}eaches you how to multiply your money</p>
-          {/* <p className='ellev8__text'>Exploit the market that moves around <strong>$6.6 trillion per day</strong>!</p> */}
-          <p className='ellev8__text'>Exploit the market that moves around <span>$6.6 trillion per day</span></p>
+      <div className='ellev8__content'>
+        <img src={Ellev8IconSvg} alt='Ellev8 Icon' />
+        <p className='ellev8__header'>FOREX TRADING LEGACY</p>
+        <p className='ellev8__subheader'>{(window.innerWidth > 425) ? 'Technology that t' : 'T'}eaches you how to multiply your money</p>
+        {/* <p className='ellev8__text'>Exploit the market that moves around <strong>$6.6 trillion per day</strong>!</p> */}
+        <p className='ellev8__text'>Exploit the market that moves around <span>$6.6 trillion per day</span></p>
 
-          <div className='ellev8__buttons'>
-            <div style={{ marginRight: '1em' }}>
-              <Button
-                buttonVariant='outlined'
-                buttonColor='primary'
-                onClick={() => window.open("https://www.ellev8.com/", "_blank")}
-              >
-                Learn More
-              </Button>
-            </div>
+        <div className='ellev8__buttons'>
+          <div style={{ marginRight: '1em' }}>
             <Button
-              buttonVariant='contained'
-              buttonColor='secondary'
-              onClick={() => showVideoHandler(true)}
+              buttonVariant='outlined'
+              buttonColor='primary'
+              onClick={() => window.open("https://www.ellev8.com/", "_blank")}
             >
-              Watch Video
+              Learn More
             </Button>
-            {videoIsShown && (
-              <VideoCard
-                videoIsShown={videoIsShown}
-                onClose={hideVideoHandler}
-                VideoLink={Ellev8Video}
-              />
-            )}
           </div>
+          <Button
+            buttonVariant='contained'
+            buttonColor='secondary'
+            onClick={() => showVideoHandler(true)}
+          >
+            Watch Video
+          </Button>
+          {videoIsShown && (
+            <VideoCard
+              videoIsShown={videoIsShown}
+              onClose={hideVideoHandler}
+              VideoLink={Ellev8Video}
+            />
+          )}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
