@@ -1,27 +1,22 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import './Navbar.css'
-import ToggleMenu from './ToggleMenu'
-import IgonnectWhiteSvg from '../../assets/SVG/igonnect_logo_white2.svg'
-import IgonnectBlackSvg from '../../assets/SVG/igonnect_logo_black2.svg'
-import Navlink from './Navlink'
-import Label from './Label'
-import { isPathSkintech, isPathBillGenius, isPathIDecide, isPathJoin, isPathEllev8 } from '../Util'
-import { desktop, tablet, lgphone, phone } from '../../breakpoints/MediaBreakpoint'
+import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
-
-
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-
-
-
-import { makeStyles } from '@material-ui/core/styles';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import ToggleMenu from './ToggleMenu'
+import IgonnectWhiteSvg from '../../assets/SVG/igonnect_logo_white2.svg'
+import IgonnectBlackSvg from '../../assets/SVG/igonnect_logo_black2.svg'
+import Navlink from './Navlink'
+import { isPathSkintech, isPathBillGenius, isPathIDecide, isPathJoin } from '../Util'
+import { desktop, tablet, lgphone } from '../../breakpoints/MediaBreakpoint'
+import Button from '../Button/Button'
 
 const services = [{
   title: 'iGo',
@@ -49,11 +44,6 @@ const products = [{
 function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobileMenu }) {
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const [isProductsOpen, setIsProductsOpen] = useState(false)
-  const [itemRefs, setItemRefs] = useState([])
-  const itemEls = useRef(new Array())
-
-  // const itemRefs = [];
-
   const servicesRef = useRef(null);
   const productsRef = useRef(null);
 
@@ -93,25 +83,26 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
   }
 
   const handleServicesRef = () => {
-    console.log('handleServicesRef')
     setIsServicesOpen(true)
     setIsProductsOpen(false)
   }
 
   const handleProductsRef = () => {
-    console.log('handleProductsRef')
     setIsServicesOpen(false)
     setIsProductsOpen(true)
   }
 
   const useStyles = makeStyles((theme) => ({
-    root: {
-      width: '100vh',
+    nav: {
+      width: '100%',
       flexDirection: 'column',
       alignItems: 'baseline',
       justifyContent: 'space-between',
       zIndex: '1',
-      borderRadius: '1px'
+      borderRadius: '1px',
+    },
+    paddingTop: {
+      paddingTop: '24px'
     },
     nested: {
       paddingLeft: theme.spacing(4),
@@ -120,151 +111,142 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
 
   const classes = useStyles();
 
-  const test = (i, itemRef, element) => {
-    // console.log('-', itemRef, element)
-    itemEls.current.push(element)
-
-    // if (itemRefs)
-    // if (itemRef && itemRefs.length <= services.length) {
-    //   console.log('itemRef', itemRef)
-
-    //   const newItemRefs = [...itemRefs]
-    //   newItemRefs.push(itemRef.offsetTop)
-    //   setItemRefs(newItemRefs)
-
-    //   // setItemRefs(itemRefs => {
-    //   //   const newItemRefs = itemRefs
-    //   //   // console.log('itemRef.offsetTop', itemRef.offsetTop)
-    //   //   newItemRefs.push(itemRef.offsetTop)
-    //   //   return newItemRefs
-    //   // })
-    //   // setItemRefChanged(i)
-    //   console.log(itemRefs)
-    // }
-    // else 
-    console.log('else')
+  const learnMore = () => {
+    window.open("https://keviinramiirez.ibuumerang.com", "_blank")
   }
-
-  const testRef = (i) => {
-    setTimeout(() => {
-      console.log('i', i, itemEls.current[i])
-      console.log(itemEls.current[i] ? itemEls.current[i].offsetTop : -1)
-      return itemEls.current[i] ? itemEls.current[i].offsetTop : 0
-    }, 1000)
-  }
-
-  // const itemElsCurrent = itemEls.current[0]
-  // useEffect(() => {
-  //   console.log('changed')
-  // }, [itemElsCurrent])
 
   return (
     <>
-      <div
-        className='navbar'
-        style={click ? {
-          backgroundColor: '#242222',
-          height: (window.outerHeight + 'px'),
-          overflow: 'hidden',
-          top: '0'
-        }
-          : {}
-        }>
-        {isServicesOpen &&
-          <div className='navbar__items'
-            style={{ top: (servicesRef?.current.offsetTop + servicesRef?.current.offsetHeight), left: servicesRef?.current.offsetLeft + 7 }}>
-            <Paper>
-              <MenuList onClick={closeMenuItems}>
-                {services.map(serviceItem => (
-                  <Navlink
-                    key={serviceItem.title}
-                    path={serviceItem.path}
-                    onClick={closeMobileMenu}
-                  >
-                    <MenuItem>{serviceItem.title}</MenuItem>
-                  </Navlink>
-                ))}
-              </MenuList>
-            </Paper>
-          </div>
-        }
-        {isProductsOpen &&
-          <div className='navbar__items'
-            style={{ top: (productsRef?.current.offsetTop + productsRef?.current.offsetHeight), left: productsRef?.current.offsetLeft + 7 }}>
-            <Paper>
-              <MenuList onClick={closeMenuItems}>
-                {products.map(serviceItem => (
-                  <Navlink
-                    key={serviceItem.title}
-                    path={serviceItem.path}
-                    onClick={closeMobileMenu}
-                  >
-                    <MenuItem>{serviceItem.title}</MenuItem>
-                  </Navlink>
-                ))}
-              </MenuList>
-            </Paper>
-          </div>
-        }
-        <header>
-          {
-            click ?
-              <div
-                className='navbar__menuIcon navbar__menuIconTimes'
-                onClick={() => handleClick()}>
-                <i className={'fas fa-times'} style={{ color: 'white' }} />
+      {
+        !(click && !showRegularNavbar) && (
+          <div
+            className='navbar'
+            style={click ? {
+              backgroundColor: '#242222',
+              height: (window.outerHeight + 'px'),
+              overflow: 'hidden',
+              top: '0'
+            } : {}
+            }>
+            {isServicesOpen &&
+              <div className='navbar__items'
+                style={{ top: (servicesRef?.current.offsetTop + servicesRef?.current.offsetHeight), left: servicesRef?.current.offsetLeft + 7 }}>
+                <Paper>
+                  <MenuList onClick={closeMenuItems}>
+                    {services.map(serviceItem => {
+                      let topPos = (serviceItem.title === 'iGo') ? 10 : 50;
+                      return (
+                        <Navlink
+                          key={serviceItem.title}
+                          path={serviceItem.path}
+                          onClick={closeMobileMenu}
+                        >
+                          <MenuItem>{serviceItem.title}</MenuItem>
+                          {serviceItem.isFree && <p className='navbar__label' style={{ top: topPos }}>free</p>}
+                        </Navlink>
+                      )
+                    })}
+                  </MenuList>
+                </Paper>
               </div>
-              :
-              <div className='navbar__logoBars'>
-                <div className='navbar__logo' onClick={closeMenuItems}>
-                  <Navlink path='/' onClick={closeMobileMenu}>
-                    {checkLogoSize()}
-                  </Navlink>
-                </div>
-                <div
-                  className='navbar__menuIcon navbar__menuIconBars'
-                  onClick={() => handleClick()}
-                  style={{ color: (blackNavColor() && !click) ? 'black' : 'white' }}
-                >
-                  <i className={'fas fa-bars'} />
-                </div>
+            }
+            {isProductsOpen &&
+              <div className='navbar__items'
+                style={{ top: (productsRef?.current.offsetTop + productsRef?.current.offsetHeight), left: productsRef?.current.offsetLeft + 7 }}>
+                <Paper>
+                  <MenuList onClick={closeMenuItems}>
+                    {products.map(serviceItem => (
+                      <Navlink
+                        key={serviceItem.title}
+                        path={serviceItem.path}
+                        onClick={closeMobileMenu}
+                      >
+                        <MenuItem>{serviceItem.title}</MenuItem>
+                      </Navlink>
+                    ))}
+                  </MenuList>
+                </Paper>
               </div>
-          }
-          {/* {(click || showRegularNavbar) && ( */}
-          {/* {((!click && showRegularNavbar) || (!click && !showRegularNavbar)) && ( */}
-          {(!click && showRegularNavbar) && (
-            <nav>
-              <ul className='navbar__links'>
-                <li onClick={() => closeMenuItems()}>
-                  <ToggleMenu
-                    title='services'
-                    menuItems={services}
-                    onMenuOpen={handleServicesRef}
-                    menuRef={servicesRef}
-                    Icon={isServicesOpen ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />} />
-                </li>
-                <li onClick={() => closeMenuItems()}>
-                  <ToggleMenu
-                    title='products'
-                    menuItems={services}
-                    onMenuOpen={handleProductsRef}
-                    menuRef={productsRef}
-                    Icon={isProductsOpen ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />} />
-                </li>
-              </ul>
-            </nav>
-          )}
-        </header>
-      </div>
+            }
+            <header>
+              {
+                click ?
+                  <div
+                    className='navbar__menuIcon navbar__menuIconTimes'
+                    onClick={() => handleClick()}>
+                    <i className={'fas fa-times'} style={{ color: 'white' }} />
+                  </div>
+                  :
+                  <div className='navbar__logoBars'>
+                    <div className='navbar__logo' onClick={closeMenuItems}>
+                      <Navlink path='/' onClick={closeMobileMenu} style={{ height: '53px' }}>
+                        {checkLogoSize()}
+                      </Navlink>
+                    </div>
+                    <div
+                      className='navbar__menuIcon navbar__menuIconBars'
+                      onClick={() => handleClick()}
+                      style={{ color: (blackNavColor() && !click) ? 'black' : 'white' }}
+                    >
+                      <i className={'fas fa-bars'} />
+                    </div>
+                  </div>
+              }
+
+              {(!click && showRegularNavbar) && (
+                <nav>
+                  <ul className='navbar__links'>
+                    <li onClick={() => closeMenuItems()}>
+                      <ToggleMenu
+                        title='services'
+                        menuItems={services}
+                        onMenuOpen={handleServicesRef}
+                        menuRef={servicesRef}
+                        Icon={isServicesOpen ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />} />
+                    </li>
+                    <li onClick={() => closeMenuItems()}>
+                      <ToggleMenu
+                        title='products'
+                        menuItems={services}
+                        onMenuOpen={handleProductsRef}
+                        menuRef={productsRef}
+                        Icon={isProductsOpen ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />} />
+                    </li>
+                    <li>
+                      {window.innerWidth > 560 ?
+                        <Button
+                          buttonVariant='contained'
+                          buttonColor='primary'
+                          isNavbarButton={true}
+                          onClick={learnMore}
+                          style={{ marginLeft: window.innerWidth > 768 ? '10px' : '6px' }}
+                        >
+                          iBuumerang
+                        </Button>
+                        : <i class="fas fa-angle-double-right" onClick={learnMore}></i>
+                      }
+                    </li>
+                  </ul>
+                </nav>
+              )}
+            </header>
+          </div>
+        )}
+
       {(click && !showRegularNavbar) && (
-        <div style={{ marginTop: '4em', overflow: 'hidden' }}>
+        // <div style={{ marginTop: '4em', overflow: 'hidden' }}>
+        <div style={{ overflow: 'hidden', background: 'rgb(36, 34, 34)', height: '100vh' }}>
+          <div
+            className='navbar__menuIcon navbar__menuIconTimes'
+            onClick={() => handleClick()}>
+            <i className={'fas fa-times'} style={{ color: 'white' }} />
+          </div>
           <List
             component="nav"
             aria-labelledby="nested-list-subheader"
             subheader={<ListSubheader component="div" id="nested-list-subheader">Services</ListSubheader>}
-            className={classes.root}>
-            {services.map((service, i) => {
-              // console.log('index', i)
+            className={`${classes.nav} ${classes.paddingTop}`}>
+            {services.map((service) => {
               return (
                 <Navlink
                   key={service.title}
@@ -272,37 +254,23 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
                   isMobile={true}
                   onClick={closeMobileMenu}
                 >
-                  {/* <ListItem button ref={item => test(i, item)}> */}
-                  {/* <ListItem button ref={(element) => itemEls.current.push(element)}> */}
-                  {/* <ListItem button ref={(element) => test(i, itemEls, element)}> */}
                   <ListItem button>
                     <ListItemText
                       primary={service.mobileTitle ? service.mobileTitle : service.title}
                       style={{ fontSize: '2.6em !important' }}
                     />
+                    {service.isFree && <p className='navbar__label' style={{ top: 0, left: 40, fontSize: '10px' }}>free</p>}
                   </ListItem>
-
-
-                  {/* {service.isFree && itemRefs[i] > -1 && */}
-                  {/* {service.isFree &&
-                    // <span className='freeLabel' style={itemRefs[i] ? { top: itemRefs[i] } : {}}>
-                    // <span className='freeLabel' style={{ top: testRef(itemRefs[i]) }}>
-                    // <span className='freeLabel' style={{ top: testRef(itemEls.current) }}>
-                    // <span className='freeLabel' style={{ top: testRef(i) }}>
-                    //   Free {i}
-                    // </span>
-                    <Label topPos={testRef(i)} />
-                  } */}
                 </Navlink>
               )
             })}
           </List>
-          <hr />
+          {/* <hr /> */}
           <List
             component="nav"
             aria-labelledby="nested-list-subheader"
             subheader={<ListSubheader component="div" id="nested-list-subheader">Products</ListSubheader>}
-            className={classes.root}>
+            className={classes.nav}>
             {products.map(product => (
               <Navlink
                 key={product.title}
@@ -318,9 +286,16 @@ function Navbar({ click, handleClick, showRegularNavbar, showButton, closeMobile
                 </ListItem>
               </Navlink>
             ))}
+            {/* <div style={{ backgroundColor: '#B06ADF', width: '100%', height: '40px' }}>
+              <p style={{ color: 'white', verticalAlign: 'middle' }}>learn more about iBuumerang</p>
+            </div> */}
           </List>
+          <div className='navbar__learnMore' onClick={learnMore}>
+            <p>Learn more about iBuumerang</p>
+          </div>
         </div>
-      )}
+      )
+      }
     </>
   )
 }

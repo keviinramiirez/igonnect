@@ -7,7 +7,14 @@ $lgphone: 480px;
 $phone: 360px;
 
 .hero__wrapper {
-  // z-index: 0 !important;
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    transform: rotate(180deg)
+  }
   video {
     object-fit: cover;
     width: 100%;
@@ -15,13 +22,13 @@ $phone: 360px;
     position: absolute;
     z-index: -1;
     video::-webkit-media-controls {
-      display:none !important;
+      display: none !important;
     }
   }
   /* background: url('') ceneter center/cover no-repeat; */
   // background-size: cover;
   height: 100vh;
-  box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.64);
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.66);
   object-fit: cover;
   width: 100%;
   // position: fixed;
@@ -39,7 +46,7 @@ $phone: 360px;
       flex-direction: row;
     }
     .hero__content {
-      padding-bottom: 3em;
+      padding-bottom: 2em;
       font-weight: 700;
       .succeed {
         font-size: 4.5em;
@@ -91,7 +98,7 @@ $phone: 360px;
     }
     @include media('<homecolumns', '<=lgphone') {
       top: 14%;
-      left: 6%;
+      left: 10%;
       .hero__content {
         .succeed { font-size: 2.2em }
         .without-selling { font-size: 1em }
@@ -102,14 +109,23 @@ $phone: 360px;
         margin-top: 0;
       }
     }
+    @include media('<lgphone', '<=phone') {
+      top: 14%;
+      left: 6%;
+    }
   }
 
   @include media('<desktop', '<=1000px') {
     height: 60vh;
     width: 100%;
     video {
-      height: 60vh;
+      height: 70vh;
       width: 100%;
     }
   }
+
+  @include media('<1000px', '<=lgphone') {
+    height: 50vh;
+  }
 }
+

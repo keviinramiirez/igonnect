@@ -1,30 +1,10 @@
 @import "../../breakpoints/MediaBreakpoints.scss";
 
-.igo__logoBack {
-  // height: 100vh;
-  // box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.3);
-  // background-position: center;
-  // background-size: cover;
-  // overflow: hidden;
-  // object-fit: cover;
-  // width: 100%;
-  // height: 100%;
-  // position: fixed;
-}
-
-// .igo__logo {
-//   z-index: 1;
-//   // width: 10%;
-//   // height: 100%;
-//   margin-left: 1em;
-//   height: 1000px;
-//   width: 1000px;
-// }
-
-.igo__heroWrapper {
+.igo {
   // height: 100vh;
   box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.5);
   z-index: 0;
+  overflow: hidden;
   .igo__logoBack {
     img {
       object-fit: cover;
@@ -33,6 +13,7 @@
       position: absolute;
       box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.4);
       z-index: -1;
+      // overflow: hidden;
     }
   }
   .igo__gridCentralize {

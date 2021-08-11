@@ -18,3 +18,85 @@
 .MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedSecondary.blackText > span.MuiButton-label {
   color: black !important
 }
+
+.glowButton {
+  border: 1px transparent;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  color: #eeeeee;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 8px 30px;
+  text-align: center;
+  text-decoration: none;
+  margin-left: 30px;
+  font-weight: 600;
+  -webkit-animation: glowing 1300ms infinite;
+  -moz-animation: glowing 1300ms infinite;
+  -o-animation: glowing 1300ms infinite;
+  animation: glowing 1300ms infinite;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .glowButton {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .glowButton {
+    font-size: 13px;
+    padding: 8px 16px;
+    margin-left: 20px;
+    font-weight: 500;
+  }
+}
+
+@-webkit-keyframes glowing {
+  0% {
+    background-color: #531f72;
+    box-shadow: 0 0 3px #531f72;
+  }
+  50% {
+    background-color: #9f4ed4;
+    box-shadow: 0 0 15px #9f4ed4;
+  }
+  100% {
+    background-color: #531f72;
+    box-shadow: 0 0 3px #531f72;
+  }
+}
+@keyframes glowing {
+  0% {
+    background-color: #531f72;
+    box-shadow: 0 0 3px #531f72;
+  }
+  50% {
+    background-color: #9f4ed4;
+    box-shadow: 0 0 15px #9f4ed4;
+  }
+  100% {
+    background-color: #531f72;
+    box-shadow: 0 0 3px #531f72;
+  }
+}
+
+.upDownAnimation:hover {
+  animation: MoveUpDown 0.3s ease-out forwards;
+}
+
+@-webkit-keyframes MoveUpDown {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-3px); }
+}
+@keyframes MoveUpDown {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-3px); }
+}

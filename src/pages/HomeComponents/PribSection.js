@@ -5,7 +5,7 @@ import './PribSection.scss'
 // import PribPng from '../../assets/prib_trans.png'
 import PribPng from '../../assets/prib.PNG'
 // import { ReactComponent as PribSvg } from '../../assets/SVG/prib3.svg'
-import { phone, lgphone, tablet, desktop, heroVideoCutout } from '../../breakpoints/MediaBreakpoint'
+import { lgphone, tablet, desktop, heroVideoCutout } from '../../breakpoints/MediaBreakpoint'
 
 function PribSection() {
   const pribPng = () => {
@@ -27,7 +27,6 @@ function PribSection() {
       width -= 250; height -= 240;
     }
     else if (innerWidth <= desktop) {
-      console.log('siiip')
       width -= 200; height -= 190;
     }
     else if (innerWidth <= heroVideoCutout) {
@@ -57,14 +56,9 @@ function PribSection() {
               <h1>Technology that works <span className='prib__forYou'>for you</span></h1>
             </div>
             <div className='prib__lightContext'>
-              {/* <p>
-                Builds you a business <strong>globally</strong> in a systematic
-                way with an ecosystem of different products
-                and services from multiple industries.
-              </p> */}
               <p>
-                Builds you a <span>global business</span> with
-                an ecosystem of different products and services from multiple industries.
+                Builds you a <span>global business</span> with an
+                ecosystem of different technologies from multiple industries.
               </p>
             </div>
           </div>

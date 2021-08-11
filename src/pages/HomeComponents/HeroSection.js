@@ -1,8 +1,9 @@
 import React from 'react'
-import Button from '../../components/Button/Button'
 import './HeroSection.scss'
+import Button from '../../components/Button/Button'
 import GoDiamondVideo from '../../assets/videos/go-diamond-cancun-tease.mp4'
 import { useHistory } from 'react-router-dom'
+import HomeBackground from '../../assets/home-back.jpeg'
 
 function HeroSection({ closeMobileMenu }) {
   const history = useHistory()
@@ -18,9 +19,14 @@ function HeroSection({ closeMobileMenu }) {
 
   return (
     <div className='hero__wrapper'>
-      <video autoPlay='autoplay' playsInline='playsinline' loop muted style={{ pointerEvents: 'none' }}>
+      {/* <video autoPlay='autoplay' playsInline='playsinline' loop muted style={{ pointerEvents: 'none' }}>
         <source src={GoDiamondVideo} type='video/mp4' />
-      </video>
+      </video> */}
+      {window.innerWidth > 425 ? (
+        <video autoPlay='autoplay' playsInline='playsinline' loop muted style={{ pointerEvents: 'none' }}>
+          <source src={GoDiamondVideo} type='video/mp4' />
+        </video>)
+        : <img src={HomeBackground} alt='hero background' />}
       <div className='hero__innerWrapper'>
         <div className='hero__content'>
           <p>
@@ -33,21 +39,16 @@ function HeroSection({ closeMobileMenu }) {
           </p>
         </div>
         <div className='hero__buttons'>
-          <div style={{ marginRight: '1em', }}>
-            <Button
-              buttonVariant='outlined'
-              buttonColor='primary'
-              onClick={toChangeNavbarColor}
-            >
-              Interact
-            </Button>
-          </div>
           <Button
-            buttonVariant='contained'
-            buttonColor='secondary'
-            onClick={goToPoweredByIgo}
-          >
-            Powered By iGo
+            buttonVariant='outlined'
+            buttonColor='primary'
+            onClick={toChangeNavbarColor}>
+            Interact
+          </Button>
+          <Button
+            isPoweredByIgo={true}
+            onClick={goToPoweredByIgo}>
+            POWERED BY IGO
           </Button>
         </div>
       </div>
