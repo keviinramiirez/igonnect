@@ -191,8 +191,8 @@ li.navbar__linkButton {
 
   .navbar__logoBars {
     width: 89%;
-    height: 200px;
-    /* margin-top: 26px; */
+    /* height: 200px; */
+    margin-top: 26px;
     display: flex;
     justify-content: space-between;
     align-items: center;
