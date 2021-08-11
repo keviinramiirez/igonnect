@@ -48,7 +48,8 @@ function IgoHomeSection() {
   window.addEventListener('resizing', igoLogo);
 
   return (
-    <div className='igo__heroWrapper' style={{ height: (window.outerHeight + 'px') }}>
+    // <div className='igo' style={{ height: (window.outerHeight + 'px') }}>
+    <div className='igo' style={{ height: (window.outerHeight + 'px') }}>
       <div className='igo__logoBack'>
         <img src={iGoBeachSvg} alt='Beach Circle background' />
       </div>
