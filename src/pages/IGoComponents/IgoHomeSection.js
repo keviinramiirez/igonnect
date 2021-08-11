@@ -48,7 +48,7 @@ function IgoHomeSection() {
   window.addEventListener('resizing', igoLogo);
 
   return (
-    <div className='igo__heroWrapper'>
+    <div className='igo__heroWrapper' style={{ height: (window.outerHeight + 'px') }}>
       <div className='igo__logoBack'>
         <img src={iGoBeachSvg} alt='Beach Circle background' />
       </div>
@@ -57,15 +57,7 @@ function IgoHomeSection() {
 
       <div className='igo__gridCentralize'>
         <div className='igo__innerWrapper'>
-          {/* <h1 className='igo__logo'>
-            igo
-          </h1> */}
-          {/* <div>
-            <IGoSvg height='250' width='250' alt='iGo Logo' />
-          </div> */}
           {igoLogo()}
-
-
           <div className='igo__title'>
             Access to <span className='igo__lifetyle'>5-star Lifestyle</span> at 3-star pricing
           </div>
