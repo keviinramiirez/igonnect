@@ -19,12 +19,7 @@ function Ellev8Hero() {
 
   return (
     <div className='ellev8' style={{ height: (window.innerHeight - 1 + 'px') }}>
-      {/* <div className='ellev8'> */}
       <img className='ellev8__backgroundImg' src={Ellev8BackSvg} alt='Ellev8 Background' />
-      {/* <div className='ellev8__img'>
-        <img src={Ellev8BackSvg} alt='Ellev8 Background' />
-      </div> */}
-
       <div className='ellev8__content'>
         <img src={Ellev8IconSvg} alt='Ellev8 Icon' />
         <p className='ellev8__header'>FOREX TRADING LEGACY</p>
