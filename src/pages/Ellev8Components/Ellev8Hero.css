@@ -6,7 +6,7 @@
 img.ellev8__backgroundImg {
   object-fit: cover;
   width: 100%;
-  /* height: 100%; */
+  height: 100%;
   overflow: hidden;
   position: absolute;
   box-shadow: inset 0 0 0 1100px rgba(0,0,0);
@@ -15,9 +15,10 @@ img.ellev8__backgroundImg {
 }
 
 .ellev8__content {
-  padding: 190px 160px;
+  padding: 200px 160px;
   /* padding: 200px 10%; */
   white-space: nowrap;
+  overflow: hidden
 }
 
 .ellev8__content > .ellev8__header {
@@ -56,17 +57,12 @@ img.ellev8__backgroundImg {
 }
 
 @media (max-width: 1260px) {
-  .ellev8__content { padding: 130px 120px }
+  .ellev8__content { padding: auto 120px }
 }
 
 @media (max-width: 1024px) {
-  .ellev8__content { padding: 140px 100px }
-
-  /* .ellev8__content > .ellev8__header,
-  .ellev8__content > .ellev8__text {
-    color: #ffffff;
-  } */
-
+  .ellev8__content { padding: 150px 100px }
+  
   .ellev8__text {
     color: #ffffff;
   }

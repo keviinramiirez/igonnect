@@ -49,7 +49,7 @@ function IgoHomeSection() {
 
   return (
     // <div className='igo' style={{ height: (window.outerHeight + 'px') }}>
-    <div className='igo' style={{ height: (window.outerHeight + 'px') }}>
+    <div className='igo'>
       <div className='igo__logoBack'>
         <img src={iGoBeachSvg} alt='Beach Circle background' />
       </div>

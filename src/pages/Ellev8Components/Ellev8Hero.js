@@ -20,7 +20,7 @@ function Ellev8Hero() {
   return (
     // <div className='ellev8' style={{ height: (window.outerHeight + 'px') }}>
     <div className='ellev8'>
-      <img className='ellev8__backgroundImg' src={Ellev8BackSvg} alt='Ellev8 Background' style={{ height: (window.outerHeight + 'px') }} />
+      <img className='ellev8__backgroundImg' src={Ellev8BackSvg} alt='Ellev8 Background' />
       {/* <div className='ellev8__img'>
         <img src={Ellev8BackSvg} alt='Ellev8 Background' />
       </div> */}
