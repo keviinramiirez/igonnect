@@ -49,7 +49,7 @@ function ZenceHeroSection() {
         <Button
           buttonVariant='outlined'
           buttonColor='primary'
-          onClick={() => window.open("https://izence.com/", "_blank")}
+          onClick={() => window.open('https://izence.com/', '_self')}
         >
           Learn More
         </Button>

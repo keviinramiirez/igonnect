@@ -15,35 +15,25 @@ function PribSection() {
 
     if (innerWidth <= 350) {
       width -= 350; height -= 176.03;
-      // width -= 300; height -= 155.88;
     }
     else if (innerWidth <= lgphone) {
-      // width -= 350; height -= 176.03;
       width -= 270; height -= 135.79;
     }
-
-
     else if (innerWidth <= 660) {
       // width -= 380; height -= 191.11;
-      // width -= 350; height -= 176.03;
       width -= 250; height -= 125.73;
-      // width -= 200; height -= 100.62;
-      // width -= 100; height -= 50.39;
     }
-
-
     else if (innerWidth <= 720) {
       width -= 350; height -= 176.03;
     }
-
     else if (innerWidth <= tablet) {
-      // width -= 300; height -= 156.04;
       width -= 300; height -= 160;
     }
     else if (innerWidth <= desktop) {
       width -= 200; height -= 100.62;
     }
     else if (innerWidth <= heroVideoCutout) {
+      // width -= 100; height -= 50.39;
       width -= 50; height -= 25;
     }
 

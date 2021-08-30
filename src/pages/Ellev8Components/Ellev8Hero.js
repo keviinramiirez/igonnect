@@ -32,7 +32,7 @@ function Ellev8Hero() {
             <Button
               buttonVariant='outlined'
               buttonColor='primary'
-              onClick={() => window.open("https://www.ellev8.com/", "_blank")}
+              onClick={() => window.open('https://www.ellev8.com/', '_self')}
             >
               Learn More
             </Button>
