@@ -27,6 +27,12 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding-right: 4em;
+    padding: 0 4em 1.5em 0;
+    @include media('<=1300px') {
+      padding: 0;
+    }
+
 
     // align-content: center;
     .prib__left {
@@ -66,7 +72,7 @@
       }
     
       .prib__lightContext {
-        font-size: 1.3em;
+        font-size: 1.2em;
         font-weight: 200;
         padding-top: 11px;
         width: 500px;
@@ -87,7 +93,7 @@
             }
           }
         }
-      
+
         .prib__subtitle > h1 {
           width: 400px;
           font-size: 2.2em;
@@ -98,7 +104,7 @@
       
         .prib__lightContext {
           font-size: 1em;
-          width: 400px;
+          width: 350px;
         }
       }
 
@@ -120,13 +126,14 @@
         }
       
         .prib__lightContext {
-          font-size: 1em;
-          width: 315px;
+          font-size: 1.1em;
+          width: inherit;
         }
       }
 
       @include media('<desktop', '<=tablet') {
         .prib__context {
+          width: 300px;
           .prib__thePribContainer {
             .the {
               font-size: 0.8em;
@@ -165,7 +172,7 @@
       
         .prib__subtitle > h1 {
           font-size: 1.5em;
-          width: 350px;
+          width: 300px;
         }
       
         .prib__lightContext {
@@ -183,6 +190,7 @@
       justify-items: center;
       .prib__right {
         padding-left: 1em;
+        text-align: center;
         .prib__context {
           .prib__thePribContainer {
             color: #F5CA51;
@@ -203,7 +211,7 @@
           // width: 330px !important;
           line-height: 1.3em;
           font-weight: 500;
-          // width: 360px;
+          width: 310px;
           padding: -100px 0 10px 0;
           margin-top: -10px;
           font-size: 2.3em;
@@ -227,7 +235,6 @@
         padding-bottom: 2em;
         // margin-left: -7em;
         // padding-right: 
-        text-align: center;
         // width: 100%;
         .prib__context {
           width: 319px;

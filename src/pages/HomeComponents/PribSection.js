@@ -3,39 +3,44 @@ import './PribSection.scss'
 // import PribImg from './prib_transparent_cropped.png';
 // import PribImg from '../../assets/prib_transparent_cropped.png';
 // import PribPng from '../../assets/prib_trans.png'
-import PribPng from '../../assets/prib.PNG'
-// import { ReactComponent as PribSvg } from '../../assets/SVG/prib3.svg'
+// import PribPng from '../../assets/prib.PNG'
+import PribPng from '../../assets/prib_transparent.PNG'
 import { lgphone, tablet, desktop, heroVideoCutout } from '../../breakpoints/MediaBreakpoint'
 
 function PribSection() {
   const pribPng = () => {
     const innerWidth = window.innerWidth;
-    let width = 550, height = 437;
+    // let width = 1350, height = 679;
+    let width = 600, height = 301.77;
+
     if (innerWidth <= 350) {
-      width -= 250; height -= 210;
+      width -= 350; height -= 176.03;
     }
     else if (innerWidth <= lgphone) {
-      width -= 200; height -= 180;
+      width -= 270; height -= 135.79;
     }
     else if (innerWidth <= 660) {
-      width -= 140; height -= 120;
-    }
-    else if (innerWidth <= tablet) {
-      width -= 220; height -= 200;
+      // width -= 380; height -= 191.11;
+      width -= 250; height -= 125.73;
     }
     else if (innerWidth <= 720) {
-      width -= 250; height -= 240;
+      width -= 350; height -= 176.03;
+    }
+    else if (innerWidth <= tablet) {
+      width -= 300; height -= 160;
     }
     else if (innerWidth <= desktop) {
-      width -= 200; height -= 190;
+      width -= 200; height -= 100.62;
     }
     else if (innerWidth <= heroVideoCutout) {
-      width -= 50; height -= 50;
+      // width -= 100; height -= 50.39;
+      width -= 50; height -= 25;
     }
 
 
-    // return <PribSvg height={height} width={width} viewBox="0 -100 1413 1172" alt='Flexibility Icon' />
-    return <img src={PribPng} width={width} height={height} alt='' />
+    // return <PribSvg height={height} width={width} viewBox="0 -100 1413 1172" alt='Prib Illustration' />
+    // return <img src={PribSvg} width={width} height={height} alt='Prib Illustration' />
+    return <img src={PribPng} width={width} height={height} alt='Prib Illustration' />
   }
 
   return (

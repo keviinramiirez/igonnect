@@ -15,10 +15,10 @@ function BillGeniusHeroSection() {
       return (
         <>
           <div className='bill__billLogoBottom' style={{ overflow: 'hidden' }}>
-            <BillCenteredSVG height={String(770)} width={String(422)} viewBox="0 -455 650 602" alt='iGo Logo' />
+            <BillCenteredSVG height={String(770)} width={String(422)} viewBox='0 -455 650 602' alt='iGo Logo' />
           </div>
           <div className='bill__billLogoTop'>
-            <BillTopSVG height={String(350)} width={String(102)} viewBox="50 800 650 602" alt='iGo Logo' />
+            <BillTopSVG height={String(350)} width={String(102)} viewBox='50 800 650 602' alt='iGo Logo' />
           </div>
         </>
       )
@@ -27,10 +27,10 @@ function BillGeniusHeroSection() {
       return (
         <>
           <div className='bill__billLogoBottom'>
-            <BillBottomSVG height={String(650)} width={String(602)} viewBox="0 -60 650 602" alt='iGo Logo' />
+            <BillBottomSVG height={String(650)} width={String(602)} viewBox='0 -60 650 602' alt='iGo Logo' />
           </div>
           <div className='bill__billLogoTop'>
-            <BillTopSVG height={String(350)} width={String(302)} viewBox="50 60 650 602" alt='iGo Logo' />
+            <BillTopSVG height={String(350)} width={String(302)} viewBox='50 60 650 602' alt='iGo Logo' />
           </div>
         </>
       )
@@ -40,13 +40,13 @@ function BillGeniusHeroSection() {
       return (
         <>
           <div className='bill__billLogoBottom'>
-            <BillBottomSVG height={String(650)} width={String(602)} viewBox="0 -60 650 602" alt='iGo Logo' />
+            <BillBottomSVG height={String(650)} width={String(602)} viewBox='0 -60 650 602' alt='iGo Logo' />
           </div>
           <div className='bill__billLogo'>
-            <BillSVG style={billOpacity} height={String(450)} width={String(402)} viewBox="0 -60 650 602" alt='iGo Logo' />
+            <BillSVG style={billOpacity} height={String(450)} width={String(402)} viewBox='0 -60 650 602' alt='iGo Logo' />
           </div>
           <div className='bill__billLogoTop'>
-            <BillTopSVG height={String(260)} width={String(202)} viewBox="50 60 650 602" alt='iGo Logo' />
+            <BillTopSVG height={String(260)} width={String(202)} viewBox='50 60 650 602' alt='iGo Logo' />
           </div>
         </>
       )
@@ -121,7 +121,7 @@ function BillGeniusHeroSection() {
             <Button
               buttonVariant='contained'
               buttonColor='primary'
-              onClick={() => window.open("https://www.billgenius.com/", "_blank")}
+              onClick={() => window.open('https://www.billgenius.com/', '_self')}
             >
               Learn More
             </Button>

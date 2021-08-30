@@ -70,7 +70,8 @@ function IgoHomeSection() {
               // className='btns'
               buttonVariant='contained'
               buttonColor='primary'
-              onClick={() => window.open("https://home.ibuumerang.com/igo/", "_blank")}
+              // onClick={() => window.open('https://home.ibuumerang.com/igo/', '_blank')}
+              onClick={() => window.open('https://home.ibuumerang.com/igo/', '_self')}
             >
               Learn More
             </Button>
@@ -93,7 +94,7 @@ function IgoHomeSection() {
 
 
       {/* <svg height='600' width='600' > */}
-      {/* <img src={iGoPNG} height='600' width='600' style={{ zIndex: '100', margin: 'auto 0' }} alt="React Logo" /> */}
+      {/* <img src={iGoPNG} height='600' width='600' style={{ zIndex: '100', margin: 'auto 0' }} alt='React Logo' /> */}
       {/* <iGoSvg height='600' width='600' alt='iGo Logo' /> */}
       {/* </svg> */}
       {/* <img src={iGoSvg} className='igo__logo' alt='iGo Logo' /> */}
